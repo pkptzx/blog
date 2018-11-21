@@ -15,6 +15,6 @@ deploy:
     local_dir: public
     repo: pkptzx/baqi.io
     fqdn: www.baqi.io
-    target_branch: master
+    target_branch: blog
     email: pkptzx@126.com
     name: pkptzx
