@@ -1,0 +1,1 @@
+git.exe push --force --progress "origin" master
