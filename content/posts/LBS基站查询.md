@@ -29,5 +29,4 @@ http://api.cellocation.com:81/cell/?mcc=460&mnc=1&lac=4301&ci=20986&output=xml
 
 文档地址：
 
-
 http://www.cellocation.com/api/
