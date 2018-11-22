@@ -8,7 +8,7 @@ theme = "maupassant"
 
 [params]
   author = "码魂"
-  subtitle = "专注于Java、移动互联网、移动支付、项目管理、软件架构"
+  subtitle = "写程序专注于Java、移动互联网、移动支付、项目管理、软件架构<br/>写程序最重要的是要有霸气!"
   keywords = "码魂,java,android,博客,项目管理,微信,软件架构,公众号,小程序"
   description = "专注于IT互联网，包括但不限于专注于Java、移动互联网、移动支付、项目管理、软件架构等"
 
