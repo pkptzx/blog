@@ -1,4 +1,4 @@
-baseURL = "http://www.baqi.io"
+baseURL = "https://www.baqi.io"
 languageCode = "zh-CN"
 title = "码魂"
 theme = "maupassant"
