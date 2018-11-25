@@ -8,6 +8,7 @@ description: "物联网卡无法上网,设置APN解决办法"
 tags: ["物联网"]
 categories: ["物联网"]
 author: "码魂"
+url: "2018/11/23"
 ---
 
 关于少数设备不能联网的情况：  
