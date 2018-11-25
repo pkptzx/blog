@@ -8,6 +8,7 @@ description: "Hugo搭建博客使用travis自动发布"
 tags: ["hugo"]
 categories: ["hugo"]
 author: "码魂"
+url: "2018/11/21"
 ---
 
 原老域名到期,cn的其实不是很喜欢.  
