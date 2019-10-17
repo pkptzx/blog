@@ -8,7 +8,7 @@ description: "Springboot flyway migrate执行完毕再执行其他数据库操�
 tags: ["springboot","flyway"]
 categories: ["springboot"]
 author: "码魂"
-url: "2019/10/17"
+url: "2019/10/17/springboot-bean-before-flyway-migrate"
 ---
 项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
 
