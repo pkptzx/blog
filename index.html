@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>码魂 - 写程序最重要的是要有霸气! | 写程序专注于Java、移动互联网、移动支付、项目管理、软件架构</title>
+    <meta property="og:title" content="码魂 - 写程序最重要的是要有霸气! | 写程序专注于Java、移动互联网、移动支付、项目管理、软件架构">
+    <meta property="og:type" content="website">
+    <meta name="Keywords" content="码魂,java,android,博客,项目管理,微信,软件架构,公众号,小程序">
+    <meta name="description" content="专注于IT互联网，包括但不限于专注于Java、移动互联网、移动支付、项目管理、软件架构等">
+    <meta property="og:url" content="https://www.baqi.io/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://www.baqi.io/index.xml" title="码魂 - 写程序最重要的是要有霸气!" />
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <h1>
+                        <a id="logo" href="https://www.baqi.io">
+                            码魂 - 写程序最重要的是要有霸气!
+                        </a>
+                    </h1>
+                
+                <p class="description">写程序专注于Java、移动互联网、移动支付、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.baqi.io">首页</a>
+                    
+                    <a  href="https://www.baqi.io/books/" title="读书">读书</a>
+                    
+                    <a  href="https://www.baqi.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.baqi.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://www.baqi.io/2019/10/17/springboot-bean-before-flyway-migrate/" title="Springboot flyway migrate执行完毕再执行其他数据库操作" >Springboot flyway migrate执行完毕再执行其他数据库操作</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年10月17日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://www.baqi.io/categories/springboot">springboot</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：</p>
+
+<ol>
+<li><p>使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。 …</p></li></ol>
+                            </div>
+                            <p class="readmore"><a href="https://www.baqi.io/2019/10/17/springboot-bean-before-flyway-migrate/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://www.baqi.io/2019/08/13/java8newdate/" title="Java8新的时间和日期API" >Java8新的时间和日期API</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年8月13日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://www.baqi.io/categories/java">java</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。</p>
+
+<h2 id="localdate-只会获取年月日">LocalDate 只会获取年月日</h2>
+
+<pre><code class="language-java">// 创建 LocalDate
+// 获取当前年月 …</code></pre>
+                            </div>
+                            <p class="readmore"><a href="https://www.baqi.io/2019/08/13/java8newdate/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://www.baqi.io/2019/05/23/java-check-maven-jar/" title="java校验maven下载的jar文件" >java校验maven下载的jar文件</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年5月23日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://www.baqi.io/categories/java">java</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>有时候maven真的很坑!</p>
+
+<p>有时候提示invalid LOC header (bad signat signature),</p>
+
+<p>但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的.</p>
+
+<p>很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有.</p>
+
+<p>今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不报 …</p>
+                            </div>
+                            <p class="readmore"><a href="https://www.baqi.io/2019/05/23/java-check-maven-jar/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://www.baqi.io/2018/12/06/docker-set-fix-ip/" title="docker设置固定ip地址" >docker设置固定ip地址</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年12月6日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://www.baqi.io/categories/docker">Docker</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="docker安装后-默认会创建下面三种网络类型">Docker安装后，默认会创建下面三种网络类型</h2>
+
+<pre><code class="language-shell">$ docker network ls
+NETWORK ID     NAME        DRIVER       SCOPE
+9781b1f585ae    bridge       bridge       local
+1252da701e55    host        host …</code></pre>
+                            </div>
+                            <p class="readmore"><a href="https://www.baqi.io/2018/12/06/docker-set-fix-ip/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://www.baqi.io/2018/11/30/" title="Windows远程“要求的函数不受支持”解决办法" >Windows远程“要求的函数不受支持”解决办法</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月30日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://www.baqi.io/categories/%E7%B3%BB%E7%BB%9F">系统</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>Windows远程“要求的函数不受支持”解决办法
+解决方法：</p>
+
+<p>开启组策略中远程桌面链接安全层。
+1、开始-运行-gpedit.msc，进入组策略编辑器；
+2、找到左侧边栏计算机配置-管理模板-Windows组件-远程桌面服务-远程桌面会话主机-安全项；
+3、修改以下两项：</p>
+
+<pre><code>A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP
+B,要求使 …</code></pre>
+                            </div>
+                            <p class="readmore"><a href="https://www.baqi.io/2018/11/30/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://www.baqi.io/2018/11/25/" title="小书匠测试" >小书匠测试</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月25日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://www.baqi.io/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0">小书匠</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>测试小红书自动发布文章<br />
+    测试开头空格<br />
+&nbsp;&nbsp;&nbsp;&nbsp;测试开头空格<br />
+测试换行<br />
+测试表格</p>
+
+<table>
+<thead>
+<tr>
+<th>你好</th>
+<th>好</th>
+<th>好的</th>
+<th>嗯</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ha</td>
+<td>a</td>
+<td>a</td>
+<td>a</td>
+</tr>
+
+<tr>
+<td>ha</td>
+<td>a</td>
+<td>a</td>
+<td>a</td>
+</tr>
+
+<tr>
+<td>ha</td>
+<td>a</td>
+<td>a</td>
+<td>a</td>
+</tr>
+
+<tr>
+<td>ha</td>
+<td>a</td>
+<td>a</td>
+<td>a</td>
+</tr>
+</tbody>
+</table>
+
+<p>测试编号(结尾要有空行)</p>
+
+<ol>
+<li>List item</li>
+<li>你好</li>
+<li>谁</li>
+</ol>
+
+<p>测试小结</p>
+
+<ul>
+<li>a</li>
+<li>asdf …</li></ul>
+                            </div>
+                            <p class="readmore"><a href="https://www.baqi.io/2018/11/25/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://www.baqi.io/2018/11/23/" title="物联网卡无法上网设置APN" >物联网卡无法上网设置APN</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月23日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://www.baqi.io/categories/%E7%89%A9%E8%81%94%E7%BD%91">物联网</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>关于少数设备不能联网的情况：<br />
+大部分终端插卡即用，部分设备插上后不能联网，这时需要设置一下APN。操作流程如下：<br />
+第①步：在移动网络设置里找到【接入点名称（APN）】，然后新建一个APN；</p>
+
+<p>提示：关于“APN地址”，有的终端显示是“接入点”、有的显示是“APN”</p>
+
+<p>第②步：创建APN/接入点时，名称可以随便填写，<br />
+联通制式终端：<br />
+APN地址输入3gnet即 …</p>
+                            </div>
+                            <p class="readmore"><a href="https://www.baqi.io/2018/11/23/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://www.baqi.io/2018/11/22/" title="LBS基站查询" >LBS基站查询</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月22日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://www.baqi.io/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1">位置服务</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>今天调试机器发现返回的LBS是&rdquo;LBS&rdquo;:&ldquo;7300B084A16&rdquo;</p>
+
+<p>没有见过这种的,后来问了人才知道这是基站的。</p>
+
+<p>2g是8位.
+4g是11位.</p>
+
+<p>不管是2/4g,头4位为LAC/TAC,剩下的是CI</p>
+
+<p>可以通过这个地址直接查询：
+<a href="http://www.gpsspg.com/bs.htm">http://www.gpsspg.com/bs.htm</a></p>
+
+<p>免费接口地址： …</p>
+                            </div>
+                            <p class="readmore"><a href="https://www.baqi.io/2018/11/22/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://www.baqi.io/2018/11/21/" title="Hugo搭建博客使用travis自动发布" >Hugo搭建博客使用travis自动发布</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月21日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://www.baqi.io/categories/hugo">hugo</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>原老域名到期,cn的其实不是很喜欢.<br />
+索性买了个io的.结果发现无法备案.<br />
+就直接GitHub上搭建博客吧&hellip;</p>
+
+<p>博客搞了好多年,从WordPress到Ghost,其实觉得Ghost还是蛮好用的.<br />
+这次寻找了一番,决定换Hugo.之前的博客等我慢慢迁移吧. …</p>
+                            </div>
+                            <p class="readmore"><a href="https://www.baqi.io/2018/11/21/">阅读全文</a></p>
+                        </article>
+                    
+
+                    
+
+
+<ol class="page-navigator">
+    
+
+    
+    <li  class="current">
+        <a href="https://www.baqi.io/">1</a>
+    </li>
+    
+    <li >
+        <a href="https://www.baqi.io/page/2/">2</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="https://www.baqi.io/page/2/">下一页</a>
+    </li>
+    
+</ol>
+
+
+
+                </div>
+            </div>
+
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.baqi.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.baqi.io/2019/10/17/springboot-bean-before-flyway-migrate/" title="Springboot flyway migrate执行完毕再执行其他数据库操作">Springboot flyway migrate执行完毕再执行其他数据库操作</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/2019/08/13/java8newdate/" title="Java8新的时间和日期API">Java8新的时间和日期API</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/2019/05/23/java-check-maven-jar/" title="java校验maven下载的jar文件">java校验maven下载的jar文件</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/2018/12/06/docker-set-fix-ip/" title="docker设置固定ip地址">docker设置固定ip地址</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/2018/11/30/" title="Windows远程“要求的函数不受支持”解决办法">Windows远程“要求的函数不受支持”解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/2018/11/25/" title="小书匠测试">小书匠测试</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/2018/11/23/" title="物联网卡无法上网设置APN">物联网卡无法上网设置APN</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/2018/11/22/" title="LBS基站查询">LBS基站查询</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/2018/11/21/" title="Hugo搭建博客使用travis自动发布">Hugo搭建博客使用travis自动发布</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.baqi.io/categories/docker/">docker(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/categories/hugo/">hugo(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/categories/java/">java(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/categories/springboot/">springboot(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0/">小书匠(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/categories/%E7%89%A9%E8%81%94%E7%BD%91/">物联网(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://www.baqi.io/categories/%E7%B3%BB%E7%BB%9F/">系统(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://www.baqi.io/tags/docker/">docker</a>
+    
+    <a href="https://www.baqi.io/tags/flyway/">flyway</a>
+    
+    <a href="https://www.baqi.io/tags/hugo/">hugo</a>
+    
+    <a href="https://www.baqi.io/tags/java/">java</a>
+    
+    <a href="https://www.baqi.io/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
+    
+    <a href="https://www.baqi.io/tags/lbs/">lbs</a>
+    
+    <a href="https://www.baqi.io/tags/maven/">maven</a>
+    
+    <a href="https://www.baqi.io/tags/springboot/">springboot</a>
+    
+    <a href="https://www.baqi.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/">物联网</a>
+    
+    <a href="https://www.baqi.io/tags/%E7%B3%BB%E7%BB%9F/">系统</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="http://www.baidu.com" title="百度">百度</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://www.oschina.net" title="开源中国">开源中国</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.baqi.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2018 <a href="https://www.baqi.io">码魂 - 写程序最重要的是要有霸气! By 码魂</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="http://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+
+</body>
+</html>

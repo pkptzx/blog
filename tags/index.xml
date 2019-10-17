@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 码魂 - 写程序最重要的是要有霸气!</title>
+    <link>https://www.baqi.io/tags/</link>
+    <description>Recent content in Tags on 码魂 - 写程序最重要的是要有霸气!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 17 Oct 2019 18:01:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.baqi.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>flyway</title>
+      <link>https://www.baqi.io/tags/flyway/</link>
+      <pubDate>Thu, 17 Oct 2019 18:01:25 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/flyway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>springboot</title>
+      <link>https://www.baqi.io/tags/springboot/</link>
+      <pubDate>Thu, 17 Oct 2019 18:01:25 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/springboot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java8时间</title>
+      <link>https://www.baqi.io/tags/java8%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Tue, 13 Aug 2019 20:09:58 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/java8%E6%97%B6%E9%97%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://www.baqi.io/tags/java/</link>
+      <pubDate>Thu, 23 May 2019 15:58:08 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maven</title>
+      <link>https://www.baqi.io/tags/maven/</link>
+      <pubDate>Thu, 23 May 2019 15:58:08 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://www.baqi.io/tags/docker/</link>
+      <pubDate>Thu, 06 Dec 2018 16:22:22 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>系统</title>
+      <link>https://www.baqi.io/tags/%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Fri, 30 Nov 2018 22:53:02 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/%E7%B3%BB%E7%BB%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://www.baqi.io/tags/hugo/</link>
+      <pubDate>Sun, 25 Nov 2018 18:02:24 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>物联网</title>
+      <link>https://www.baqi.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/</link>
+      <pubDate>Fri, 23 Nov 2018 20:19:47 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LBS</title>
+      <link>https://www.baqi.io/tags/lbs/</link>
+      <pubDate>Thu, 22 Nov 2018 17:02:47 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/tags/lbs/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

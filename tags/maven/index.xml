@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maven on 码魂 - 写程序最重要的是要有霸气!</title>
+    <link>https://www.baqi.io/tags/maven/</link>
+    <description>Recent content in maven on 码魂 - 写程序最重要的是要有霸气!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 23 May 2019 15:58:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.baqi.io/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>java校验maven下载的jar文件</title>
+      <link>https://www.baqi.io/2019/05/23/java-check-maven-jar/</link>
+      <pubDate>Thu, 23 May 2019 15:58:08 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2019/05/23/java-check-maven-jar/</guid>
+      <description>有时候maven真的很坑!
+有时候提示invalid LOC header (bad signat signature),
+但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的.
+很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有.
+今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不报错,用mvn命令的时候才能看到jar invalid.
+我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
+真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
+不如就写个代码跑一下吧~
+public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &amp;quot;F:/mvnlib&amp;quot;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &amp;quot;jar,pom&amp;quot;); System.out.println(&amp;quot;完毕&amp;quot;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&amp;quot;,&amp;quot;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.</description>
+    </item>
+    
+  </channel>
+</rss>

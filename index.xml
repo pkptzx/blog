@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>码魂 - 写程序最重要的是要有霸气!</title>
+    <link>https://www.baqi.io/</link>
+    <description>Recent content on 码魂 - 写程序最重要的是要有霸气!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 17 Oct 2019 18:01:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.baqi.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Springboot flyway migrate执行完毕再执行其他数据库操作</title>
+      <link>https://www.baqi.io/2019/10/17/springboot-bean-before-flyway-migrate/</link>
+      <pubDate>Thu, 17 Oct 2019 18:01:25 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2019/10/17/springboot-bean-before-flyway-migrate/</guid>
+      <description>项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
+ 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。
+@DependsOn({&amp;quot;flyway&amp;quot;, &amp;quot;flywayInitializer&amp;quot;}) @Component public class UserDao { }  继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。
+@Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&amp;quot;before flyway migration...&amp;quot;); flyway.migrate(); log.info(&amp;quot;after flyway migration...&amp;quot;); } }   </description>
+    </item>
+    
+    <item>
+      <title>Java8新的时间和日期API</title>
+      <link>https://www.baqi.io/2019/08/13/java8newdate/</link>
+      <pubDate>Tue, 13 Aug 2019 20:09:58 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2019/08/13/java8newdate/</guid>
+      <description>Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。
+LocalDate 只会获取年月日 // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.getDayOfWeek(); int dayOfWeek1 = localDate.get(ChronoField.DAY_OF_WEEK);  LocalTime 只会获取时分秒 // 创建 LocalTime LocalTime localTime = LocalTime.</description>
+    </item>
+    
+    <item>
+      <title>java校验maven下载的jar文件</title>
+      <link>https://www.baqi.io/2019/05/23/java-check-maven-jar/</link>
+      <pubDate>Thu, 23 May 2019 15:58:08 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2019/05/23/java-check-maven-jar/</guid>
+      <description>有时候maven真的很坑!
+有时候提示invalid LOC header (bad signat signature),
+但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的.
+很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有.
+今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不报错,用mvn命令的时候才能看到jar invalid.
+我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
+真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
+不如就写个代码跑一下吧~
+public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &amp;quot;F:/mvnlib&amp;quot;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &amp;quot;jar,pom&amp;quot;); System.out.println(&amp;quot;完毕&amp;quot;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&amp;quot;,&amp;quot;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.</description>
+    </item>
+    
+    <item>
+      <title>docker设置固定ip地址</title>
+      <link>https://www.baqi.io/2018/12/06/docker-set-fix-ip/</link>
+      <pubDate>Thu, 06 Dec 2018 16:22:22 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2018/12/06/docker-set-fix-ip/</guid>
+      <description>Docker安装后，默认会创建下面三种网络类型 $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local  启动 Docker的时候，用 &amp;ndash;network 参数，可以指定网络类型 docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash  bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  docker run -itd --net bridge --ip 172.17.0.10 centos:latest /bin/bash 6eb1f228cf308d1c60db30093c126acbfd0cb21d76cb448c678bab0f1a7c0df6 docker: Error response from daemon: User specified IP address is supported on user defined networks only.</description>
+    </item>
+    
+    <item>
+      <title>Windows远程“要求的函数不受支持”解决办法</title>
+      <link>https://www.baqi.io/2018/11/30/</link>
+      <pubDate>Fri, 30 Nov 2018 22:53:02 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2018/11/30/</guid>
+      <description>Windows远程“要求的函数不受支持”解决办法 解决方法：
+开启组策略中远程桌面链接安全层。 1、开始-运行-gpedit.msc，进入组策略编辑器； 2、找到左侧边栏计算机配置-管理模板-Windows组件-远程桌面服务-远程桌面会话主机-安全项； 3、修改以下两项：
+A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP B,要求使用网络级别的身份验证对远程连接的用户进行身份验证，改为禁用；  4、关闭组策略编辑器，重启计算机。</description>
+    </item>
+    
+    <item>
+      <title>小书匠测试</title>
+      <link>https://www.baqi.io/2018/11/25/</link>
+      <pubDate>Sun, 25 Nov 2018 18:02:24 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2018/11/25/</guid>
+      <description>测试小红书自动发布文章
+测试开头空格
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;测试开头空格
+测试换行
+测试表格
+   你好 好 好的 嗯     ha a a a   ha a a a   ha a a a   ha a a a    测试编号(结尾要有空行)
+ List item 你好 谁  测试小结
+ a asdf fdsa fdsa fdsa  测试代码高亮
+package cn.xdemo; import java.util.Date; /** * 测试 * * */ public class IOTCard { public static void main(String[] args) { System.</description>
+    </item>
+    
+    <item>
+      <title>物联网卡无法上网设置APN</title>
+      <link>https://www.baqi.io/2018/11/23/</link>
+      <pubDate>Fri, 23 Nov 2018 20:19:47 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2018/11/23/</guid>
+      <description>关于少数设备不能联网的情况：
+大部分终端插卡即用，部分设备插上后不能联网，这时需要设置一下APN。操作流程如下：
+第①步：在移动网络设置里找到【接入点名称（APN）】，然后新建一个APN；
+提示：关于“APN地址”，有的终端显示是“接入点”、有的显示是“APN”
+第②步：创建APN/接入点时，名称可以随便填写，
+联通制式终端：
+APN地址输入3gnet即可享受3G网络；
+APN地址输入wonet即可享受4G网络。
+电信制式终端：
+APN地址输入CTNET即可享受3G/4G网络。
+第③步：保存，然后重启即可。
+【如果按照上述步骤设置后还是不能用，请在APN地址输入UNIM2M.NJM2MAPN或者UNIM2M.GZM2MAPN
+然后，MCC改为460，MNC改为06 保存，重启即可】
+【中移物联网】尊敬的客户，您好！针对您反馈的上网功能问题，我们建议您将故障卡放在普通安卓智能机（非联通/电信定制机）中，打开设置-移动网络-APN/接入点-新建APN，将“名称”和“APN”均修改为“cmiot”后保存并勾选，勾选“数据连接”和“数据漫游”后，浏览任意网页，若能正常访问，则物联卡上网功能正常。感谢您的配合，谢谢！</description>
+    </item>
+    
+    <item>
+      <title>LBS基站查询</title>
+      <link>https://www.baqi.io/2018/11/22/</link>
+      <pubDate>Thu, 22 Nov 2018 17:02:47 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2018/11/22/</guid>
+      <description>今天调试机器发现返回的LBS是&amp;rdquo;LBS&amp;rdquo;:&amp;ldquo;7300B084A16&amp;rdquo;
+没有见过这种的,后来问了人才知道这是基站的。
+2g是8位. 4g是11位.
+不管是2/4g,头4位为LAC/TAC,剩下的是CI
+可以通过这个地址直接查询： http://www.gpsspg.com/bs.htm
+免费接口地址： http://api.cellocation.com:81/cell/?mcc=460&amp;amp;mnc=1&amp;amp;lac=4301&amp;amp;ci=20986&amp;amp;output=xml
+文档地址： http://www.cellocation.com/api/</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://www.baqi.io/about/</link>
+      <pubDate>Thu, 22 Nov 2018 17:02:47 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/about/</guid>
+      <description>这几年一直没有好好地搞博客，虽然从WordPress到Ghost的博客开了好多年，但一直处于瞎折腾，没有好好地写博客。每次由于切换服务器等原因都丢失博客的内容。
+这次本来打算只注册一个io的域名，结果io域名还无法备案，索性就直接放到GitHub上吧。
+这样博客至少也不会丢失了。也希望自己能好好地写写博客，哪怕不是写技术博客，吐槽吐槽也行。</description>
+    </item>
+    
+    <item>
+      <title>Hugo搭建博客使用travis自动发布</title>
+      <link>https://www.baqi.io/2018/11/21/</link>
+      <pubDate>Wed, 21 Nov 2018 22:52:47 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2018/11/21/</guid>
+      <description>原老域名到期,cn的其实不是很喜欢.
+索性买了个io的.结果发现无法备案.
+就直接GitHub上搭建博客吧&amp;hellip;
+博客搞了好多年,从WordPress到Ghost,其实觉得Ghost还是蛮好用的.
+这次寻找了一番,决定换Hugo.之前的博客等我慢慢迁移吧.
+主题和搭建过程是参见
+https://segmentfault.com/a/1190000012975914 方式建立的.
+但文章中对很多问题描述都不是很清楚.
+稍后等我慢慢道来&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>归档</title>
+      <link>https://www.baqi.io/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.baqi.io/archives/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

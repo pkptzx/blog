@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java8时间 on 码魂 - 写程序最重要的是要有霸气!</title>
+    <link>https://www.baqi.io/tags/java8%E6%97%B6%E9%97%B4/</link>
+    <description>Recent content in java8时间 on 码魂 - 写程序最重要的是要有霸气!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 13 Aug 2019 20:09:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.baqi.io/tags/java8%E6%97%B6%E9%97%B4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java8新的时间和日期API</title>
+      <link>https://www.baqi.io/2019/08/13/java8newdate/</link>
+      <pubDate>Tue, 13 Aug 2019 20:09:58 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2019/08/13/java8newdate/</guid>
+      <description>Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。
+LocalDate 只会获取年月日 // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.getDayOfWeek(); int dayOfWeek1 = localDate.get(ChronoField.DAY_OF_WEEK);  LocalTime 只会获取时分秒 // 创建 LocalTime LocalTime localTime = LocalTime.</description>
+    </item>
+    
+  </channel>
+</rss>

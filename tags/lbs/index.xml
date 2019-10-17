@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LBS on 码魂 - 写程序最重要的是要有霸气!</title>
+    <link>https://www.baqi.io/tags/lbs/</link>
+    <description>Recent content in LBS on 码魂 - 写程序最重要的是要有霸气!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 22 Nov 2018 17:02:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.baqi.io/tags/lbs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LBS基站查询</title>
+      <link>https://www.baqi.io/2018/11/22/</link>
+      <pubDate>Thu, 22 Nov 2018 17:02:47 +0800</pubDate>
+      
+      <guid>https://www.baqi.io/2018/11/22/</guid>
+      <description>今天调试机器发现返回的LBS是&amp;rdquo;LBS&amp;rdquo;:&amp;ldquo;7300B084A16&amp;rdquo;
+没有见过这种的,后来问了人才知道这是基站的。
+2g是8位. 4g是11位.
+不管是2/4g,头4位为LAC/TAC,剩下的是CI
+可以通过这个地址直接查询： http://www.gpsspg.com/bs.htm
+免费接口地址： http://api.cellocation.com:81/cell/?mcc=460&amp;amp;mnc=1&amp;amp;lac=4301&amp;amp;ci=20986&amp;amp;output=xml
+文档地址： http://www.cellocation.com/api/</description>
+    </item>
+    
+  </channel>
+</rss>
