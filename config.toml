@@ -1,4 +1,4 @@
-baseURL = "https://blog.lazy.icu"
+baseURL = "http://blog.lazy.icu"
 languageCode = "zh-CN"
 title = "码魂 - 写程序最重要的是要有霸气!"
 theme = "maupassant"
