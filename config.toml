@@ -1,4 +1,4 @@
-baseURL = "https://www.baqi.io"
+baseURL = "https://blog.lazy.icu"
 languageCode = "zh-CN"
 title = "码魂 - 写程序最重要的是要有霸气!"
 theme = "maupassant"
@@ -41,7 +41,7 @@ theme = "maupassant"
 
 [params.utteranc]
     enable = true
-    repo = "pkptzx/baqi.io"
+    repo = "pkptzx/blog"
     issueTerm = "pathname"
     theme = "github-light"
 
