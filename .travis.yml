@@ -1,9 +1,18 @@
-sudo: false
+# sudo: false
 language: go
+os:
+  - linux
+go:
+  - "1.14.8"
+  - "1.15.1"
+  - master
 git:
     depth: 1
-install: go get -v github.com/gohugoio/hugo
+install: 
+    - go get -v github.com/gohugoio/hugo
 script:
+    - go mod download
+    - go mod verify
     - hugo
     - echo 'Hugo build done!'
 deploy:
