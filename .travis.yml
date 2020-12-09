@@ -13,8 +13,8 @@ deploy:
     on:
         branch: master
     local_dir: public
-    repo: pkptzx/baqi.io
-    fqdn: www.baqi.io
+    repo: pkptzx/blog
+    fqdn: blog.lazy.icu
     target_branch: gh-pages
     email: pkptzx@126.com
     name: pkptzx
