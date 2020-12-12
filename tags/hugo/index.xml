@@ -2,24 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on 码魂 - 写程序最重要的是要有霸气!</title>
-    <link>https://www.baqi.io/tags/hugo/</link>
+    <link>http://blog.lazy.icu/tags/hugo/</link>
     <description>Recent content in hugo on 码魂 - 写程序最重要的是要有霸气!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 25 Nov 2018 18:02:24 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.baqi.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 25 Nov 2018 18:02:24 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>小书匠测试</title>
-      <link>https://www.baqi.io/2018/11/25/</link>
+      <link>http://blog.lazy.icu/2018/11/25/</link>
       <pubDate>Sun, 25 Nov 2018 18:02:24 +0800</pubDate>
       
-      <guid>https://www.baqi.io/2018/11/25/</guid>
+      <guid>http://blog.lazy.icu/2018/11/25/</guid>
       <description>测试小红书自动发布文章
 测试开头空格
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;测试开头空格
+测试开头空格
 测试换行
 测试表格
    你好 好 好的 嗯     ha a a a   ha a a a   ha a a a   ha a a a    测试编号(结尾要有空行)
@@ -30,10 +26,10 @@ package cn.xdemo; import java.util.Date; /** * 测试 * * */ public class IOTCar
     
     <item>
       <title>Hugo搭建博客使用travis自动发布</title>
-      <link>https://www.baqi.io/2018/11/21/</link>
+      <link>http://blog.lazy.icu/2018/11/21/</link>
       <pubDate>Wed, 21 Nov 2018 22:52:47 +0800</pubDate>
       
-      <guid>https://www.baqi.io/2018/11/21/</guid>
+      <guid>http://blog.lazy.icu/2018/11/21/</guid>
       <description>原老域名到期,cn的其实不是很喜欢.
 索性买了个io的.结果发现无法备案.
 就直接GitHub上搭建博客吧&amp;hellip;

@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>位置服务 on 码魂 - 写程序最重要的是要有霸气!</title>
-    <link>https://www.baqi.io/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/</link>
+    <link>http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/</link>
     <description>Recent content in 位置服务 on 码魂 - 写程序最重要的是要有霸气!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 22 Nov 2018 17:02:47 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.baqi.io/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 22 Nov 2018 17:02:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LBS基站查询</title>
-      <link>https://www.baqi.io/2018/11/22/</link>
+      <link>http://blog.lazy.icu/2018/11/22/</link>
       <pubDate>Thu, 22 Nov 2018 17:02:47 +0800</pubDate>
       
-      <guid>https://www.baqi.io/2018/11/22/</guid>
-      <description>今天调试机器发现返回的LBS是&amp;rdquo;LBS&amp;rdquo;:&amp;ldquo;7300B084A16&amp;rdquo;
+      <guid>http://blog.lazy.icu/2018/11/22/</guid>
+      <description>今天调试机器发现返回的LBS是&amp;quot;LBS&amp;quot;:&amp;ldquo;7300B084A16&amp;rdquo;
 没有见过这种的,后来问了人才知道这是基站的。
 2g是8位. 4g是11位.
 不管是2/4g,头4位为LAC/TAC,剩下的是CI

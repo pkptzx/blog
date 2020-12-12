@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>maven on 码魂 - 写程序最重要的是要有霸气!</title>
-    <link>https://www.baqi.io/tags/maven/</link>
+    <link>http://blog.lazy.icu/tags/maven/</link>
     <description>Recent content in maven on 码魂 - 写程序最重要的是要有霸气!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 23 May 2019 15:58:08 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.baqi.io/tags/maven/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 23 May 2019 15:58:08 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/maven/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>java校验maven下载的jar文件</title>
-      <link>https://www.baqi.io/2019/05/23/java-check-maven-jar/</link>
+      <link>http://blog.lazy.icu/2019/05/23/java-check-maven-jar/</link>
       <pubDate>Thu, 23 May 2019 15:58:08 +0800</pubDate>
       
-      <guid>https://www.baqi.io/2019/05/23/java-check-maven-jar/</guid>
+      <guid>http://blog.lazy.icu/2019/05/23/java-check-maven-jar/</guid>
       <description>有时候maven真的很坑!
 有时候提示invalid LOC header (bad signat signature),
 但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的.

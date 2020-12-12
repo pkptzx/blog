@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>物联网 on 码魂 - 写程序最重要的是要有霸气!</title>
-    <link>https://www.baqi.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/</link>
+    <link>http://blog.lazy.icu/tags/%E7%89%A9%E8%81%94%E7%BD%91/</link>
     <description>Recent content in 物联网 on 码魂 - 写程序最重要的是要有霸气!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 23 Nov 2018 20:19:47 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.baqi.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 23 Nov 2018 20:19:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/%E7%89%A9%E8%81%94%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>物联网卡无法上网设置APN</title>
-      <link>https://www.baqi.io/2018/11/23/</link>
+      <link>http://blog.lazy.icu/2018/11/23/</link>
       <pubDate>Fri, 23 Nov 2018 20:19:47 +0800</pubDate>
       
-      <guid>https://www.baqi.io/2018/11/23/</guid>
+      <guid>http://blog.lazy.icu/2018/11/23/</guid>
       <description>关于少数设备不能联网的情况：
 大部分终端插卡即用，部分设备插上后不能联网，这时需要设置一下APN。操作流程如下：
 第①步：在移动网络设置里找到【接入点名称（APN）】，然后新建一个APN；
