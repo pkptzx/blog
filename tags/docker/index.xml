@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on 码魂 - 写程序最重要的是要有霸气!</title>
+    <title>Docker on 码魂</title>
     <link>http://blog.lazy.icu/tags/docker/</link>
-    <description>Recent content in Docker on 码魂 - 写程序最重要的是要有霸气!</description>
+    <description>Recent content in Docker on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 06 Dec 2018 16:22:22 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/docker/index.xml" rel="self" type="application/rss+xml" />
