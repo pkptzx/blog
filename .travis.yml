@@ -3,9 +3,8 @@ language: go
 os:
   - linux
 go:
-  - "1.14.8"
-  - "1.15.1"
   - master
+env: GO111MODULE=on GOFLAGS='-mod vendor'
 git:
     depth: 1
 install: 
