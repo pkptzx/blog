@@ -119,7 +119,7 @@
         
         <div class="post-content">
             Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。
-LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14  // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.getDayOfWeek(); int dayOfWeek1 = localDate.get(ChronoField.DAY_OF_WEEK);   LocalTime 只会获取时分秒 1 2 3 4 5 6 7 8 9 10 11 12  // 创建 LocalTime LocalTime localTime = LocalTime.of(14, 14, 14); LocalTime localTime1 = LocalTime.now(); // 获取小时 int hour = localTime.getHour(); int hour1 = localTime.get(ChronoField.HOUR_OF_DAY); // 获取分 int minute = localTime.getMinute(); int minute1 = localTime.get(ChronoField.MINUTE_OF_HOUR); // 获取秒 int second = localTime.getMinute(); int second1 = localTime.get(ChronoField.SECOND_OF_MINUTE);   LocalDateTime 获取年月日时分秒，相当于 LocalDate + LocalTime 1 2 3 4 5 6 7 8 9 10  // 创建 LocalDateTime LocalDateTime localDateTime = LocalDateTime.……
+LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14  // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2019/08/13/java8newdate/">阅读全文</a></p>
     </article>
@@ -152,7 +152,7 @@ LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14  // 创建 Loca
 我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
 真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
 不如就写个代码跑一下吧~
-public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &quot;F:/mvnlib&quot;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &quot;jar,pom&quot;); System.out.println(&quot;完毕&quot;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&quot;,&quot;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.getName().endsWith(suffix)) { // System.out.println(path.getAbsolutePath() ); handler(path); } } } else { File[] ff = path.listFiles(); if(ff!=null) for (File x : ff) { getFile(x, suffixs); } } } /** * 验证,发现不匹配则删除 * * @throws IOException */ public static void handler(File f) throws Exception { File fsha1 = new File(f.getAbsolutePath() + &quot;.sha1&quot;); if (fsha1.exists()) { String sha1 = FileUtils.readFileToString(fsha1, &quot;utf-8&quot;).replaceAll(&quot;(?m).*(\\w{40}).*&quot;, &quot;$1&quot;).replaceAll(&quot;\\n|\\r&quot;, &quot;&quot;); String currsha1 = sha1(f); if(!sha1.equals(currsha1)){//如果不等,则删除 当前文件和sha1 // System.out.println(&quot;sha1file: &quot; + sha1 ); fsha1.……
+public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &quot;F:/mvnlib&quot;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &quot;jar,pom&quot;); System.out.println(&quot;完毕&quot;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&quot;,&quot;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/">阅读全文</a></p>
     </article>
@@ -177,7 +177,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
         </div>
         
         <div class="post-content">
-            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5  $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local   启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1  docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash   bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  1 2 3  docker run -itd --net bridge --ip 172.17.0.10 centos:latest /bin/bash 6eb1f228cf308d1c60db30093c126acbfd0cb21d76cb448c678bab0f1a7c0df6 docker: Error response from daemon: User specified IP address is supported on user defined networks only.   步骤1: 创建自定义网络 1 2 3 4 5 6 7  docker network create --subnet=172.18.0.0/16 mynetwork ➜ ~ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 4f11ae9c85de mynetwork bridge local 237ea3d5cfbf none null local   步骤2: 创建Docker容器 1  docker run -itd --name networkTest1 --net mynetwork --ip 172.……
+            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5  $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local   启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1  docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash   bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  1 2 3  docker run -itd --net bridge --ip 172.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/">阅读全文</a></p>
     </article>
@@ -237,7 +237,7 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
    你好 好 好的 嗯     ha a a a   ha a a a   ha a a a   ha a a a    测试编号(结尾要有空行)
  List item 你好 谁  测试小结
  a asdf fdsa fdsa fdsa  测试代码高亮
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package cn.xdemo; import java.util.Date; /** * 测试 * * */ public class IOTCard { public static void main(String[] args) { System.out.println(&#34;你好&#34;); } }   ……
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package cn.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2018/11/25/">阅读全文</a></p>
     </article>
