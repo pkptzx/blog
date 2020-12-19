@@ -2,6 +2,7 @@ baseURL = "http://blog.lazy.icu"
 languageCode = "zh-CN"
 title = "码魂"
 theme = "maupassant"
+summaryLength = 140 
 
 [author]
   name = "码魂"
@@ -12,7 +13,9 @@ theme = "maupassant"
   keywords = "码魂,java,android,博客,项目管理,微信,软件架构,公众号,小程序"
   description = "专注于IT互联网，包括但不限于专注于Java、移动互联网、移动支付、项目管理、软件架构等"
   busuanzi = true
-
+  beian = "计划中..."
+  fancybox = true
+  
 [menu]
   [[menu.main]]
     identifier = "books"
@@ -44,5 +47,13 @@ theme = "maupassant"
     repo = "pkptzx/blog"
     issueTerm = "pathname"
     theme = "github-light"
-
-
+  
+[markup]
+  [markup.highlight]
+    lineNos = true
+    style = "github"
+    
+    
+    
+    
+  
