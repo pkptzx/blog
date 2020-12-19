@@ -14,7 +14,7 @@
       
       <guid>http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/</guid>
       <description>项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
- 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。  @DependsOn({&amp;#34;flyway&amp;#34;, &amp;#34;flywayInitializer&amp;#34;}) @Component public class UserDao { } 继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。  @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&amp;#34;before flyway migration...&amp;#34;); flyway.migrate(); log.info(&amp;#34;after flyway migration...&amp;#34;); } } </description>
+ 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。  1 2 3 4  @DependsOn({&amp;#34;flyway&amp;#34;, &amp;#34;flywayInitializer&amp;#34;}) @Component public class UserDao { }   继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。  1 2 3 4 5 6 7 8 9 10 11 12 13  @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&amp;#34;before flyway migration...&amp;#34;); flyway.migrate(); log.info(&amp;#34;after flyway migration...&amp;#34;); } }   </description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       
       <guid>http://blog.lazy.icu/2019/08/13/java8newdate/</guid>
       <description>Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。
-LocalDate 只会获取年月日 // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.getDayOfWeek(); int dayOfWeek1 = localDate.get(ChronoField.DAY_OF_WEEK); LocalTime 只会获取时分秒 // 创建 LocalTime LocalTime localTime = LocalTime.</description>
+LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14  // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.getDayOfWeek(); int dayOfWeek1 = localDate.get(ChronoField.DAY_OF_WEEK);   LocalTime 只会获取时分秒 1 2 3 4 5 6 7 8 9 10 11 12  // 创建 LocalTime LocalTime localTime = LocalTime.of(14, 14, 14); LocalTime localTime1 = LocalTime.now(); // 获取小时 int hour = localTime.getHour(); int hour1 = localTime.get(ChronoField.HOUR_OF_DAY); // 获取分 int minute = localTime.getMinute(); int minute1 = localTime.get(ChronoField.MINUTE_OF_HOUR); // 获取秒 int second = localTime.getMinute(); int second1 = localTime.get(ChronoField.SECOND_OF_MINUTE);   LocalDateTime 获取年月日时分秒，相当于 LocalDate + LocalTime 1 2 3 4 5 6 7 8 9 10  // 创建 LocalDateTime LocalDateTime localDateTime = LocalDateTime.</description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@ LocalDate 只会获取年月日 // 创建 LocalDate // 获取当前年月日 Loc
 我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
 真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
 不如就写个代码跑一下吧~
-public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &amp;quot;F:/mvnlib&amp;quot;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &amp;quot;jar,pom&amp;quot;); System.out.println(&amp;quot;完毕&amp;quot;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&amp;quot;,&amp;quot;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.</description>
+public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &amp;quot;F:/mvnlib&amp;quot;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &amp;quot;jar,pom&amp;quot;); System.out.println(&amp;quot;完毕&amp;quot;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&amp;quot;,&amp;quot;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.getName().endsWith(suffix)) { // System.out.println(path.getAbsolutePath() ); handler(path); } } } else { File[] ff = path.listFiles(); if(ff!=null) for (File x : ff) { getFile(x, suffixs); } } } /** * 验证,发现不匹配则删除 * * @throws IOException */ public static void handler(File f) throws Exception { File fsha1 = new File(f.getAbsolutePath() + &amp;quot;.sha1&amp;quot;); if (fsha1.exists()) { String sha1 = FileUtils.readFileToString(fsha1, &amp;quot;utf-8&amp;quot;).replaceAll(&amp;quot;(?m).*(\\w{40}).*&amp;quot;, &amp;quot;$1&amp;quot;).replaceAll(&amp;quot;\\n|\\r&amp;quot;, &amp;quot;&amp;quot;); String currsha1 = sha1(f); if(!sha1.equals(currsha1)){//如果不等,则删除 当前文件和sha1 // System.out.println(&amp;quot;sha1file: &amp;quot; + sha1 ); fsha1.</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
       <pubDate>Thu, 06 Dec 2018 16:22:22 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/</guid>
-      <description>Docker安装后，默认会创建下面三种网络类型 $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local 启动 Docker的时候，用 &amp;ndash;network 参数，可以指定网络类型 docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  docker run -itd --net bridge --ip 172.17.0.10 centos:latest /bin/bash 6eb1f228cf308d1c60db30093c126acbfd0cb21d76cb448c678bab0f1a7c0df6 docker: Error response from daemon: User specified IP address is supported on user defined networks only.</description>
+      <description>Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5  $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local   启动 Docker的时候，用 &amp;ndash;network 参数，可以指定网络类型 1  docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash   bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  1 2 3  docker run -itd --net bridge --ip 172.17.0.10 centos:latest /bin/bash 6eb1f228cf308d1c60db30093c126acbfd0cb21d76cb448c678bab0f1a7c0df6 docker: Error response from daemon: User specified IP address is supported on user defined networks only.   步骤1: 创建自定义网络 1 2 3 4 5 6 7  docker network create --subnet=172.18.0.0/16 mynetwork ➜ ~ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 4f11ae9c85de mynetwork bridge local 237ea3d5cfbf none null local   步骤2: 创建Docker容器 1  docker run -itd --name networkTest1 --net mynetwork --ip 172.</description>
     </item>
     
     <item>
@@ -78,7 +78,7 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
    你好 好 好的 嗯     ha a a a   ha a a a   ha a a a   ha a a a    测试编号(结尾要有空行)
  List item 你好 谁  测试小结
  a asdf fdsa fdsa fdsa  测试代码高亮
-package cn.xdemo; import java.util.Date; /** * 测试 * * */ public class IOTCard { public static void main(String[] args) { System.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package cn.xdemo; import java.util.Date; /** * 测试 * * */ public class IOTCard { public static void main(String[] args) { System.out.println(&amp;#34;你好&amp;#34;); } }   </description>
     </item>
     
     <item>
