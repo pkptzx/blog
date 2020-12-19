@@ -15,6 +15,7 @@ summaryLength = 140
   busuanzi = true
   beian = "计划中..."
   fancybox = true
+  localSearch = true
   
 [menu]
   [[menu.main]]
