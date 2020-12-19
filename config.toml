@@ -2,7 +2,7 @@ baseURL = "http://blog.lazy.icu"
 languageCode = "zh-CN"
 title = "码魂"
 theme = "maupassant"
-summaryLength = 140 
+summaryLength = 70 
 
 [author]
   name = "码魂"
