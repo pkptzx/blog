@@ -3,9 +3,11 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.79.1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>Docker | 码魂</title>
     <meta property="og:title" content="Docker - 码魂">
@@ -17,24 +19,26 @@
         
     <meta name="author" content="码魂">
     <meta property="og:url" content="http://blog.lazy.icu/tags/docker/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
     <link rel="alternate" type="application/rss+xml+xml" href="http://blog.lazy.icu/tags/docker/index.xml" title="码魂" />
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-
-
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
     
     
 </head>
 
 
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -61,57 +65,92 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-    <div class="container">
-        <div class="col-group">
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <h3 class="archive-title">
+        包含标签
+        <span class="keyword">Docker</span>
+        的文章
+    </h3>
+    
 
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        包含标签
-                        <span class="keyword">Docker</span>
-                        的文章
-                    </h3>
-                    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/">docker设置固定ip地址</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年12月6日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/docker'>Docker</a>
+            
+        </div>
+        
+        <div class="post-content">
+            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5  $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local   启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1  docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash   bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  1 2 3  docker run -itd --net bridge --ip 172.17.0.10 centos:latest /bin/bash 6eb1f228cf308d1c60db30093c126acbfd0cb21d76cb448c678bab0f1a7c0df6 docker: Error response from daemon: User specified IP address is supported on user defined networks only.   步骤1: 创建自定义网络 1 2 3 4 5 6 7  docker network create --subnet=172.18.0.0/16 mynetwork ➜ ~ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 4f11ae9c85de mynetwork bridge local 237ea3d5cfbf none null local   步骤2: 创建Docker容器 1  docker run -itd --name networkTest1 --net mynetwork --ip 172.……
+            <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/">阅读全文</a></p>
+        </div>
+    </article>
+    
 
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/">docker设置固定ip地址</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年12月6日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="http://blog.lazy.icu/categories/docker">Docker</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                <!-- raw HTML omitted -->
-                                <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
+    
 
-                    
+
+
+
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://www.beian.miit.gov.cn/">计划中...</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 
 
                 </div>
-            </div>
 
-            <div id="secondary">
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='http://blog.lazy.icu/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">
@@ -165,49 +204,33 @@
     
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/docker/">docker(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/hugo/">hugo(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/java/">java(2)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/java/">java (2)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/springboot/">springboot(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0/">小书匠(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0/">小书匠 (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/">物联网(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/">物联网 (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/">系统(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/">系统 (1)</a></li>
     
 </ul>
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
-    <a href="http://blog.lazy.icu/tags/docker/">docker</a>
+    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
     
     <a href="http://blog.lazy.icu/tags/flyway/">flyway</a>
     
@@ -217,7 +240,7 @@
     
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
     
-    <a href="http://blog.lazy.icu/tags/lbs/">lbs</a>
+    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
     
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
@@ -254,29 +277,9 @@
         </ul>
     </section>
 </div>
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2018 <a href="http://blog.lazy.icu">码魂 By 码魂</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="http://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
-
 </body>
+
 </html>

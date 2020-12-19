@@ -3,9 +3,11 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.79.1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>物联网 | 码魂</title>
     <meta property="og:title" content="物联网 - 码魂">
@@ -17,24 +19,26 @@
         
     <meta name="author" content="码魂">
     <meta property="og:url" content="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
     <link rel="alternate" type="application/rss+xml+xml" href="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/index.xml" title="码魂" />
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-
-
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
     
     
 </head>
 
 
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -61,57 +65,105 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-    <div class="container">
-        <div class="col-group">
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <h3 class="archive-title">
+        分类
+        <span class="keyword">物联网</span>
+        中的文章
+    </h3>
+    
 
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        分类
-                        <span class="keyword">物联网</span>
-                        中的文章
-                    </h3>
-                    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2018/11/23/">物联网卡无法上网设置APN</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年11月23日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/%E7%89%A9%E8%81%94%E7%BD%91'>物联网</a>
+            
+        </div>
+        
+        <div class="post-content">
+            关于少数设备不能联网的情况：
+大部分终端插卡即用，部分设备插上后不能联网，这时需要设置一下APN。操作流程如下：
+第①步：在移动网络设置里找到【接入点名称（APN）】，然后新建一个APN；
+提示：关于“APN地址”，有的终端显示是“接入点”、有的显示是“APN”
+第②步：创建APN/接入点时，名称可以随便填写，
+联通制式终端：
+APN地址输入3gnet即可享受3G网络；
+APN地址输入wonet即可享受4G网络。
+电信制式终端：
+APN地址输入CTNET即可享受3G/4G网络。
+第③步：保存，然后重启即可。
+【如果按照上述步骤设置后还是不能用，请在APN地址输入UNIM2M.NJM2MAPN或者UNIM2M.GZM2MAPN
+然后，MCC改为460，MNC改为06 保存，重启即可】
+【中移物联网】尊敬的客户，您好！针对您反馈的上网功能问题，我们建议您将故障卡放在普通安卓智能机（非联通/电信定制机）中，打开设置-移动网络-APN/接入点-新建APN，将“名称”和“APN”均修改为“cmiot”后保存并勾选，勾选“数据连接”和“数据漫游”后，浏览任意网页，若能正常访问，则物联卡上网功能正常。感谢您的配合，谢谢！……
+            <p class="readmore"><a href="http://blog.lazy.icu/2018/11/23/">阅读全文</a></p>
+        </div>
+    </article>
+    
 
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://blog.lazy.icu/2018/11/23/">物联网卡无法上网设置APN</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年11月23日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91">物联网</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                <!-- raw HTML omitted -->
-                                <p class="readmore"><a href="http://blog.lazy.icu/2018/11/23/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
+    
 
-                    
+
+
+
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://www.beian.miit.gov.cn/">计划中...</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 
 
                 </div>
-            </div>
 
-            <div id="secondary">
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='http://blog.lazy.icu/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">
@@ -165,49 +217,33 @@
     
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/docker/">docker(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/hugo/">hugo(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/java/">java(2)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/java/">java (2)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/springboot/">springboot(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0/">小书匠(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0/">小书匠 (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/">物联网(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/">物联网 (1)</a></li>
     
-    <li>
-        <a href="http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/">系统(1)</a>
-    </li>
+    <li><a href="http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/">系统 (1)</a></li>
     
 </ul>
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
-    <a href="http://blog.lazy.icu/tags/docker/">docker</a>
+    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
     
     <a href="http://blog.lazy.icu/tags/flyway/">flyway</a>
     
@@ -217,7 +253,7 @@
     
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
     
-    <a href="http://blog.lazy.icu/tags/lbs/">lbs</a>
+    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
     
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
@@ -254,29 +290,9 @@
         </ul>
     </section>
 </div>
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2018 <a href="http://blog.lazy.icu">码魂 By 码魂</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="http://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
-
 </body>
+
 </html>
