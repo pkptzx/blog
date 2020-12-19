@@ -166,4 +166,8 @@
     <loc>http://blog.lazy.icu/archives/</loc>
   </url>
   
+  <url>
+    <loc>http://blog.lazy.icu/search/</loc>
+  </url>
+  
 </urlset>
