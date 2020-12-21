@@ -9,21 +9,24 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>rar | 码魂</title>
-    <meta property="og:title" content="rar - 码魂">
+    <title>向压缩包中添加文件而不压缩 | 码魂</title>
+    <meta property="og:title" content="向压缩包中添加文件而不压缩 - 码魂">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2020-12-21T16:37:18&#43;08:00'>
         
-    <meta name="Keywords" content="码魂,java,android,博客,项目管理,微信,软件架构,公众号,小程序">
-    <meta name="description" content="rar">
         
-    <meta name="author" content="码魂">
-    <meta property="og:url" content="http://blog.lazy.icu/tags/rar/">
+    <meta property="article:modified_time" content='2020-12-21T16:37:18&#43;08:00'>
+        
+    <meta name="Keywords" content="[springboot jar zip]">
+    <meta name="description" content="向压缩包中添加文件而不压缩">
+        <meta name="author" content="码魂">
+        
+    <meta property="og:url" content="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="http://blog.lazy.icu/tags/rar/index.xml" title="码魂" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -73,47 +76,88 @@
                     
 <div class="res-cons">
     
-    <h3 class="archive-title">
-        包含标签
-        <span class="keyword">rar</span>
-        的文章
-    </h3>
-    
-
-    
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2020/12/21/rar-append-file-not-compress/">向压缩包中添加文件而不压缩</a>
-            </h1>
+            <h1 class="post-title">向压缩包中添加文件而不压缩</h1>
         </header>
         <date class="post-meta meta-date">
             2020年12月21日
         </date>
         
-        <div class="post-meta meta-category">
-            |
+        <div class="post-meta">
+            <span>|</span>
             
-            <a href='/categories/springboot'>springboot</a>
+            <span class="meta-category"><a href='/categories/springboot'>springboot</a></span>
             
         </div>
         
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
         <div class="post-content">
-            有时候需要替换springboot打包后jar中的文件,当替换jar时会导致无法启动,提示的大概意思是jar应该是不压缩的才行. 手动在rar中操作的步骤是, 用rar打开,找到目录后,点命令-添加文件到压缩文件中- 然后选择文件(可多选), 然后在[压缩文件名和参数]的对话框中选择[文件] 在[不压缩直接存储的文件]中填写不压缩的文件名称或使用通配符*.jar
-手动操作太麻烦了,一次还好,如果测试或长期需要替换的话还是命令比较方便,折腾了一阵子才找到命令参数的方式.
-winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的别随便用,好吧我就再找了下7z的文档,改写成7z:
-7z a -mx=0 target.jar dist/*.jar 7z rn target.jar dist BOOT-INF/lib 在7z中没办法直接向压缩文件添加时指定路径,只能先添加然后通过rn再修改为最终路径.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/rar-append-file-not-compress/">阅读全文</a></p>
+            <p>有时候需要替换springboot打包后jar中的文件,当替换jar时会导致无法启动,提示的大概意思是jar应该是不压缩的才行.
+手动在rar中操作的步骤是,
+用rar打开,找到目录后,点命令-添加文件到压缩文件中-
+然后选择文件(可多选),
+然后在[压缩文件名和参数]的对话框中选择[文件]
+在[不压缩直接存储的文件]中填写不压缩的文件名称或使用通配符*.jar</p>
+<p>手动操作太麻烦了,一次还好,如果测试或长期需要替换的话还是命令比较方便,折腾了一阵子才找到命令参数的方式.</p>
+<pre><code>winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar
+</code></pre><p>有人说rar是商用的别随便用,好吧我就再找了下7z的文档,改写成7z:</p>
+<pre><code>7z a -mx=0 target.jar dist/*.jar
+7z rn target.jar dist BOOT-INF/lib
+</code></pre><p>在7z中没办法直接向压缩文件添加时指定路径,只能先添加然后通过rn再修改为最终路径.</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/2019/10/17/springboot-bean-before-flyway-migrate/">Springboot flyway migrate执行完毕再执行其他数据库操作</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/springboot'>springboot</a></li>
+                
+                <li><a href='/tags/jar'>jar</a></li>
+                
+                <li><a href='/tags/zip'>zip</a></li>
+                
+            </ul>
+            
         </div>
     </article>
     
-
     
 
-
-
-
-
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "pkptzx/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
 </div>
 
                     <footer id="footer">
@@ -138,6 +182,16 @@ winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
@@ -166,7 +220,7 @@ winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的
 <ul class="widget-list">
     
     <li>
-        <a href="http://blog.lazy.icu/2020/12/21/rar-append-file-not-compress/" title="向压缩包中添加文件而不压缩">向压缩包中添加文件而不压缩</a>
+        <a href="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/" title="向压缩包中添加文件而不压缩">向压缩包中添加文件而不压缩</a>
     </li>
     
     <li>
@@ -247,6 +301,8 @@ winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的
     
     <a href="http://blog.lazy.icu/tags/hugo/">hugo</a>
     
+    <a href="http://blog.lazy.icu/tags/jar/">jar</a>
+    
     <a href="http://blog.lazy.icu/tags/java/">java</a>
     
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
@@ -254,8 +310,6 @@ winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的
     <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
     
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
-    
-    <a href="http://blog.lazy.icu/tags/rar/">rar</a>
     
     <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
     
