@@ -9,21 +9,21 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>flyway | 码魂</title>
-    <meta property="og:title" content="flyway - 码魂">
+    <title>rar | 码魂</title>
+    <meta property="og:title" content="rar - 码魂">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="码魂,java,android,博客,项目管理,微信,软件架构,公众号,小程序">
-    <meta name="description" content="flyway">
+    <meta name="description" content="rar">
         
     <meta name="author" content="码魂">
-    <meta property="og:url" content="http://blog.lazy.icu/tags/flyway/">
+    <meta property="og:url" content="http://blog.lazy.icu/tags/rar/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="http://blog.lazy.icu/tags/flyway/index.xml" title="码魂" />
+    <link rel="alternate" type="application/rss+xml+xml" href="http://blog.lazy.icu/tags/rar/index.xml" title="码魂" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -75,7 +75,7 @@
     
     <h3 class="archive-title">
         包含标签
-        <span class="keyword">flyway</span>
+        <span class="keyword">rar</span>
         的文章
     </h3>
     
@@ -84,11 +84,11 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/">Springboot flyway migrate执行完毕再执行其他数据库操作</a>
+                <a href="http://blog.lazy.icu/2020/12/21/rar-append-file-not-compress/">向压缩包中添加文件而不压缩</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2019年10月17日
+            2020年12月21日
         </date>
         
         <div class="post-meta meta-category">
@@ -99,9 +99,10 @@
         </div>
         
         <div class="post-content">
-            项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
- 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。  1 2 3 4  @DependsOn({&#34;flyway&#34;, &#34;flywayInitializer&#34;}) @Component public class UserDao { }   继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。  1 2 3 4 5 6 7 8 9 10 11 12 13  @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&#34;before flyway migration...&#34;); flyway.migrate(); log.info(&#34;after flyway migration...&#34;); } }   ……
-            <p class="readmore"><a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/">阅读全文</a></p>
+            有时候需要替换springboot打包后jar中的文件,当替换jar时会导致无法启动,提示的大概意思是jar应该是不压缩的才行. 手动在rar中操作的步骤是, 用rar打开,找到目录后,点命令-添加文件到压缩文件中- 然后选择文件(可多选), 然后在[压缩文件名和参数]的对话框中选择[文件] 在[不压缩直接存储的文件]中填写不压缩的文件名称或使用通配符*.jar
+手动操作太麻烦了,一次还好,如果测试或长期需要替换的话还是命令比较方便,折腾了一阵子才找到命令参数的方式.
+winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar ……
+            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/rar-append-file-not-compress/">阅读全文</a></p>
         </div>
     </article>
     

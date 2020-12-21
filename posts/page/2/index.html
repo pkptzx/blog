@@ -9,21 +9,21 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>flyway | 码魂</title>
-    <meta property="og:title" content="flyway - 码魂">
+    <title>Posts | 码魂</title>
+    <meta property="og:title" content="Posts - 码魂">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="码魂,java,android,博客,项目管理,微信,软件架构,公众号,小程序">
-    <meta name="description" content="flyway">
+    <meta name="description" content="Posts">
         
     <meta name="author" content="码魂">
-    <meta property="og:url" content="http://blog.lazy.icu/tags/flyway/">
+    <meta property="og:url" content="http://blog.lazy.icu/posts/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="http://blog.lazy.icu/tags/flyway/index.xml" title="码魂" />
+    <link rel="alternate" type="application/rss+xml+xml" href="http://blog.lazy.icu/posts/index.xml" title="码魂" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -73,42 +73,62 @@
                     
 <div class="res-cons">
     
-    <h3 class="archive-title">
-        包含标签
-        <span class="keyword">flyway</span>
-        的文章
-    </h3>
-    
-
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/">Springboot flyway migrate执行完毕再执行其他数据库操作</a>
+                <a href="http://blog.lazy.icu/2018/11/21/" title="Hugo搭建博客使用travis自动发布">Hugo搭建博客使用travis自动发布</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2019年10月17日
+            2018年11月21日
         </date>
         
-        <div class="post-meta meta-category">
-            |
+        <div class="post-meta">
+            <span>|</span>
             
-            <a href='/categories/springboot'>springboot</a>
+            <span class="meta-category"><a href='/categories/hugo'>hugo</a></span>
             
         </div>
         
         <div class="post-content">
-            项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
- 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。  1 2 3 4  @DependsOn({&#34;flyway&#34;, &#34;flywayInitializer&#34;}) @Component public class UserDao { }   继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。  1 2 3 4 5 6 7 8 9 10 11 12 13  @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&#34;before flyway migration...&#34;); flyway.migrate(); log.info(&#34;after flyway migration...&#34;); } }   ……
-            <p class="readmore"><a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/">阅读全文</a></p>
+            原老域名到期,cn的其实不是很喜欢.
+索性买了个io的.结果发现无法备案.
+就直接GitHub上搭建博客吧&hellip;
+博客搞了好多年,从WordPress到Ghost,其实觉得Ghost还是蛮好用的.
+这次寻找了一番,决定换Hugo.之前的博客等我慢慢迁移吧.
+主题和搭建过程是参见
+https://segmentfault.com/a/1190000012975914 方式建立的.
+但文章中对很多问题描述都不是很清楚.
+稍后等我慢慢道来&hellip;……
         </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2018/11/21/">阅读全文</a></p>
     </article>
     
-
+    
     
 
 
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="http://blog.lazy.icu/posts/">上一页</a>
+    </li>
+    
+
+    
+    <li >
+        <a href="http://blog.lazy.icu/posts/">1</a>
+    </li>
+    
+    <li  class="current">
+        <a href="http://blog.lazy.icu/posts/page/2/">2</a>
+    </li>
+    
+
+    
+</ol>
 
 
 
