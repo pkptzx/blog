@@ -6,7 +6,17 @@
     <description>Recent content in Posts on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 17 Oct 2019 18:01:25 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Dec 2020 16:31:50 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>更新git项目中submodule的命令</title>
+      <link>http://blog.lazy.icu/2020/12/21/git-submodule-update/</link>
+      <pubDate>Mon, 21 Dec 2020 16:31:50 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2020/12/21/git-submodule-update/</guid>
+      <description>之前一直没有注意submodule如何更新的问题,一直以为我clone后submodule就是新的,后来才发现即便我重新clone,submodule也是按照当时提交时候的版本.找了几个小时才找到简单的命令进行更新submodule.
+git submodule update --recursive --remote --merge --force </description>
+    </item>
+    
     <item>
       <title>Springboot flyway migrate执行完毕再执行其他数据库操作</title>
       <link>http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/</link>

@@ -6,7 +6,16 @@
     <description>Recent content in Tags on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 17 Oct 2019 18:01:25 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Dec 2020 16:31:50 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>http://blog.lazy.icu/tags/git/</link>
+      <pubDate>Mon, 21 Dec 2020 16:31:50 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/tags/git/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>flyway</title>
       <link>http://blog.lazy.icu/tags/flyway/</link>
