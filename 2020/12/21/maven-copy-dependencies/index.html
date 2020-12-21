@@ -9,21 +9,24 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>Docker | 码魂</title>
-    <meta property="og:title" content="Docker - 码魂">
+    <title>maven导出依赖jar | 码魂</title>
+    <meta property="og:title" content="maven导出依赖jar - 码魂">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2020-12-21T19:20:23&#43;08:00'>
         
-    <meta name="Keywords" content="码魂,java,android,博客,项目管理,微信,软件架构,公众号,小程序">
-    <meta name="description" content="Docker">
         
-    <meta name="author" content="码魂">
-    <meta property="og:url" content="http://blog.lazy.icu/tags/docker/">
+    <meta property="article:modified_time" content='2020-12-21T19:20:23&#43;08:00'>
+        
+    <meta name="Keywords" content="[maven]">
+    <meta name="description" content="maven导出依赖jar">
+        <meta name="author" content="码魂">
+        
+    <meta property="og:url" content="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="http://blog.lazy.icu/tags/docker/index.xml" title="码魂" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -73,44 +76,74 @@
                     
 <div class="res-cons">
     
-    <h3 class="archive-title">
-        包含标签
-        <span class="keyword">Docker</span>
-        的文章
-    </h3>
-    
-
-    
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/">docker设置固定ip地址</a>
-            </h1>
+            <h1 class="post-title">maven导出依赖jar</h1>
         </header>
         <date class="post-meta meta-date">
-            2018年12月6日
+            2020年12月21日
         </date>
         
-        <div class="post-meta meta-category">
-            |
+        <div class="post-meta">
+            <span>|</span>
             
-            <a href='/categories/docker'>Docker</a>
+            <span class="meta-category"><a href='/categories/maven'>maven</a></span>
             
         </div>
         
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
         <div class="post-content">
-            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5  $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local   启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1  docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash   bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  1 2 3  docker run -itd --net bridge --ip 172.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/">阅读全文</a></p>
+            <p>在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来.</p>
+<pre><code>mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime
+</code></pre>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/2019/05/23/java-check-maven-jar/">java校验maven下载的jar文件</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/maven'>maven</a></li>
+                
+            </ul>
+            
         </div>
     </article>
     
-
     
 
-
-
-
-
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "pkptzx/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
 </div>
 
                     <footer id="footer">
@@ -135,6 +168,16 @@
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

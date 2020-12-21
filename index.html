@@ -75,6 +75,30 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" title="maven导出依赖jar">maven导出依赖jar</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/maven'>maven</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来.
+mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime ……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/" title="向压缩包中添加文件而不压缩">向压缩包中添加文件而不压缩</a>
             </h1>
         </header>
@@ -316,35 +340,6 @@ APN地址输入CTNET即可享受3G/4G网络。
         <p class="readmore"><a href="http://blog.lazy.icu/2018/11/23/">阅读全文</a></p>
     </article>
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2018/11/22/" title="LBS基站查询">LBS基站查询</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2018年11月22日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1'>位置服务</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            今天调试机器发现返回的LBS是&quot;LBS&quot;:&ldquo;7300B084A16&rdquo;
-没有见过这种的,后来问了人才知道这是基站的。
-2g是8位. 4g是11位.
-不管是2/4g,头4位为LAC/TAC,剩下的是CI
-可以通过这个地址直接查询： http://www.gpsspg.com/bs.htm
-免费接口地址： http://api.cellocation.com:81/cell/?mcc=460&amp;mnc=1&amp;lac=4301&amp;ci=20986&amp;output=xml
-文档地址： http://www.cellocation.com/api/……
-        </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2018/11/22/">阅读全文</a></p>
-    </article>
-    
     
 
 
@@ -423,6 +418,10 @@ APN地址输入CTNET即可享受3G/4G网络。
 <ul class="widget-list">
     
     <li>
+        <a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" title="maven导出依赖jar">maven导出依赖jar</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/" title="向压缩包中添加文件而不压缩">向压缩包中添加文件而不压缩</a>
     </li>
     
@@ -458,10 +457,6 @@ APN地址输入CTNET即可享受3G/4G网络。
         <a href="http://blog.lazy.icu/2018/11/23/" title="物联网卡无法上网设置APN">物联网卡无法上网设置APN</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2018/11/22/" title="LBS基站查询">LBS基站查询</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -478,6 +473,8 @@ APN地址输入CTNET即可享受3G/4G网络。
     <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/java/">java (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
     
