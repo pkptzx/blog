@@ -107,7 +107,11 @@
 在[不压缩直接存储的文件]中填写不压缩的文件名称或使用通配符*.jar</p>
 <p>手动操作太麻烦了,一次还好,如果测试或长期需要替换的话还是命令比较方便,折腾了一阵子才找到命令参数的方式.</p>
 <pre><code>winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar
-</code></pre>
+</code></pre><p>有人说rar是商用的别随便用,好吧我就再找了下7z的文档,改写成7z:</p>
+<pre><code>7z a -mx=0 target.jar dist/*.jar
+7z rn target.jar dist BOOT-INF/lib
+</code></pre><p>在7z中没办法直接向压缩文件添加时指定路径,只能先添加然后通过rn再修改为最终路径.</p>
+
         </div>
 
         
