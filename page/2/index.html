@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-	<meta name="generator" content="Hugo 0.79.1" />
+	<meta name="generator" content="Hugo 0.81.0" />
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,6 +71,42 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2018/11/23/" title="物联网卡无法上网设置APN">物联网卡无法上网设置APN</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年11月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E7%89%A9%E8%81%94%E7%BD%91'>物联网</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            关于少数设备不能联网的情况：
+大部分终端插卡即用，部分设备插上后不能联网，这时需要设置一下APN。操作流程如下：
+第①步：在移动网络设置里找到【接入点名称（APN）】，然后新建一个APN；
+提示：关于“APN地址”，有的终端显示是“接入点”、有的显示是“APN”
+第②步：创建APN/接入点时，名称可以随便填写，
+联通制式终端：
+APN地址输入3gnet即可享受3G网络；
+APN地址输入wonet即可享受4G网络。
+电信制式终端：
+APN地址输入CTNET即可享受3G/4G网络。
+第③步：保存，然后重启即可。
+【如果按照上述步骤设置后还是不能用，请在APN地址输入UNIM2M.NJM2MAPN或者UNIM2M.GZM2MAPN
+然后，MCC改为460，MNC改为06 保存，重启即可】
+【中移物联网】尊敬的客户，您好！针对您反馈的上网功能问题，我们建议您将故障卡放在普通安卓智能机（非联通/电信定制机）中，打开设置-移动网络-APN/接入点-新建APN，将“名称”和“APN”均修改为“cmiot”后保存并勾选，勾选“数据连接”和“数据漫游”后，浏览任意网页，若能正常访问，则物联卡上网功能正常。感谢您的配合，谢谢！……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2018/11/23/">阅读全文</a></p>
+    </article>
     
     <article class="post">
         <header>
@@ -162,7 +198,7 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
 
                     <footer id="footer">
     <div>
-        &copy; 2020 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        &copy; 2021 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
         
         | <a rel="nofollow" target="_blank" href="http://www.beian.miit.gov.cn/">计划中...</a>
         
@@ -210,6 +246,10 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
 <ul class="widget-list">
     
     <li>
+        <a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/" title="SVG图片格式转PNG图片格式">SVG图片格式转PNG图片格式</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" title="maven导出依赖jar">maven导出依赖jar</a>
     </li>
     
@@ -245,10 +285,6 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
         <a href="http://blog.lazy.icu/2018/11/25/" title="小书匠测试">小书匠测试</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2018/11/23/" title="物联网卡无法上网设置APN">物联网卡无法上网设置APN</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -264,7 +300,7 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
     
     <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/java/">java (2)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/java/">java (3)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
@@ -292,6 +328,8 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
     <a href="http://blog.lazy.icu/tags/git/">git</a>
     
     <a href="http://blog.lazy.icu/tags/hugo/">hugo</a>
+    
+    <a href="http://blog.lazy.icu/tags/image/">image</a>
     
     <a href="http://blog.lazy.icu/tags/jar/">jar</a>
     

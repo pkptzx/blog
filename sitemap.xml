@@ -1,213 +1,135 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>http://blog.lazy.icu/2021/03/19/svg-convert-png/</loc>
+    <lastmod>2021-03-19T15:29:12+08:00</lastmod>
+  </url><url>
     <loc>http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/</loc>
     <lastmod>2020-12-21T19:20:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/</loc>
     <lastmod>2020-12-21T16:37:18+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2020/12/21/git-submodule-update/</loc>
     <lastmod>2020-12-21T16:31:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/</loc>
     <lastmod>2019-10-17T18:01:25+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2019/08/13/java8newdate/</loc>
     <lastmod>2019-08-13T20:09:58+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2019/05/23/java-check-maven-jar/</loc>
     <lastmod>2019-05-23T15:58:08+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/</loc>
     <lastmod>2018-12-06T16:22:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2018/11/30/</loc>
     <lastmod>2018-11-30T22:53:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2018/11/25/</loc>
     <lastmod>2018-11-25T18:02:24+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2018/11/23/</loc>
     <lastmod>2018-11-23T20:19:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2018/11/22/</loc>
     <lastmod>2018-11-22T17:02:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/about/</loc>
     <lastmod>2018-11-22T17:02:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/2018/11/21/</loc>
     <lastmod>2018-11-21T22:52:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/</loc>
-    <lastmod>2020-12-21T19:20:23+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-03-19T15:29:12+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/image/</loc>
+    <lastmod>2021-03-19T15:29:12+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/java/</loc>
+    <lastmod>2021-03-19T15:29:12+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/categories/java/</loc>
+    <lastmod>2021-03-19T15:29:12+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/posts/</loc>
+    <lastmod>2021-03-19T15:29:12+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/</loc>
+    <lastmod>2021-03-19T15:29:12+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/</loc>
+    <lastmod>2021-03-19T15:29:12+08:00</lastmod>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/maven/</loc>
     <lastmod>2020-12-21T19:20:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/maven/</loc>
     <lastmod>2020-12-21T19:20:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.lazy.icu/posts/</loc>
-    <lastmod>2020-12-21T19:20:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.lazy.icu/tags/</loc>
-    <lastmod>2020-12-21T19:20:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.lazy.icu/</loc>
-    <lastmod>2020-12-21T19:20:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/jar/</loc>
     <lastmod>2020-12-21T16:37:18+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/springboot/</loc>
     <lastmod>2020-12-21T16:37:18+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/springboot/</loc>
     <lastmod>2020-12-21T16:37:18+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/zip/</loc>
     <lastmod>2020-12-21T16:37:18+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/git/</loc>
     <lastmod>2020-12-21T16:31:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/git/</loc>
     <lastmod>2020-12-21T16:31:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/flyway/</loc>
     <lastmod>2019-10-17T18:01:25+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.lazy.icu/categories/java/</loc>
-    <lastmod>2019-08-13T20:09:58+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/</loc>
     <lastmod>2019-08-13T20:09:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.lazy.icu/tags/java/</loc>
-    <lastmod>2019-05-23T15:58:08+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/docker/</loc>
     <lastmod>2018-12-06T16:22:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/docker/</loc>
     <lastmod>2018-12-06T16:22:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2018-11-30T22:53:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2018-11-30T22:53:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/hugo/</loc>
     <lastmod>2018-11-25T18:02:24+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0/</loc>
     <lastmod>2018-11-25T18:02:24+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/%E7%89%A9%E8%81%94%E7%BD%91/</loc>
     <lastmod>2018-11-23T20:19:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/</loc>
     <lastmod>2018-11-23T20:19:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/tags/lbs/</loc>
     <lastmod>2018-11-22T17:02:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2018-11-22T17:02:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/categories/hugo/</loc>
     <lastmod>2018-11-21T22:52:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/archives/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://blog.lazy.icu/search/</loc>
   </url>
-  
 </urlset>
