@@ -45,7 +45,7 @@ public class SVG2PNG {
    * @throws Exception
    */
   public static void main(String[] args) throws Exception {
-    File[] svgs = new File("H:\\tmp\\布尔图网站图\\解决方案图标").listFiles(new FilenameFilter() {
+    File[] svgs = new File("H:\\tmp\\图标").listFiles(new FilenameFilter() {
       @Override
       public boolean accept(File dir, String name) {
         return name.endsWith("svg");
