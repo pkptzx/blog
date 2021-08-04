@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>虚拟机中Linux磁盘空间进行扩容 | 码魂</title>
+    <meta property="og:title" content="虚拟机中Linux磁盘空间进行扩容 - 码魂">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-08-04T20:48:07&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-08-04T20:48:07&#43;08:00'>
+        
+    <meta name="Keywords" content="[linux esxi VM]">
+    <meta name="description" content="虚拟机中Linux磁盘空间进行扩容">
+        <meta name="author" content="码魂">
+        
+    <meta property="og:url" content="http://blog.lazy.icu/2021/08/04/linux-expansion/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://blog.lazy.icu">
+                        码魂
+                    </a>
+                
+                <p class="description">专注于Java、移动互联网、移动支付、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="http://blog.lazy.icu">首页</a>
+                    
+                    <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
+                    
+                    <a  href="http://blog.lazy.icu/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://blog.lazy.icu/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">虚拟机中Linux磁盘空间进行扩容</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月4日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/linux'>linux</a></span>
+            
+            <span class="meta-category"><a href='/categories/esxi'>esxi</a></span>
+            
+            <span class="meta-category"><a href='/categories/vm'>VM</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>虚拟机中Linux磁盘空间进行扩容</p>
+<p>直接在虚拟机中对Linux进行磁盘容量扩容,如果有快照必须先删除快照再扩容.</p>
+<p>然后重启虚拟机</p>
+<p>查看磁盘空间信息</p>
+<p>fdisk -l</p>
+<p>增加分区</p>
+<p>fdisk /dev/sda</p>
+<p>输入n</p>
+<p>输入p</p>
+<p>按照分区信息输入下一个编号(3)</p>
+<p>使用默认的起始扇区和结束扇区,两次回车,输入t,设置分区类型为8e</p>
+<p>输入w保存分区信息</p>
+<p>重启</p>
+<p>初始化分区加入卷组</p>
+<pre><code>#查看卷组信息
+vgdisplay
+#初始化创建的卷组
+pvcreate /dev/sda3
+#查看卷组信息,记住卷组名称
+vgdisplay
+#将初始化的分区加入到虚拟卷组
+vgextend VolGroup /dev/sda3
+#扩展逻辑卷的大小,使用df -lh查看逻辑卷名称
+lvextend -L +20G /dev/mapper/VolGroup-lv_root
+#查看文件系统格式
+cat /etc/fstab
+#扩容重新加载逻辑卷
+xfs_growfs /dev/mapper/centos-home
+#查看修改后的容量
+df -lh
+</code></pre>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/2021/08/04/batch-rename-dir-and-batch-uncompress/">文件夹批量改名&amp;批量解压</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/linux'>linux</a></li>
+                
+                <li><a href='/tags/esxi'>esxi</a></li>
+                
+                <li><a href='/tags/vm'>VM</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "pkptzx/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='http://blog.lazy.icu/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容">虚拟机中Linux磁盘空间进行扩容</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境">Jupyter Notebook使用Anaconda虚拟环境</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压">文件夹批量改名&amp;批量解压</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像">Anaconda &amp; conda 配置镜像</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" title="获取7z压缩文件压缩前文件大小">获取7z压缩文件压缩前文件大小</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/" title="使用java将SVG图片格式转PNG图片格式">使用java将SVG图片格式转PNG图片格式</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" title="maven导出依赖jar">maven导出依赖jar</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/" title="向压缩包中添加文件而不压缩">向压缩包中添加文件而不压缩</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2020/12/21/git-submodule-update/" title="更新git项目中submodule的命令">更新git项目中submodule的命令</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/" title="Springboot flyway migrate执行完毕再执行其他数据库操作">Springboot flyway migrate执行完毕再执行其他数据库操作</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/esxi/">esxi (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/git/">git (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/python/">python (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/vm/">VM (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0/">小书匠 (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/">物联网 (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/">系统 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="http://blog.lazy.icu/tags/conda/">conda</a>
+    
+    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
+    
+    <a href="http://blog.lazy.icu/tags/esxi/">esxi</a>
+    
+    <a href="http://blog.lazy.icu/tags/flyway/">flyway</a>
+    
+    <a href="http://blog.lazy.icu/tags/git/">git</a>
+    
+    <a href="http://blog.lazy.icu/tags/hugo/">hugo</a>
+    
+    <a href="http://blog.lazy.icu/tags/image/">image</a>
+    
+    <a href="http://blog.lazy.icu/tags/jar/">jar</a>
+    
+    <a href="http://blog.lazy.icu/tags/java/">java</a>
+    
+    <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
+    
+    <a href="http://blog.lazy.icu/tags/jupyter/">Jupyter</a>
+    
+    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
+    
+    <a href="http://blog.lazy.icu/tags/linux/">linux</a>
+    
+    <a href="http://blog.lazy.icu/tags/maven/">maven</a>
+    
+    <a href="http://blog.lazy.icu/tags/python/">python</a>
+    
+    <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
+    
+    <a href="http://blog.lazy.icu/tags/vm/">VM</a>
+    
+    <a href="http://blog.lazy.icu/tags/zip/">zip</a>
+    
+    <a href="http://blog.lazy.icu/tags/%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B/">压缩解压</a>
+    
+    <a href="http://blog.lazy.icu/tags/%E7%89%A9%E8%81%94%E7%BD%91/">物联网</a>
+    
+    <a href="http://blog.lazy.icu/tags/%E7%B3%BB%E7%BB%9F/">系统</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="http://www.baidu.com" title="百度">百度</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://www.oschina.net" title="开源中国">开源中国</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
