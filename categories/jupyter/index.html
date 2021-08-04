@@ -9,21 +9,21 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>linux | 码魂</title>
-    <meta property="og:title" content="linux - 码魂">
+    <title>Jupyter | 码魂</title>
+    <meta property="og:title" content="Jupyter - 码魂">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="码魂,java,android,博客,项目管理,微信,软件架构,公众号,小程序">
-    <meta name="description" content="linux">
+    <meta name="description" content="Jupyter">
         
     <meta name="author" content="码魂">
-    <meta property="og:url" content="http://blog.lazy.icu/tags/linux/">
+    <meta property="og:url" content="http://blog.lazy.icu/categories/jupyter/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml" href="http://blog.lazy.icu/tags/linux/index.xml" title="码魂" />
+    <link rel="alternate" type="application/rss+xml" href="http://blog.lazy.icu/categories/jupyter/index.xml" title="码魂" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -74,9 +74,9 @@
 <div class="res-cons">
     
     <h3 class="archive-title">
-        包含标签
-        <span class="keyword">linux</span>
-        的文章
+        分类
+        <span class="keyword">Jupyter</span>
+        中的文章
     </h3>
     
 
@@ -84,7 +84,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/">文件夹批量改名&amp;批量解压</a>
+                <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/">Jupyter Notebook使用Anaconda虚拟环境</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -94,16 +94,22 @@
         <div class="post-meta meta-category">
             |
             
-            <a href='/categories/linux'>linux</a>
+            <a href='/categories/python'>python</a>
+            
+            <a href='/categories/jupyter'>Jupyter</a>
             
         </div>
         
         <div class="post-content">
-            文件夹批量改名&amp;批量解压 将2020xxxx批量修改为xxxx
-1 2 3 4 5 6 7 8 9  for f in ls /root/testdata1/data/OB/2020 do if test -f $f then echo $f &#34;is file&#34; else mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020} fi done   win批量解压sz
-@echo off set path=D:\Program Files\7-Zip;%path% cd L2-shenzhen\2020 for /d %%i in () do ( echo %%i 7z e %%i*trade.7z.001 -o..\%%i\ ) pause win批量解压OB
-@echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.7z) do ( echo %%i 7z x %%i *\SZ000725 *\SZ002475 *\SZ300185 *\SZ300059 *\SZ300433 *\SZ002241 *\SZ002549 *\SZ002797 *\SZ123048 *\SZ000100 -y ) pause ……
-            <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/">阅读全文</a></p>
+            Jupyter Notebook使用Anaconda虚拟环境 第一步：安装ipykernel： 法一： 1.进入虚拟环境
+Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Terminal, 运行 source activate myenv 安装ipykernel：conda install ipykernel 法二： 在任何环境下都可以直接运行conda install -n myenv ipykernel为myenv安装ipykernel
+第二步：将环境写入notebook的kernel中 首先要保证在当前虚拟环境下，进入虚拟环境的过程如第一步的法一。 运行python -m ipykernel install &ndash;user &ndash;name=myenv 将环境写入notebook的kernel中
+生成配置文件:
+1  jupyter notebook --generate-config   生成密码
+输入ipython后
+1 2 3  from notebook.auth import passwd passwd()   修改配置文件
+1 2 3 4 5 6 7  c.NotebookApp.ip=&#39;*&#39; c.NotebookApp.notebook_dir = &#39;/home/ozh/share&#39;#共享目录 c.……
+            <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/">阅读全文</a></p>
         </div>
     </article>
     

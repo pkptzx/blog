@@ -77,6 +77,40 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境">Jupyter Notebook使用Anaconda虚拟环境</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月4日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/python'>python</a></span>
+            
+            <span class="meta-category"><a href='/categories/jupyter'>Jupyter</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            Jupyter Notebook使用Anaconda虚拟环境 第一步：安装ipykernel： 法一： 1.进入虚拟环境
+Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Terminal, 运行 source activate myenv 安装ipykernel：conda install ipykernel 法二： 在任何环境下都可以直接运行conda install -n myenv ipykernel为myenv安装ipykernel
+第二步：将环境写入notebook的kernel中 首先要保证在当前虚拟环境下，进入虚拟环境的过程如第一步的法一。 运行python -m ipykernel install &ndash;user &ndash;name=myenv 将环境写入notebook的kernel中
+生成配置文件:
+1  jupyter notebook --generate-config   生成密码
+输入ipython后
+1 2 3  from notebook.auth import passwd passwd()   修改配置文件
+1 2 3 4 5 6 7  c.NotebookApp.ip=&#39;*&#39; c.NotebookApp.notebook_dir = &#39;/home/ozh/share&#39;#共享目录 c.……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压">文件夹批量改名&amp;批量解压</a>
             </h1>
         </header>
@@ -319,39 +353,6 @@ LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14  // 创建 Loca
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" title="java校验maven下载的jar文件">java校验maven下载的jar文件</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年5月23日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/java'>java</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            有时候maven真的很坑!
-有时候提示invalid LOC header (bad signat signature),
-但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的.
-很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有.
-今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不报错,用mvn命令的时候才能看到jar invalid.
-我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
-真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
-不如就写个代码跑一下吧~
-public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &quot;F:/mvnlib&quot;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &quot;jar,pom&quot;); System.out.println(&quot;完毕&quot;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&quot;,&quot;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.……
-        </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -429,6 +430,10 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 <ul class="widget-list">
     
     <li>
+        <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境">Jupyter Notebook使用Anaconda虚拟环境</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压">文件夹批量改名&amp;批量解压</a>
     </li>
     
@@ -464,10 +469,6 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
         <a href="http://blog.lazy.icu/2019/08/13/java8newdate/" title="Java8新的时间和日期API">Java8新的时间和日期API</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" title="java校验maven下载的jar文件">java校验maven下载的jar文件</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -489,11 +490,13 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     
     <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
     
+    <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
+    
     <li><a href="http://blog.lazy.icu/categories/linux/">linux (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/python/">python (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/python/">python (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
     
@@ -529,6 +532,8 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     <a href="http://blog.lazy.icu/tags/java/">java</a>
     
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
+    
+    <a href="http://blog.lazy.icu/tags/jupyter/">Jupyter</a>
     
     <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
     

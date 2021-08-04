@@ -9,20 +9,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>Springboot flyway migrate执行完毕再执行其他数据库操作 | 码魂</title>
-    <meta property="og:title" content="Springboot flyway migrate执行完毕再执行其他数据库操作 - 码魂">
+    <title>Jupyter Notebook使用Anaconda虚拟环境 | 码魂</title>
+    <meta property="og:title" content="Jupyter Notebook使用Anaconda虚拟环境 - 码魂">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2019-10-17T18:01:25&#43;08:00'>
+    <meta property="article:published_time" content='2021-08-04T20:41:06&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2019-10-17T18:01:25&#43;08:00'>
+    <meta property="article:modified_time" content='2021-08-04T20:41:06&#43;08:00'>
         
-    <meta name="Keywords" content="[Springboot]">
-    <meta name="description" content="Springboot flyway migrate执行完毕再执行其他数据库操作 ">
+    <meta name="Keywords" content="[python Jupyter]">
+    <meta name="description" content="Jupyter Notebook使用Anaconda虚拟环境">
         <meta name="author" content="码魂">
         
-    <meta property="og:url" content="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/">
+    <meta property="og:url" content="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -78,16 +78,18 @@
     
     <article class="post">
         <header>
-            <h1 class="post-title">Springboot flyway migrate执行完毕再执行其他数据库操作</h1>
+            <h1 class="post-title">Jupyter Notebook使用Anaconda虚拟环境</h1>
         </header>
         <date class="post-meta meta-date">
-            2019年10月17日
+            2021年8月4日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/springboot'>springboot</a></span>
+            <span class="meta-category"><a href='/categories/python'>python</a></span>
+            
+            <span class="meta-category"><a href='/categories/jupyter'>Jupyter</a></span>
             
         </div>
         
@@ -99,27 +101,72 @@
         
         
         <div class="post-content">
-            <p>项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：</p>
-<ol>
-<li>使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。</li>
-</ol>
+            <h2 id="jupyter-notebook使用anaconda虚拟环境">Jupyter Notebook使用Anaconda虚拟环境</h2>
+<p>第一步：安装ipykernel：
+法一：
+1.进入虚拟环境</p>
+<p>Windows：在Anaconda Prompt, 运行 activate myenv
+macOS &amp; Linux, 在Terminal, 运行 source activate myenv
+安装ipykernel：conda install ipykernel
+法二：
+在任何环境下都可以直接运行conda install -n myenv ipykernel为myenv安装ipykernel</p>
+<p>第二步：将环境写入notebook的kernel中
+首先要保证在当前虚拟环境下，进入虚拟环境的过程如第一步的法一。
+运行python -m ipykernel install &ndash;user &ndash;name=myenv 将环境写入notebook的kernel中</p>
+<p>生成配置文件:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">jupyter notebook --generate-config
+</code></pre></td></tr></table>
+</div>
+</div><p>生成密码</p>
+<p>输入ipython后</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">notebook.auth</span> <span style="color:#000;font-weight:bold">import</span> passwd
+
+passwd()
+</code></pre></td></tr></table>
+</div>
+</div><p>修改配置文件</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#3c5d5d;font-weight:bold">@DependsOn</span><span style="color:#000;font-weight:bold">({</span><span style="color:#d14">&#34;flyway&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;flywayInitializer&#34;</span><span style="color:#000;font-weight:bold">})</span>
-<span style="color:#3c5d5d;font-weight:bold">@Component</span>
-<span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">UserDao</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="color:#000;font-weight:bold">}</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c<span style="color:#000;font-weight:bold">.</span>NotebookApp<span style="color:#000;font-weight:bold">.</span>ip<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;*&#39;</span> 
+c<span style="color:#000;font-weight:bold">.</span>NotebookApp<span style="color:#000;font-weight:bold">.</span>notebook_dir <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;/home/ozh/share&#39;</span><span style="color:#998;font-style:italic">#共享目录</span>
+c<span style="color:#000;font-weight:bold">.</span>NotebookApp<span style="color:#000;font-weight:bold">.</span>password <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">u</span><span style="color:#d14">&#39;sha1:5df252f58b7f:bf65d53125bb36c085162b3780377f66d73972d1&#39;</span> <span style="color:#998;font-style:italic">#填写刚刚生成的密文  </span>
+c<span style="color:#000;font-weight:bold">.</span>NotebookApp<span style="color:#000;font-weight:bold">.</span>open_browser <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">False</span> <span style="color:#998;font-style:italic"># 禁止notebook启动时自动打开浏览器(在linux服务器一般都是ssh命令行访问，没有图形界面的。所以，启动也没啥用)  </span>
+c<span style="color:#000;font-weight:bold">.</span>NotebookApp<span style="color:#000;font-weight:bold">.</span>port <span style="color:#000;font-weight:bold">=</span><span style="color:#099">8899</span> <span style="color:#998;font-style:italic">#指定访问的端口，默认是8899  </span>
+
+c<span style="color:#000;font-weight:bold">.</span>NotebookApp<span style="color:#000;font-weight:bold">.</span>allow_remote_access <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">True</span>
 </code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。</li>
-</ol>
+</div><p>启动</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">jupyter notebook --port<span style="color:#000;font-weight:bold">=</span><span style="color:#099">8890</span> --allow-root
+</code></pre></td></tr></table>
+</div>
+</div><p>如果要输出图形，请安装</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -135,24 +182,115 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#3c5d5d;font-weight:bold">@Component</span>
-<span style="color:#3c5d5d;font-weight:bold">@Slf4j</span>
-<span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">CallbackFlywayMigrationStrategy</span> <span style="color:#000;font-weight:bold">implements</span> FlywayMigrationStrategy <span style="color:#000;font-weight:bold">{</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip config <span style="color:#0086b3">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
+pip/conda install matplotlib
 
-    <span style="color:#3c5d5d;font-weight:bold">@Override</span>
-    <span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">migrate</span><span style="color:#000;font-weight:bold">(</span>Flyway flyway<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        log<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">info</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;before flyway migration...&#34;</span><span style="color:#000;font-weight:bold">);</span>
-        flyway<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">migrate</span><span style="color:#000;font-weight:bold">();</span>
-        log<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">info</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;after flyway migration...&#34;</span><span style="color:#000;font-weight:bold">);</span>
-    <span style="color:#000;font-weight:bold">}</span>
+pip install akshare --upgrade
 
-<span style="color:#000;font-weight:bold">}</span>
+pip install backtrader
+
+pip install tushare
+
+conda install scipy
+
+anaconda search -t conda tensorflow
+
+conda install tensorflow
+
+conda install pytorch
+
+conda install sympy
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><pre><code># backtrader兼容性问题
+pip uninstall matplotlib
+pip install matplotlib==3.2.2
+</code></pre>
+<p>conda activate py3</p>
+<p>nohup jupyter notebook &ndash;port=8890 &ndash;allow-root &gt; /root/jupyternotebook.log 2&gt;&amp;1 &amp;</p>
+<pre><code>conda activate py3
+nohup jupyter notebook --port=8890 --allow-root --NotebookApp.terminals_enabled=False &gt; /root/jupyternotebook.log 2&gt;&amp;1 &amp;
+# 禁用控制台命令行
+--NotebookApp.terminals_enabled=False
+</code></pre>
+<h2 id="xeus-cling-安装">xeus-cling 安装</h2>
+<p>conda create -n xeus-cling python=3.6</p>
+<p>conda activate xeus-cling</p>
+<p>conda install -c conda-forge xeus-cling</p>
+<p>Anaconda3的安装路径下的/envs/xeus-cling/share/jupyter/kernels/下</p>
+<pre><code>jupyter kernelspec install PREFIX/share/jupyter/xcpp11 --sys-prefix
+jupyter kernelspec install PREFIX/share/jupyter/xcpp14 --sys-prefix
+jupyter kernelspec install PREFIX/share/jupyter/xcpp17 --sys-prefix
+
+jupyter kernelspec install /root/anaconda3/envs/xeus-cling/share/jupyter/kernels/xcpp11 --sys-prefix
+jupyter kernelspec install /root/anaconda3/envs/xeus-cling/share/jupyter/kernels/xcpp14 --sys-prefix
+jupyter kernelspec install /root/anaconda3/envs/xeus-cling/share/jupyter/kernels/xcpp17 --sys-prefix
+</code></pre>
+<p>/root/anaconda3/envs/xeus-cling/share/jupyter/kernels</p>
+<pre><code>firewall-cmd --zone=public --add-port=8891/tcp --permanent
+firewall-cmd --reload
+
+
+
+conda activate xeus-cling
+nohup jupyter notebook --port=8891 --allow-root --NotebookApp.terminals_enabled=True &gt; /root/jupyternotebookc.log 2&gt;&amp;1 &amp;
+</code></pre>
+<p>cmake 安装</p>
+<p>yum install -y gcc gcc-c++ make automake</p>
+<p><a href="https://cmake.org/download/">https://cmake.org/download/</a></p>
+<p>sh  cmake-3.21.1-linux-x86_64.sh &ndash;prefix=/usr/local &ndash;exclude-subdir</p>
+<pre><code>yum install  -y openssl  openssl-devel 
+cd finarthur-master
+mkdir build
+cd build
+cmake ..
+make
+</code></pre>
+<h2 id="低延时调优文章">低延时调优文章</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/59242346">https://zhuanlan.zhihu.com/p/59242346</a></p>
+<p>安装 openonload</p>
+<pre><code>## 进入相应的文件夹
+cd openonload-201811/
+
+## 源代码存放
+cd scripts/
+
+## 搭建环境
+./onload_build
+## 执行安装
+./onload_install
+#加载 onload
+onload_tool reload
+
+## 停止 cpuspeed 服务以避免进入省电模式，降低CPU时钟速度
+systemctl stop cpuspeed
+
+## 停止 irqbalance 服务器以防止 OS 在可用的CPU内核之间重新平衡中断
+systemctl stop irqbalance
+
+## 停止防火墙辐射器以消除简介消耗
+systemctl stop firewalld
+
+## 禁用 interrupt moderation
+ethtool -C enp1s0f1 rx-usecs-irq 0 adaptive-rx off
+
+## 启动低延时配置：tuned-adm
+tuned-adm list
+tuned-adm profile network-latency
+
+## 防止系统进入 CPU 低功耗模式　cstates
+## 参考博文: https://williamlfang.github.io/post/2019-12-11-linux-调整-cstate-实现cpu超频/
+</code></pre>
+
         </div>
 
         
@@ -160,14 +298,23 @@
 
         
 
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/2021/08/04/anaconda-conda-install-mirrors/">Anaconda &amp; conda 配置镜像</a></li>
+        
+    </ul>
+</div>
+
 
         <div class="post-meta meta-tags">
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/springboot'>springboot</a></li>
+                <li><a href='/tags/python'>python</a></li>
                 
-                <li><a href='/tags/flyway'>flyway</a></li>
+                <li><a href='/tags/jupyter'>Jupyter</a></li>
                 
             </ul>
             
