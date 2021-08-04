@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/</loc>
+    <lastmod>2021-08-04T20:05:48+08:00</lastmod>
+  </url><url>
     <loc>http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/</loc>
     <lastmod>2021-08-04T19:14:18+08:00</lastmod>
   </url><url>
@@ -47,10 +50,31 @@
     <loc>http://blog.lazy.icu/2018/11/21/</loc>
     <lastmod>2018-11-21T22:52:47+08:00</lastmod>
   </url><url>
-    <loc>http://blog.lazy.icu/categories/7z/</loc>
-    <lastmod>2021-08-04T19:14:18+08:00</lastmod>
+    <loc>http://blog.lazy.icu/categories/anaconda/</loc>
+    <lastmod>2021-08-04T20:05:48+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/categories/</loc>
+    <lastmod>2021-08-04T20:05:48+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/conda/</loc>
+    <lastmod>2021-08-04T20:05:48+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/posts/</loc>
+    <lastmod>2021-08-04T20:05:48+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/python/</loc>
+    <lastmod>2021-08-04T20:05:48+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/categories/python/</loc>
+    <lastmod>2021-08-04T20:05:48+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/</loc>
+    <lastmod>2021-08-04T20:05:48+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/</loc>
+    <lastmod>2021-08-04T20:05:48+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/categories/7z/</loc>
     <lastmod>2021-08-04T19:14:18+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/tags/java/</loc>
@@ -59,16 +83,7 @@
     <loc>http://blog.lazy.icu/categories/java/</loc>
     <lastmod>2021-08-04T19:14:18+08:00</lastmod>
   </url><url>
-    <loc>http://blog.lazy.icu/posts/</loc>
-    <lastmod>2021-08-04T19:14:18+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.lazy.icu/tags/</loc>
-    <lastmod>2021-08-04T19:14:18+08:00</lastmod>
-  </url><url>
     <loc>http://blog.lazy.icu/tags/%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B/</loc>
-    <lastmod>2021-08-04T19:14:18+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.lazy.icu/</loc>
     <lastmod>2021-08-04T19:14:18+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/tags/image/</loc>

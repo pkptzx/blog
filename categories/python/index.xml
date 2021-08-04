@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on 码魂</title>
+    <link>http://blog.lazy.icu/categories/python/</link>
+    <description>Recent content in python on 码魂</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 04 Aug 2021 20:05:48 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anaconda &amp; conda 配置镜像</title>
+      <link>http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/</link>
+      <pubDate>Wed, 04 Aug 2021 20:05:48 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/</guid>
+      <description>Anaconda &amp;amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。
+各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config &amp;ndash;set show_channel_urls yes 生成该文件之后再修改。
+channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud  即可添加 Anaconda Python 免费仓库。
+运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索引。
+运行 conda create -n myenv numpy 测试一下吧。
+#创建python3.6环境,名称为python3.6,可按照实际环境名称修改 conda create -n python3.6 python=3.6 #移除环境 conda remove -n py3 --all #进入指定的环境 conda activate python3.</description>
+    </item>
+    
+  </channel>
+</rss>
