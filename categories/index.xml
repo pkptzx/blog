@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 04 Aug 2021 20:05:48 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Aug 2021 20:11:22 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>http://blog.lazy.icu/categories/linux/</link>
+      <pubDate>Wed, 04 Aug 2021 20:11:22 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/categories/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>anaconda </title>
       <link>http://blog.lazy.icu/categories/anaconda/</link>

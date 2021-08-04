@@ -77,6 +77,31 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/" title="docker设置固定ip地址">docker设置固定ip地址</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年12月6日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>Docker</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5  $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local   启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1  docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash   bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  1 2 3  docker run -itd --net bridge --ip 172.……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2018/11/30/" title="Windows远程“要求的函数不受支持”解决办法">Windows远程“要求的函数不受支持”解决办法</a>
             </h1>
         </header>
@@ -313,6 +338,10 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
 <ul class="widget-list">
     
     <li>
+        <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压">文件夹批量改名&amp;批量解压</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像">Anaconda &amp; conda 配置镜像</a>
     </li>
     
@@ -348,10 +377,6 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
         <a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" title="java校验maven下载的jar文件">java校验maven下载的jar文件</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/" title="docker设置固定ip地址">docker设置固定ip地址</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -372,6 +397,8 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
     <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
@@ -413,6 +440,8 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
     
     <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
+    
+    <a href="http://blog.lazy.icu/tags/linux/">linux</a>
     
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
