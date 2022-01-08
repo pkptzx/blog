@@ -77,6 +77,35 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" title="Rust 安装与环境设置">Rust 安装与环境设置</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年1月8日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/rust'>Rust</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意. CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
+rustup target list rustup target add x86_64-pc-windows-gnu
+windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unknown-linux-musl ~/.cargo/config添加: [target.x86_64-unknown-linux-musl] linker = &ldquo;rust-lld&rdquo; 编译: cargo build &ndash;target x86_64-unknown-linux-musl &ndash;release
+国内源 ~/.cargo/config添加:
+1 2 3 4 5 6 7 8 9  [source.crates-io] registry = &#34;https://github.com/rust-lang/crates.io-index&#34; replace-with = &#39;ustc&#39; [source.ustc] registry = &#34;git://mirrors.ustc.edu.cn/crates.io-index&#34; [target.x86_64-pc-windows-gnu] linker = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&#34; ar = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&#34;    或者在项目工程结构中，与 Cargo.……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2022/01/08/rust-setup/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容">虚拟机中Linux磁盘空间进行扩容</a>
             </h1>
         </header>
@@ -344,32 +373,6 @@ git submodule update --recursive --remote --merge --force ……
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/" title="Springboot flyway migrate执行完毕再执行其他数据库操作">Springboot flyway migrate执行完毕再执行其他数据库操作</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年10月17日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/springboot'>springboot</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
- 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。  1 2 3 4  @DependsOn({&#34;flyway&#34;, &#34;flywayInitializer&#34;}) @Component public class UserDao { }   继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。  1 2 3 4 5 6 7 8 9 10 11 12 13  @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&#34;before flyway migration...&#34;); flyway.migrate(); log.info(&#34;after flyway migration...&#34;); } }   ……
-        </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -399,7 +402,7 @@ git submodule update --recursive --remote --merge --force ……
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
         
@@ -447,6 +450,10 @@ git submodule update --recursive --remote --merge --force ……
 <ul class="widget-list">
     
     <li>
+        <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" title="Rust 安装与环境设置">Rust 安装与环境设置</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容">虚拟机中Linux磁盘空间进行扩容</a>
     </li>
     
@@ -482,10 +489,6 @@ git submodule update --recursive --remote --merge --force ……
         <a href="http://blog.lazy.icu/2020/12/21/git-submodule-update/" title="更新git项目中submodule的命令">更新git项目中submodule的命令</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/" title="Springboot flyway migrate执行完毕再执行其他数据库操作">Springboot flyway migrate执行完毕再执行其他数据库操作</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -516,6 +519,8 @@ git submodule update --recursive --remote --merge --force ……
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
     
@@ -565,6 +570,8 @@ git submodule update --recursive --remote --merge --force ……
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
     <a href="http://blog.lazy.icu/tags/python/">python</a>
+    
+    <a href="http://blog.lazy.icu/tags/rust/">Rust</a>
     
     <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
     

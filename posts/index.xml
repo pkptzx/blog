@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 04 Aug 2021 20:48:07 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jan 2022 08:23:22 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust 安装与环境设置</title>
+      <link>http://blog.lazy.icu/2022/01/08/rust-setup/</link>
+      <pubDate>Sat, 08 Jan 2022 08:23:22 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2022/01/08/rust-setup/</guid>
+      <description>rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意. CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
+rustup target list rustup target add x86_64-pc-windows-gnu
+windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unknown-linux-musl ~/.cargo/config添加: [target.x86_64-unknown-linux-musl] linker = &amp;ldquo;rust-lld&amp;rdquo; 编译: cargo build &amp;ndash;target x86_64-unknown-linux-musl &amp;ndash;release
+国内源 ~/.cargo/config添加:
+1 2 3 4 5 6 7 8 9  [source.crates-io] registry = &amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34; replace-with = &amp;#39;ustc&amp;#39; [source.ustc] registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34; [target.x86_64-pc-windows-gnu] linker = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&amp;#34; ar = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&amp;#34;    或者在项目工程结构中，与 Cargo.</description>
+    </item>
+    
     <item>
       <title>虚拟机中Linux磁盘空间进行扩容</title>
       <link>http://blog.lazy.icu/2021/08/04/linux-expansion/</link>

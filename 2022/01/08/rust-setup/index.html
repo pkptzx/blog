@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Rust 安装与环境设置 | 码魂</title>
+    <meta property="og:title" content="Rust 安装与环境设置 - 码魂">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2022-01-08T08:23:22&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-01-08T08:23:22&#43;08:00'>
+        
+    <meta name="Keywords" content="[Rust]">
+    <meta name="description" content="Rust 安装与环境设置">
+        <meta name="author" content="码魂">
+        
+    <meta property="og:url" content="http://blog.lazy.icu/2022/01/08/rust-setup/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://blog.lazy.icu">
+                        码魂
+                    </a>
+                
+                <p class="description">专注于Java、移动互联网、移动支付、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="http://blog.lazy.icu">首页</a>
+                    
+                    <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
+                    
+                    <a  href="http://blog.lazy.icu/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://blog.lazy.icu/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Rust 安装与环境设置</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年1月8日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/rust'>Rust</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="rust-安装与环境设置">rust 安装与环境设置</h1>
+<h2 id="配置环境变量">配置环境变量</h2>
+<p>新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.
+CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO
+RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP</p>
+<p>rustup target list
+rustup target add x86_64-pc-windows-gnu</p>
+<p>windows中编译成linux可执行文件:
+先添加或安装工具链:x86_64-unknown-linux-musl
+~/.cargo/config添加:
+[target.x86_64-unknown-linux-musl]
+linker = &ldquo;rust-lld&rdquo;
+编译:
+cargo build &ndash;target x86_64-unknown-linux-musl &ndash;release</p>
+<h2 id="国内源">国内源</h2>
+<p>~/.cargo/config添加:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#000;font-weight:bold">[source.crates-io]</span>
+<span style="color:#008080">registry</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;https://github.com/rust-lang/crates.io-index&#34;</span>
+<span style="color:#008080">replace-with</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;ustc&#39;</span>
+<span style="color:#000;font-weight:bold">[source.ustc]</span>
+<span style="color:#008080">registry</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;git://mirrors.ustc.edu.cn/crates.io-index&#34;</span>
+
+<span style="color:#000;font-weight:bold">[target.x86_64-pc-windows-gnu]</span>
+<span style="color:#008080">linker</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&#34;</span>
+<span style="color:#008080">ar</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>或者在项目工程结构中，与 Cargo.toml 同级目录的 .cargo 文件夹下创建 config 文件，config 文件配置方法和内容与第一种相同。</li>
+</ul>
+<p>cargo build &ndash;target x86_64-pc-windows-gnu</p>
+<p>cargo run &ndash;release &ndash;target x86_64-pc-windows-gnu</p>
+<p>查看当前默认工具链
+rustup default
+修改为gnu
+rustup default stable-gnu
+修改为msvc
+rustup default stable-msvc</p>
+<p>rustup toolchain install stable-x86_64-pc-windows-gnu
+rustup default stable-x86_64-pc-windows-gnu</p>
+<h2 id="升级">升级</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rustup self update
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rustup update
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="cargo-常用命令">cargo 常用命令</h2>
+<p>创建一个新项目,默认是二进制程序,可以不写&ndash;bin,如果是创建库项目则&ndash;lib
+默认还会初始化git存储库,如果不要则&ndash;vcs none
+<code>cargo new hello_world --bin</code>
+编译release版本
+<code>cargo build --release</code>
+编译运行
+<code>cargo run</code></p>
+<h2 id="国内源参考">国内源参考:</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#000;font-weight:bold">[source.crates-io]</span>
+<span style="color:#008080">registry</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;https://github.com/rust-lang/crates.io-index&#34;</span>
+<span style="color:#998;font-style:italic"># 指定镜像</span>
+<span style="color:#008080">replace-with</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;镜像源名&#39; # 如：tuna、sjtu、ustc，或者 rustcc</span>
+
+<span style="color:#998;font-style:italic"># 注：以下源配置一个即可，无需全部</span>
+
+<span style="color:#998;font-style:italic"># 中国科学技术大学</span>
+<span style="color:#000;font-weight:bold">[source.ustc]</span>
+<span style="color:#008080">registry</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;https://mirrors.ustc.edu.cn/crates.io-index&#34;</span>
+<span style="color:#998;font-style:italic"># &gt;&gt;&gt; 或者 &lt;&lt;&lt;</span>
+<span style="color:#008080">registry</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;git://mirrors.ustc.edu.cn/crates.io-index&#34;</span>
+
+<span style="color:#998;font-style:italic"># 上海交通大学</span>
+<span style="color:#000;font-weight:bold">[source.sjtu]</span>
+<span style="color:#008080">registry</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/&#34;</span>
+
+<span style="color:#998;font-style:italic"># 清华大学</span>
+<span style="color:#000;font-weight:bold">[source.tuna]</span>
+<span style="color:#008080">registry</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&#34;</span>
+
+<span style="color:#998;font-style:italic"># rustcc社区</span>
+<span style="color:#000;font-weight:bold">[source.rustcc]</span>
+<span style="color:#008080">registry</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;https://code.aliyun.com/rustcc/crates.io-index.git&#34;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="strip减小文件体积">strip减小文件体积</h2>
+<h2 id="rust相关参考">rust相关参考</h2>
+<p>cargo: <a href="https://cargo.budshome.com/guide/dependencies.html">https://cargo.budshome.com/guide/dependencies.html</a>
+Rust实践指南: <a href="https://rust-guide.budshome.com/">https://rust-guide.budshome.com/</a>
+rust-in-databend: <a href="https://github.com/wubx/rust-in-databend">https://github.com/wubx/rust-in-databend</a></p>
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/rust'>Rust</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "pkptzx/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='http://blog.lazy.icu/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" title="Rust 安装与环境设置">Rust 安装与环境设置</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容">虚拟机中Linux磁盘空间进行扩容</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境">Jupyter Notebook使用Anaconda虚拟环境</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压">文件夹批量改名&amp;批量解压</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像">Anaconda &amp; conda 配置镜像</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" title="获取7z压缩文件压缩前文件大小">获取7z压缩文件压缩前文件大小</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/" title="使用java将SVG图片格式转PNG图片格式">使用java将SVG图片格式转PNG图片格式</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" title="maven导出依赖jar">maven导出依赖jar</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/" title="向压缩包中添加文件而不压缩">向压缩包中添加文件而不压缩</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2020/12/21/git-submodule-update/" title="更新git项目中submodule的命令">更新git项目中submodule的命令</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/esxi/">esxi (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/git/">git (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/python/">python (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/vm/">VM (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0/">小书匠 (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/">物联网 (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/">系统 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="http://blog.lazy.icu/tags/conda/">conda</a>
+    
+    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
+    
+    <a href="http://blog.lazy.icu/tags/esxi/">esxi</a>
+    
+    <a href="http://blog.lazy.icu/tags/flyway/">flyway</a>
+    
+    <a href="http://blog.lazy.icu/tags/git/">git</a>
+    
+    <a href="http://blog.lazy.icu/tags/hugo/">hugo</a>
+    
+    <a href="http://blog.lazy.icu/tags/image/">image</a>
+    
+    <a href="http://blog.lazy.icu/tags/jar/">jar</a>
+    
+    <a href="http://blog.lazy.icu/tags/java/">java</a>
+    
+    <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
+    
+    <a href="http://blog.lazy.icu/tags/jupyter/">Jupyter</a>
+    
+    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
+    
+    <a href="http://blog.lazy.icu/tags/linux/">linux</a>
+    
+    <a href="http://blog.lazy.icu/tags/maven/">maven</a>
+    
+    <a href="http://blog.lazy.icu/tags/python/">python</a>
+    
+    <a href="http://blog.lazy.icu/tags/rust/">Rust</a>
+    
+    <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
+    
+    <a href="http://blog.lazy.icu/tags/vm/">VM</a>
+    
+    <a href="http://blog.lazy.icu/tags/zip/">zip</a>
+    
+    <a href="http://blog.lazy.icu/tags/%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B/">压缩解压</a>
+    
+    <a href="http://blog.lazy.icu/tags/%E7%89%A9%E8%81%94%E7%BD%91/">物联网</a>
+    
+    <a href="http://blog.lazy.icu/tags/%E7%B3%BB%E7%BB%9F/">系统</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="http://www.baidu.com" title="百度">百度</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://www.oschina.net" title="开源中国">开源中国</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

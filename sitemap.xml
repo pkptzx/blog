@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.lazy.icu/2022/01/08/rust-setup/</loc>
+    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
+  </url><url>
     <loc>http://blog.lazy.icu/2021/08/04/linux-expansion/</loc>
     <lastmod>2021-08-04T20:48:07+08:00</lastmod>
   </url><url>
@@ -60,7 +63,22 @@
     <lastmod>2018-11-21T22:52:47+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/categories/</loc>
-    <lastmod>2021-08-04T20:48:07+08:00</lastmod>
+    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/posts/</loc>
+    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/rust/</loc>
+    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/categories/rust/</loc>
+    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/</loc>
+    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/</loc>
+    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/tags/esxi/</loc>
     <lastmod>2021-08-04T20:48:07+08:00</lastmod>
@@ -74,19 +92,10 @@
     <loc>http://blog.lazy.icu/categories/linux/</loc>
     <lastmod>2021-08-04T20:48:07+08:00</lastmod>
   </url><url>
-    <loc>http://blog.lazy.icu/posts/</loc>
-    <lastmod>2021-08-04T20:48:07+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.lazy.icu/tags/</loc>
-    <lastmod>2021-08-04T20:48:07+08:00</lastmod>
-  </url><url>
     <loc>http://blog.lazy.icu/tags/vm/</loc>
     <lastmod>2021-08-04T20:48:07+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/categories/vm/</loc>
-    <lastmod>2021-08-04T20:48:07+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.lazy.icu/</loc>
     <lastmod>2021-08-04T20:48:07+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/tags/jupyter/</loc>

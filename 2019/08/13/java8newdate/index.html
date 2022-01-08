@@ -347,14 +347,14 @@ LocalDate localDate1 <span style="color:#000;font-weight:bold">=</span> localDat
 </tbody>
 </table>
 <h2 id="格式化时间">格式化时间</h2>
-<pre><code>LocalDate localDate = LocalDate.of(2019, 9, 12);
+<pre tabindex="0"><code>LocalDate localDate = LocalDate.of(2019, 9, 12);
 String s1 = localDate.format(DateTimeFormatter.BASIC_ISO_DATE);
 String s2 = localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
 // 自定义格式化
 DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);
 String s3 = localDate.format(dateTimeFormatter);
 </code></pre><h2 id="解析时间">解析时间</h2>
-<pre><code>LocalDate localDate1 = LocalDate.parse(&quot;20190912&quot;, DateTimeFormatter.BASIC_ISO_DATE);
+<pre tabindex="0"><code>LocalDate localDate1 = LocalDate.parse(&quot;20190912&quot;, DateTimeFormatter.BASIC_ISO_DATE);
 LocalDate localDate2 = LocalDate.parse(&quot;2019-09-12&quot;, DateTimeFormatter.ISO_LOCAL_DATE);
 </code></pre><h2 id="总结">总结</h2>
 <p>和 SimpleDateFormat 相比，DateTimeFormatter 是线程安全的。</p>
@@ -409,7 +409,7 @@ LocalDate localDate2 = LocalDate.parse(&quot;2019-09-12&quot;, DateTimeFormatter
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
         
@@ -467,6 +467,10 @@ LocalDate localDate2 = LocalDate.parse(&quot;2019-09-12&quot;, DateTimeFormatter
 <ul class="widget-list">
     
     <li>
+        <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" title="Rust 安装与环境设置">Rust 安装与环境设置</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容">虚拟机中Linux磁盘空间进行扩容</a>
     </li>
     
@@ -502,10 +506,6 @@ LocalDate localDate2 = LocalDate.parse(&quot;2019-09-12&quot;, DateTimeFormatter
         <a href="http://blog.lazy.icu/2020/12/21/git-submodule-update/" title="更新git项目中submodule的命令">更新git项目中submodule的命令</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/" title="Springboot flyway migrate执行完毕再执行其他数据库操作">Springboot flyway migrate执行完毕再执行其他数据库操作</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -536,6 +536,8 @@ LocalDate localDate2 = LocalDate.parse(&quot;2019-09-12&quot;, DateTimeFormatter
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
     
@@ -585,6 +587,8 @@ LocalDate localDate2 = LocalDate.parse(&quot;2019-09-12&quot;, DateTimeFormatter
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
     <a href="http://blog.lazy.icu/tags/python/">python</a>
+    
+    <a href="http://blog.lazy.icu/tags/rust/">Rust</a>
     
     <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
     
