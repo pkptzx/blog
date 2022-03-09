@@ -19,7 +19,7 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp;amp; Linux, 在Te
 生成配置文件:
 1  jupyter notebook --generate-config   生成密码
 输入ipython后
-1 2 3  from notebook.auth import passwd passwd()   修改配置文件
+1 2 3  from notebook.auth import passwd  passwd()   修改配置文件
 1 2 3 4 5 6 7  c.NotebookApp.ip=&amp;#39;*&amp;#39; c.NotebookApp.notebook_dir = &amp;#39;/home/ozh/share&amp;#39;#共享目录 c.</description>
     </item>
     

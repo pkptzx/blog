@@ -36,7 +36,6 @@
     
 </head>
 
-
 <body>
     <header id="header" class="clearfix">
     <div class="container">
@@ -131,7 +130,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
 我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
 真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
 不如就写个代码跑一下吧~
-public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &quot;F:/mvnlib&quot;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &quot;jar,pom&quot;); System.out.println(&quot;完毕&quot;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&quot;,&quot;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.……
+public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &#34;F:/mvnlib&#34;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &#34;jar,pom&#34;); System.out.println(&#34;完毕&#34;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&#34;,&#34;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.……
             <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/">阅读全文</a></p>
         </div>
     </article>

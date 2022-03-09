@@ -39,7 +39,6 @@
     
 </head>
 
-
 <body>
     <header id="header" class="clearfix">
     <div class="container">
@@ -111,15 +110,15 @@
 
   public static void main(String[] args) throws Exception {
       
-    String localMvnPath = &quot;F:/mvnlib&quot;;
+    String localMvnPath = &#34;F:/mvnlib&#34;;
     // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除
-    getFile(new File(localMvnPath), &quot;jar,pom&quot;);
-    System.out.println(&quot;完毕&quot;);
+    getFile(new File(localMvnPath), &#34;jar,pom&#34;);
+    System.out.println(&#34;完毕&#34;);
   }
 
   public static void getFile(File path, String suffixs) throws Exception {
     String[] suffixs_ = new String[] {};
-    if (suffixs != null) suffixs_ = suffixs.split(&quot;,&quot;);
+    if (suffixs != null) suffixs_ = suffixs.split(&#34;,&#34;);
     if (path.isFile()) {
       for (String suffix : suffixs_) {
         if (path.getName().endsWith(suffix)) {
@@ -142,16 +141,16 @@
    * @throws IOException
    */
   public static void handler(File f) throws Exception {
-    File fsha1 = new File(f.getAbsolutePath() + &quot;.sha1&quot;);
+    File fsha1 = new File(f.getAbsolutePath() + &#34;.sha1&#34;);
     if (fsha1.exists()) {
       String sha1 =
-          FileUtils.readFileToString(fsha1, &quot;utf-8&quot;).replaceAll(&quot;(?m).*(\\w{40}).*&quot;, &quot;$1&quot;).replaceAll(&quot;\\n|\\r&quot;, &quot;&quot;);
+          FileUtils.readFileToString(fsha1, &#34;utf-8&#34;).replaceAll(&#34;(?m).*(\\w{40}).*&#34;, &#34;$1&#34;).replaceAll(&#34;\\n|\\r&#34;, &#34;&#34;);
       String currsha1 = sha1(f);
       if(!sha1.equals(currsha1)){//如果不等,则删除 当前文件和sha1
-//          System.out.println(&quot;sha1file: &quot; + sha1 ); 
+//          System.out.println(&#34;sha1file: &#34; + sha1 ); 
           fsha1.delete();
           f.delete();
-      System.out.println(sha1 + &quot; , &quot; + currsha1 + &quot; , &quot; + f.getAbsolutePath());
+      System.out.println(sha1 + &#34; , &#34; + currsha1 + &#34; , &#34; + f.getAbsolutePath());
       
       }
 

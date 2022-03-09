@@ -14,7 +14,7 @@
       
       <guid>http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/</guid>
       <description>项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
- 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。  1 2 3 4  @DependsOn({&amp;#34;flyway&amp;#34;, &amp;#34;flywayInitializer&amp;#34;}) @Component public class UserDao { }   继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。  1 2 3 4 5 6 7 8 9 10 11 12 13  @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&amp;#34;before flyway migration...&amp;#34;); flyway.migrate(); log.info(&amp;#34;after flyway migration...&amp;#34;); } }   </description>
+ 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。  1 2 3 4  @DependsOn({&amp;#34;flyway&amp;#34;, &amp;#34;flywayInitializer&amp;#34;}) @Component public class UserDao { }   继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。  1 2 3 4 5 6 7 8 9 10 11 12 13  @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy {    @Override  public void migrate(Flyway flyway) {  log.info(&amp;#34;before flyway migration...&amp;#34;);  flyway.migrate();  log.info(&amp;#34;after flyway migration...&amp;#34;);  }  }   </description>
     </item>
     
   </channel>

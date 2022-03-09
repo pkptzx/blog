@@ -39,7 +39,6 @@
     
 </head>
 
-
 <body>
     <header id="header" class="clearfix">
     <div class="container">
@@ -101,187 +100,187 @@
         <div class="post-content">
             <p>Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。</p>
 <h2 id="localdate-只会获取年月日">LocalDate 只会获取年月日</h2>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 创建 LocalDate
-</span><span style="color:#998;font-style:italic">// 获取当前年月日
-</span><span style="color:#998;font-style:italic"></span>LocalDate localDate <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#998;font-style:italic">// 构造指定的年月日
-</span><span style="color:#998;font-style:italic"></span>LocalDate localDate1 <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> 9<span style="color:#000;font-weight:bold">,</span> 12<span style="color:#000;font-weight:bold">);</span>
-<span style="color:#998;font-style:italic">// 获取年、月、日、星期几
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> year <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getYear</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#458;font-weight:bold">int</span> year1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEAR</span><span style="color:#000;font-weight:bold">);</span>
-Month month <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getMonth</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#458;font-weight:bold">int</span> month1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">MONTH_OF_YEAR</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#458;font-weight:bold">int</span> day <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getDayOfMonth</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#458;font-weight:bold">int</span> day1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">DAY_OF_MONTH</span><span style="color:#000;font-weight:bold">);</span>
-DayOfWeek dayOfWeek <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getDayOfWeek</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#458;font-weight:bold">int</span> dayOfWeek1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">DAY_OF_WEEK</span><span style="color:#000;font-weight:bold">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 创建 LocalDate
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取当前年月日
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDate localDate <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 构造指定的年月日
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDate localDate1 <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> 9<span style="color:#000;font-weight:bold">,</span> 12<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取年、月、日、星期几
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> year <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getYear</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> year1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEAR</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>Month month <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getMonth</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> month1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">MONTH_OF_YEAR</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> day <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getDayOfMonth</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> day1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">DAY_OF_MONTH</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>DayOfWeek dayOfWeek <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getDayOfWeek</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> dayOfWeek1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">DAY_OF_WEEK</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="localtime-只会获取时分秒">LocalTime 只会获取时分秒</h2>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 创建 LocalTime
-</span><span style="color:#998;font-style:italic"></span>LocalTime localTime <span style="color:#000;font-weight:bold">=</span> LocalTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>14<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">);</span>
-LocalTime localTime1 <span style="color:#000;font-weight:bold">=</span> LocalTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#998;font-style:italic">// 获取小时
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> hour <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getHour</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#458;font-weight:bold">int</span> hour1 <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">HOUR_OF_DAY</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#998;font-style:italic">// 获取分
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> minute <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getMinute</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#458;font-weight:bold">int</span> minute1 <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">MINUTE_OF_HOUR</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#998;font-style:italic">// 获取秒
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> second <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getMinute</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#458;font-weight:bold">int</span> second1 <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SECOND_OF_MINUTE</span><span style="color:#000;font-weight:bold">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 创建 LocalTime
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalTime localTime <span style="color:#000;font-weight:bold">=</span> LocalTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>14<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>LocalTime localTime1 <span style="color:#000;font-weight:bold">=</span> LocalTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取小时
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> hour <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getHour</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> hour1 <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">HOUR_OF_DAY</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取分
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> minute <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getMinute</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> minute1 <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">MINUTE_OF_HOUR</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取秒
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> second <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getMinute</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> second1 <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SECOND_OF_MINUTE</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="localdatetime-获取年月日时分秒相当于-localdate--localtime">LocalDateTime 获取年月日时分秒，相当于 LocalDate + LocalTime</h2>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 创建 LocalDateTime
-</span><span style="color:#998;font-style:italic"></span>LocalDateTime localDateTime <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
-LocalDateTime localDateTime1 <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> 10<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 46<span style="color:#000;font-weight:bold">,</span> 56<span style="color:#000;font-weight:bold">);</span>
-LocalDateTime localDateTime2 <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>localDate<span style="color:#000;font-weight:bold">,</span> localTime<span style="color:#000;font-weight:bold">);</span>
-LocalDateTime localDateTime3 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">atTime</span><span style="color:#000;font-weight:bold">(</span>localTime<span style="color:#000;font-weight:bold">);</span>
-LocalDateTime localDateTime4 <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">atDate</span><span style="color:#000;font-weight:bold">(</span>localDate<span style="color:#000;font-weight:bold">);</span>
-<span style="color:#998;font-style:italic">// 获取LocalDate
-</span><span style="color:#998;font-style:italic"></span>LocalDate localDate2 <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toLocalDate</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#998;font-style:italic">// 获取LocalTime
-</span><span style="color:#998;font-style:italic"></span>LocalTime localTime2 <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toLocalTime</span><span style="color:#000;font-weight:bold">();</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 创建 LocalDateTime
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDateTime localDateTime <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span>LocalDateTime localDateTime1 <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> 10<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 46<span style="color:#000;font-weight:bold">,</span> 56<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>LocalDateTime localDateTime2 <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>localDate<span style="color:#000;font-weight:bold">,</span> localTime<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>LocalDateTime localDateTime3 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">atTime</span><span style="color:#000;font-weight:bold">(</span>localTime<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>LocalDateTime localDateTime4 <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">atDate</span><span style="color:#000;font-weight:bold">(</span>localDate<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取LocalDate
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDate localDate2 <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toLocalDate</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取LocalTime
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalTime localTime2 <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toLocalTime</span><span style="color:#000;font-weight:bold">();</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Instant 获取秒数，用于表示一个时间戳（精确到纳秒）</p>
 <p>如果只是为了获取秒数或者毫秒数，可以使用</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">currentTimeMillis</span><span style="color:#000;font-weight:bold">()</span><span style="color:#a61717;background-color:#e3d2d2">。</span>
-
-<span style="color:#998;font-style:italic">// 创建Instant对象
-</span><span style="color:#998;font-style:italic"></span>Instant instant <span style="color:#000;font-weight:bold">=</span> Instant<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#998;font-style:italic">// 获取秒数
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> currentSecond <span style="color:#000;font-weight:bold">=</span> instant<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getEpochSecond</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#998;font-style:italic">// 获取毫秒数
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> currentMilli <span style="color:#000;font-weight:bold">=</span> instant<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toEpochMilli</span><span style="color:#000;font-weight:bold">();</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">currentTimeMillis</span><span style="color:#000;font-weight:bold">()</span><span style="color:#a61717;background-color:#e3d2d2">。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 创建Instant对象
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>Instant instant <span style="color:#000;font-weight:bold">=</span> Instant<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取秒数
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> currentSecond <span style="color:#000;font-weight:bold">=</span> instant<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getEpochSecond</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取毫秒数
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> currentMilli <span style="color:#000;font-weight:bold">=</span> instant<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toEpochMilli</span><span style="color:#000;font-weight:bold">();</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="duration-表示一个时间段">Duration 表示一个时间段</h2>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// Duration.between()方法创建 Duration 对象
-</span><span style="color:#998;font-style:italic"></span>LocalDateTime from <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2017<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">JANUARY</span><span style="color:#000;font-weight:bold">,</span> 1<span style="color:#000;font-weight:bold">,</span> 00<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">);</span>    <span style="color:#998;font-style:italic">// 2017-01-01 00:00:00
-</span><span style="color:#998;font-style:italic"></span>LocalDateTime to <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> 12<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 28<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">);</span>     <span style="color:#998;font-style:italic">// 2019-09-15 14:28:00
-</span><span style="color:#998;font-style:italic"></span>Duration duration <span style="color:#000;font-weight:bold">=</span> Duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">between</span><span style="color:#000;font-weight:bold">(</span>from<span style="color:#000;font-weight:bold">,</span> to<span style="color:#000;font-weight:bold">);</span>     <span style="color:#998;font-style:italic">// 表示从 from 到 to 这段时间
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> days <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toDays</span><span style="color:#000;font-weight:bold">();</span>              <span style="color:#998;font-style:italic">// 这段时间的总天数
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> hours <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toHours</span><span style="color:#000;font-weight:bold">();</span>            <span style="color:#998;font-style:italic">// 这段时间的小时数
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> minutes <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toMinutes</span><span style="color:#000;font-weight:bold">();</span>        <span style="color:#998;font-style:italic">// 这段时间的分钟数
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> seconds <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getSeconds</span><span style="color:#000;font-weight:bold">();</span>       <span style="color:#998;font-style:italic">// 这段时间的秒数
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> milliSeconds <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toMillis</span><span style="color:#000;font-weight:bold">();</span>    <span style="color:#998;font-style:italic">// 这段时间的毫秒数
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> nanoSeconds <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toNanos</span><span style="color:#000;font-weight:bold">();</span>      <span style="color:#998;font-style:italic">// 这段时间的纳秒数
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// Duration.between()方法创建 Duration 对象
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDateTime from <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2017<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">JANUARY</span><span style="color:#000;font-weight:bold">,</span> 1<span style="color:#000;font-weight:bold">,</span> 00<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">);</span>    <span style="color:#998;font-style:italic">// 2017-01-01 00:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDateTime to <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> 12<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 28<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">);</span>     <span style="color:#998;font-style:italic">// 2019-09-15 14:28:00
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>Duration duration <span style="color:#000;font-weight:bold">=</span> Duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">between</span><span style="color:#000;font-weight:bold">(</span>from<span style="color:#000;font-weight:bold">,</span> to<span style="color:#000;font-weight:bold">);</span>     <span style="color:#998;font-style:italic">// 表示从 from 到 to 这段时间
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> days <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toDays</span><span style="color:#000;font-weight:bold">();</span>              <span style="color:#998;font-style:italic">// 这段时间的总天数
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> hours <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toHours</span><span style="color:#000;font-weight:bold">();</span>            <span style="color:#998;font-style:italic">// 这段时间的小时数
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> minutes <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toMinutes</span><span style="color:#000;font-weight:bold">();</span>        <span style="color:#998;font-style:italic">// 这段时间的分钟数
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> seconds <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getSeconds</span><span style="color:#000;font-weight:bold">();</span>       <span style="color:#998;font-style:italic">// 这段时间的秒数
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> milliSeconds <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toMillis</span><span style="color:#000;font-weight:bold">();</span>    <span style="color:#998;font-style:italic">// 这段时间的毫秒数
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> nanoSeconds <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toNanos</span><span style="color:#000;font-weight:bold">();</span>      <span style="color:#998;font-style:italic">// 这段时间的纳秒数
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>修改 LocalDate、LocalTime、LocalDateTime、Instant。</p>
 <p>LocalDate、LocalTime、LocalDateTime、Instant 为不可变对象，修改这些对象对象会返回一个副本。</p>
 <p>增加、减少年数、月数、天数等，以LocalDateTime为例:</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">LocalDateTime localDateTime <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> 12<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 32<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">);</span>
-<span style="color:#998;font-style:italic">// 增加一年
-</span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">plusYears</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">);</span>
-localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">plus</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">,</span> ChronoUnit<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEARS</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#998;font-style:italic">// 减少一个月
-</span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">minusMonths</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">);</span>
-localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">minus</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">,</span> ChronoUnit<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">MONTHS</span><span style="color:#000;font-weight:bold">);</span>  
-<span style="color:#998;font-style:italic">// 通过with修改某些值
-</span><span style="color:#998;font-style:italic">// 修改年为2020
-</span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">withYear</span><span style="color:#000;font-weight:bold">(</span>2020<span style="color:#000;font-weight:bold">);</span>
-localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">with</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEAR</span><span style="color:#000;font-weight:bold">,</span> 2020<span style="color:#000;font-weight:bold">);</span>
-<span style="color:#998;font-style:italic">// 时间计算
-</span><span style="color:#998;font-style:italic">// 获取该年的第一天
-</span><span style="color:#998;font-style:italic"></span>LocalDate localDate <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
-LocalDate localDate1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">with</span><span style="color:#000;font-weight:bold">(</span>firstDayOfYear<span style="color:#000;font-weight:bold">());</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>LocalDateTime localDateTime <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> 12<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 32<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 增加一年
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">plusYears</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">plus</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">,</span> ChronoUnit<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEARS</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 减少一个月
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">minusMonths</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">minus</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">,</span> ChronoUnit<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">MONTHS</span><span style="color:#000;font-weight:bold">);</span>  
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 通过with修改某些值
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 修改年为2020
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">withYear</span><span style="color:#000;font-weight:bold">(</span>2020<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">with</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEAR</span><span style="color:#000;font-weight:bold">,</span> 2020<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 时间计算
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取该年的第一天
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDate localDate <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span>LocalDate localDate1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">with</span><span style="color:#000;font-weight:bold">(</span>firstDayOfYear<span style="color:#000;font-weight:bold">());</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="temporaladjusters-包含许多静态方法可以直接调用以下列举一些">TemporalAdjusters 包含许多静态方法，可以直接调用，以下列举一些：</h2>
 <table>
@@ -351,11 +350,11 @@ LocalDate localDate1 <span style="color:#000;font-weight:bold">=</span> localDat
 String s1 = localDate.format(DateTimeFormatter.BASIC_ISO_DATE);
 String s2 = localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
 // 自定义格式化
-DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(&#34;yyyy-MM-dd HH:mm:ss&#34;);
 String s3 = localDate.format(dateTimeFormatter);
 </code></pre><h2 id="解析时间">解析时间</h2>
-<pre tabindex="0"><code>LocalDate localDate1 = LocalDate.parse(&quot;20190912&quot;, DateTimeFormatter.BASIC_ISO_DATE);
-LocalDate localDate2 = LocalDate.parse(&quot;2019-09-12&quot;, DateTimeFormatter.ISO_LOCAL_DATE);
+<pre tabindex="0"><code>LocalDate localDate1 = LocalDate.parse(&#34;20190912&#34;, DateTimeFormatter.BASIC_ISO_DATE);
+LocalDate localDate2 = LocalDate.parse(&#34;2019-09-12&#34;, DateTimeFormatter.ISO_LOCAL_DATE);
 </code></pre><h2 id="总结">总结</h2>
 <p>和 SimpleDateFormat 相比，DateTimeFormatter 是线程安全的。</p>
 <p>Instant 的精确度更高，可以精确到纳秒级。</p>

@@ -31,7 +31,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime <
 我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
 真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
 不如就写个代码跑一下吧~
-public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &amp;quot;F:/mvnlib&amp;quot;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &amp;quot;jar,pom&amp;quot;); System.out.println(&amp;quot;完毕&amp;quot;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&amp;quot;,&amp;quot;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.</description>
+public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &amp;#34;F:/mvnlib&amp;#34;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &amp;#34;jar,pom&amp;#34;); System.out.println(&amp;#34;完毕&amp;#34;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&amp;#34;,&amp;#34;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.</description>
     </item>
     
   </channel>

@@ -36,7 +36,6 @@
     
 </head>
 
-
 <body>
     <header id="header" class="clearfix">
     <div class="container">
@@ -107,7 +106,7 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
 生成配置文件:
 1  jupyter notebook --generate-config   生成密码
 输入ipython后
-1 2 3  from notebook.auth import passwd passwd()   修改配置文件
+1 2 3  from notebook.auth import passwd  passwd()   修改配置文件
 1 2 3 4 5 6 7  c.NotebookApp.ip=&#39;*&#39; c.NotebookApp.notebook_dir = &#39;/home/ozh/share&#39;#共享目录 c.……
             <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/">阅读全文</a></p>
         </div>

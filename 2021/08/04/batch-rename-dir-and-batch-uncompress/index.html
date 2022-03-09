@@ -39,7 +39,6 @@
     
 </head>
 
-
 <body>
     <header id="header" class="clearfix">
     <div class="container">
@@ -101,29 +100,29 @@
         <div class="post-content">
             <h2 id="文件夹批量改名批量解压">文件夹批量改名&amp;批量解压</h2>
 <p>将2020xxxx批量修改为xxxx</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000;font-weight:bold">for</span> f in ls /root/testdata1/data/OB/2020
- <span style="color:#000;font-weight:bold">do</span>
-  <span style="color:#000;font-weight:bold">if</span> <span style="color:#0086b3">test</span> -f <span style="color:#008080">$f</span>
-  <span style="color:#000;font-weight:bold">then</span>
-    <span style="color:#0086b3">echo</span> <span style="color:#008080">$f</span> <span style="color:#d14">&#34;is file&#34;</span>
-  <span style="color:#000;font-weight:bold">else</span>
-    mv /root/testdata1/data/OB/2020/<span style="color:#008080">$f</span> /root/testdata1/data/OB/2020/<span style="color:#d14">${</span><span style="color:#008080">f</span>##2020<span style="color:#d14">}</span>
-  <span style="color:#000;font-weight:bold">fi</span>
-<span style="color:#000;font-weight:bold">done</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">for</span> f in ls /root/testdata1/data/OB/2020
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">if</span> <span style="color:#0086b3">test</span> -f <span style="color:#008080">$f</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0086b3">echo</span> <span style="color:#008080">$f</span> <span style="color:#d14">&#34;is file&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    mv /root/testdata1/data/OB/2020/<span style="color:#008080">$f</span> /root/testdata1/data/OB/2020/<span style="color:#d14">${</span><span style="color:#008080">f</span>##2020<span style="color:#d14">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">done</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>win批量解压sz</p>
 <pre tabindex="0"><code class="language-dos" data-lang="dos">@echo off

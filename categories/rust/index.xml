@@ -17,7 +17,7 @@
 rustup target list rustup target add x86_64-pc-windows-gnu
 windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unknown-linux-musl ~/.cargo/config添加: [target.x86_64-unknown-linux-musl] linker = &amp;ldquo;rust-lld&amp;rdquo; 编译: cargo build &amp;ndash;target x86_64-unknown-linux-musl &amp;ndash;release
 国内源 ~/.cargo/config添加:
-1 2 3 4 5 6 7 8 9  [source.crates-io] registry = &amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34; replace-with = &amp;#39;ustc&amp;#39; [source.ustc] registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34; [target.x86_64-pc-windows-gnu] linker = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&amp;#34; ar = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&amp;#34;    或者在项目工程结构中，与 Cargo.</description>
+1 2 3 4 5 6 7 8 9  [source.crates-io] registry = &amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34; replace-with = &amp;#39;ustc&amp;#39; [source.ustc] registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34;  [target.x86_64-pc-windows-gnu] linker = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&amp;#34; ar = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&amp;#34;    或者在项目工程结构中，与 Cargo.</description>
     </item>
     
   </channel>
