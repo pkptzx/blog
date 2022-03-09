@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/</loc>
+    <lastmod>2022-03-10T00:15:47+08:00</lastmod>
+  </url><url>
     <loc>http://blog.lazy.icu/2022/01/08/rust-setup/</loc>
     <lastmod>2022-01-08T08:23:22+08:00</lastmod>
   </url><url>
@@ -63,21 +66,27 @@
     <lastmod>2018-11-21T22:52:47+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/categories/</loc>
-    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
+    <lastmod>2022-03-10T00:15:47+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/posts/</loc>
-    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
+    <lastmod>2022-03-10T00:15:47+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/python/</loc>
+    <lastmod>2022-03-10T00:15:47+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/categories/python/</loc>
+    <lastmod>2022-03-10T00:15:47+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/tags/</loc>
+    <lastmod>2022-03-10T00:15:47+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.lazy.icu/</loc>
+    <lastmod>2022-03-10T00:15:47+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/tags/rust/</loc>
     <lastmod>2022-01-08T08:23:22+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/categories/rust/</loc>
-    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.lazy.icu/tags/</loc>
-    <lastmod>2022-01-08T08:23:22+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.lazy.icu/</loc>
     <lastmod>2022-01-08T08:23:22+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/tags/esxi/</loc>
@@ -102,12 +111,6 @@
     <lastmod>2021-08-04T20:41:06+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/categories/jupyter/</loc>
-    <lastmod>2021-08-04T20:41:06+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.lazy.icu/tags/python/</loc>
-    <lastmod>2021-08-04T20:41:06+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.lazy.icu/categories/python/</loc>
     <lastmod>2021-08-04T20:41:06+08:00</lastmod>
   </url><url>
     <loc>http://blog.lazy.icu/categories/anaconda/</loc>
@@ -193,8 +196,6 @@
   </url><url>
     <loc>http://blog.lazy.icu/categories/hugo/</loc>
     <lastmod>2018-11-21T22:52:47+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.lazy.icu/posts/python%E9%AA%8C%E8%AF%81%E7%A0%81%E5%9C%A8%E7%BA%BF%E8%AF%86%E5%88%AB/</loc>
   </url><url>
     <loc>http://blog.lazy.icu/archives/</loc>
   </url><url>
