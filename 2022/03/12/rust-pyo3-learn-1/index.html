@@ -102,23 +102,36 @@
         <div class="post-content">
             <h3 id="rust和python交互pyo31">rust和python交互pyo3(1)</h3>
 <p>pyo3 需要python3.7以上的版本</p>
-<p>pip install maturin
-新建文件夹后:初始化
-maturin init &ndash;bindings pyo3
-开发编译安装,就可以测试用python调用了
-maturin develop
-release版本编译,只会编译,不会更新安装到python环境
-maturin build &ndash;release</p>
-<p>生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip install maturin
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 新建文件夹后:初始化</span>
+</span></span><span style="display:flex;"><span>maturin init --bindings pyo3
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 开发编译安装,就可以测试用python调用了</span>
+</span></span><span style="display:flex;"><span>maturin develop
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># release版本编译,只会编译,不会更新安装到python环境</span>
+</span></span><span style="display:flex;"><span>maturin build --release
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上</p>
 <p>Ubuntu:
-sudo apt install python3-dev
-centos8:
-yum/dnf install python38-devel</p>
+<code>sudo apt install python3-dev</code></p>
+<p>centos8:
+<code>yum/dnf install python38-devel</code></p>
 <p>这两个features不能同时存在,否则导致rust编译失败
 &ldquo;extension-module&rdquo;,&ldquo;auto-initialize&rdquo;
 将rust写的py库和,rust调用py拆成两个子工程.</p>
 <p>whl强制安装/更新
-pip install -U &ndash;force-reinstall  xxx.whl</p>
+<code>pip install -U --force-reinstall  xxx.whl</code></p>
 
         </div>
 
