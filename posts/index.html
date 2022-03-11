@@ -76,6 +76,38 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)">rust和python交互pyo3(一)</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年3月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/python'>python</a></span>
+            
+            <span class="meta-category"><a href='/categories/rust'>rust</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
+pip install maturin 新建文件夹后:初始化 maturin init &ndash;bindings pyo3 开发编译安装,就可以测试用python调用了 maturin develop release版本编译,只会编译,不会更新安装到python环境 maturin build &ndash;release
+生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
+Ubuntu: sudo apt install python3-dev centos8: yum/dnf install python38-devel
+这两个features不能同时存在,否则导致rust编译失败 &ldquo;extension-module&rdquo;,&ldquo;auto-initialize&rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
+whl强制安装/更新 pip install -U &ndash;force-reinstall xxx.whl……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别">python验证码在线识别</a>
             </h1>
         </header>
@@ -228,38 +260,6 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
 @echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)">rust和python交互pyo3(一)</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年8月4日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/python'>python</a></span>
-            
-            <span class="meta-category"><a href='/categories/rust'>rust</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
-pip install maturin 新建文件夹后:初始化 maturin init &ndash;bindings pyo3 开发编译安装,就可以测试用python调用了 maturin develop release版本编译,只会编译,不会更新安装到python环境 maturin build &ndash;release
-生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
-Ubuntu: sudo apt install python3-dev centos8: yum/dnf install python38-devel
-这两个features不能同时存在,否则导致rust编译失败 &ldquo;extension-module&rdquo;,&ldquo;auto-initialize&rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
-whl强制安装/更新 pip install -U &ndash;force-reinstall xxx.whl……
-        </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/">阅读全文</a></p>
     </article>
     
     
@@ -456,6 +456,10 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
 <ul class="widget-list">
     
     <li>
+        <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)">rust和python交互pyo3(一)</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别">python验证码在线识别</a>
     </li>
     
@@ -477,10 +481,6 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
     
     <li>
         <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像">Anaconda &amp; conda 配置镜像</a>
-    </li>
-    
-    <li>
-        <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)">rust和python交互pyo3(一)</a>
     </li>
     
     <li>

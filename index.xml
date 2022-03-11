@@ -6,7 +6,21 @@
     <description>Recent content on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 10 Mar 2022 00:15:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 06:05:48 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rust和python交互pyo3(一)</title>
+      <link>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</link>
+      <pubDate>Sat, 12 Mar 2022 06:05:48 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</guid>
+      <description>rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
+pip install maturin 新建文件夹后:初始化 maturin init &amp;ndash;bindings pyo3 开发编译安装,就可以测试用python调用了 maturin develop release版本编译,只会编译,不会更新安装到python环境 maturin build &amp;ndash;release
+生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
+Ubuntu: sudo apt install python3-dev centos8: yum/dnf install python38-devel
+这两个features不能同时存在,否则导致rust编译失败 &amp;ldquo;extension-module&amp;rdquo;,&amp;ldquo;auto-initialize&amp;rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
+whl强制安装/更新 pip install -U &amp;ndash;force-reinstall xxx.whl</description>
+    </item>
+    
     <item>
       <title>python验证码在线识别</title>
       <link>http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/</link>
@@ -92,20 +106,6 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
 运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索引。
 运行 conda create -n myenv numpy 测试一下吧。
 #创建python3.6环境,名称为python3.6,可按照实际环境名称修改 conda create -n python3.6 python=3.6 #移除环境 conda remove -n py3 --all #进入指定的环境 conda activate python3.</description>
-    </item>
-    
-    <item>
-      <title>rust和python交互pyo3(一)</title>
-      <link>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</link>
-      <pubDate>Wed, 04 Aug 2021 20:05:48 +0800</pubDate>
-      
-      <guid>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</guid>
-      <description>rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
-pip install maturin 新建文件夹后:初始化 maturin init &amp;ndash;bindings pyo3 开发编译安装,就可以测试用python调用了 maturin develop release版本编译,只会编译,不会更新安装到python环境 maturin build &amp;ndash;release
-生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
-Ubuntu: sudo apt install python3-dev centos8: yum/dnf install python38-devel
-这两个features不能同时存在,否则导致rust编译失败 &amp;ldquo;extension-module&amp;rdquo;,&amp;ldquo;auto-initialize&amp;rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
-whl强制安装/更新 pip install -U &amp;ndash;force-reinstall xxx.whl</description>
     </item>
     
     <item>

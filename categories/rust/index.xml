@@ -6,7 +6,21 @@
     <description>Recent content in Rust on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 08 Jan 2022 08:23:22 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 06:05:48 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rust和python交互pyo3(一)</title>
+      <link>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</link>
+      <pubDate>Sat, 12 Mar 2022 06:05:48 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</guid>
+      <description>rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
+pip install maturin 新建文件夹后:初始化 maturin init &amp;ndash;bindings pyo3 开发编译安装,就可以测试用python调用了 maturin develop release版本编译,只会编译,不会更新安装到python环境 maturin build &amp;ndash;release
+生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
+Ubuntu: sudo apt install python3-dev centos8: yum/dnf install python38-devel
+这两个features不能同时存在,否则导致rust编译失败 &amp;ldquo;extension-module&amp;rdquo;,&amp;ldquo;auto-initialize&amp;rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
+whl强制安装/更新 pip install -U &amp;ndash;force-reinstall xxx.whl</description>
+    </item>
+    
     <item>
       <title>Rust 安装与环境设置</title>
       <link>http://blog.lazy.icu/2022/01/08/rust-setup/</link>
@@ -18,20 +32,6 @@ rustup target list rustup target add x86_64-pc-windows-gnu
 windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unknown-linux-musl ~/.cargo/config添加: [target.x86_64-unknown-linux-musl] linker = &amp;ldquo;rust-lld&amp;rdquo; 编译: cargo build &amp;ndash;target x86_64-unknown-linux-musl &amp;ndash;release
 国内源 ~/.cargo/config添加:
 1 2 3 4 5 6 7 8 9  [source.crates-io] registry = &amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34; replace-with = &amp;#39;ustc&amp;#39; [source.ustc] registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34;  [target.x86_64-pc-windows-gnu] linker = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&amp;#34; ar = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&amp;#34;    或者在项目工程结构中，与 Cargo.</description>
-    </item>
-    
-    <item>
-      <title>rust和python交互pyo3(一)</title>
-      <link>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</link>
-      <pubDate>Wed, 04 Aug 2021 20:05:48 +0800</pubDate>
-      
-      <guid>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</guid>
-      <description>rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
-pip install maturin 新建文件夹后:初始化 maturin init &amp;ndash;bindings pyo3 开发编译安装,就可以测试用python调用了 maturin develop release版本编译,只会编译,不会更新安装到python环境 maturin build &amp;ndash;release
-生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
-Ubuntu: sudo apt install python3-dev centos8: yum/dnf install python38-devel
-这两个features不能同时存在,否则导致rust编译失败 &amp;ldquo;extension-module&amp;rdquo;,&amp;ldquo;auto-initialize&amp;rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
-whl强制安装/更新 pip install -U &amp;ndash;force-reinstall xxx.whl</description>
     </item>
     
   </channel>
