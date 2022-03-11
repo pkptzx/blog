@@ -107,6 +107,36 @@ windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unkn
         </div>
     </article>
     
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/">rust和python交互pyo3(一)</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月4日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/python'>python</a>
+            
+            <a href='/categories/rust'>rust</a>
+            
+        </div>
+        
+        <div class="post-content">
+            rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
+pip install maturin 新建文件夹后:初始化 maturin init &ndash;bindings pyo3 开发编译安装,就可以测试用python调用了 maturin develop release版本编译,只会编译,不会更新安装到python环境 maturin build &ndash;release
+生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
+Ubuntu: sudo apt install python3-dev centos8: yum/dnf install python38-devel
+这两个features不能同时存在,否则导致rust编译失败 &ldquo;extension-module&rdquo;,&ldquo;auto-initialize&rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
+whl强制安装/更新 pip install -U &ndash;force-reinstall xxx.whl……
+            <p class="readmore"><a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/">阅读全文</a></p>
+        </div>
+    </article>
+    
 
     
 
@@ -190,6 +220,10 @@ windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unkn
     </li>
     
     <li>
+        <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)">rust和python交互pyo3(一)</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" title="获取7z压缩文件压缩前文件大小">获取7z压缩文件压缩前文件大小</a>
     </li>
     
@@ -199,10 +233,6 @@ windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unkn
     
     <li>
         <a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" title="maven导出依赖jar">maven导出依赖jar</a>
-    </li>
-    
-    <li>
-        <a href="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/" title="向压缩包中添加文件而不压缩">向压缩包中添加文件而不压缩</a>
     </li>
     
 </ul>
@@ -234,9 +264,9 @@ windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unkn
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/python/">python (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/python/">python (4)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
     
