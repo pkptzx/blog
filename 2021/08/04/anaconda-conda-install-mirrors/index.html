@@ -102,7 +102,7 @@
         <div class="post-content">
             <h2 id="anaconda--conda-配置镜像">Anaconda &amp; conda 配置镜像</h2>
 <p>Anaconda 安装包可以到 <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/</a> 下载。</p>
-<p>各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config &ndash;set show_channel_urls yes 生成该文件之后再修改。</p>
+<p>各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 <code>conda config --set show_channel_urls yes</code> 生成该文件之后再修改。</p>
 <pre><code>channels:
   - defaults
 show_channel_urls: true
