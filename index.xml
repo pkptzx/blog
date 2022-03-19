@@ -6,7 +6,16 @@
     <description>Recent content on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 12 Mar 2022 06:05:48 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Mar 2022 18:09:58 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>未整理</title>
+      <link>http://blog.lazy.icu/2022/03/19/unknow/</link>
+      <pubDate>Sat, 19 Mar 2022 18:09:58 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2022/03/19/unknow/</guid>
+      <description>1 2  # linux 删除空文件夹 find -type d -empty -delete   </description>
+    </item>
+    
     <item>
       <title>rust和python交互pyo3(一)</title>
       <link>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</link>
