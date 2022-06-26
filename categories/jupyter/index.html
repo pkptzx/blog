@@ -104,10 +104,10 @@
 Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Terminal, 运行 source activate myenv 安装ipykernel：conda install ipykernel 法二： 在任何环境下都可以直接运行conda install -n myenv ipykernel为myenv安装ipykernel
 第二步：将环境写入notebook的kernel中 首先要保证在当前虚拟环境下，进入虚拟环境的过程如第一步的法一。 运行python -m ipykernel install &ndash;user &ndash;name=myenv 将环境写入notebook的kernel中
 生成配置文件:
-1  jupyter notebook --generate-config   生成密码
+1 jupyter notebook --generate-config 生成密码
 输入ipython后
-1 2 3  from notebook.auth import passwd  passwd()   修改配置文件
-1 2 3 4 5 6 7  c.NotebookApp.ip=&#39;*&#39; c.NotebookApp.notebook_dir = &#39;/home/ozh/share&#39;#共享目录 c.……
+1 2 3 from notebook.auth import passwd passwd() 修改配置文件
+1 2 3 4 5 6 7 c.NotebookApp.ip=&#39;*&#39; c.NotebookApp.notebook_dir = &#39;/home/ozh/share&#39;#共享目录 c.NotebookApp.password = u&#39;sha1:5df252f58b7f:bf65d53125bb36c085162b3780377f66d73972d1&#39; #填写刚刚生成的密文 c.NotebookApp.open_browser = False # 禁止notebook启动时自动打开浏览器(在linux服务器一般都是ssh命令行访问，没有图形界面的。所以，启动也没啥用) c.……
             <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/">阅读全文</a></p>
         </div>
     </article>
@@ -146,9 +146,6 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
-
-
-
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
@@ -158,7 +155,7 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='http://blog.lazy.icu/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='http://blog.lazy.icu/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">

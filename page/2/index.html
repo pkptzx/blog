@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-	<meta name="generator" content="Hugo 0.94.2" />
+	<meta name="generator" content="Hugo 0.101.0" />
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,6 +71,7 @@
                     
 <div class="res-cons">
     
+    
     <article class="post">
         <header>
             <h1 class="post-title">
@@ -94,6 +95,8 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -121,6 +124,8 @@ winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的
         <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/">阅读全文</a></p>
     </article>
     
+    
+    
     <article class="post">
         <header>
             <h1 class="post-title">
@@ -145,6 +150,8 @@ git submodule update --recursive --remote --merge --force ……
         <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/git-submodule-update/">阅读全文</a></p>
     </article>
     
+    
+    
     <article class="post">
         <header>
             <h1 class="post-title">
@@ -164,10 +171,12 @@ git submodule update --recursive --remote --merge --force ……
         
         <div class="post-content">
             项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
- 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。  1 2 3 4  @DependsOn({&#34;flyway&#34;, &#34;flywayInitializer&#34;}) @Component public class UserDao { }   继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。  1 2 3 4 5 6 7 8 9 10 11 12 13  @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy {    @Override  public void migrate(Flyway flyway) {  log.info(&#34;before flyway migration...&#34;);  flyway.migrate();  log.info(&#34;after flyway migration...&#34;);  }  }   ……
+使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。 1 2 3 4 @DependsOn({&#34;flyway&#34;, &#34;flywayInitializer&#34;}) @Component public class UserDao { } 继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。 1 2 3 4 5 6 7 8 9 10 11 12 13 @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&#34;before flyway migration...&#34;); flyway.migrate(); log.info(&#34;after flyway migration...&#34;); } } ……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -188,10 +197,12 @@ git submodule update --recursive --remote --merge --force ……
         
         <div class="post-content">
             Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。
-LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14  // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.……
+LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2019/08/13/java8newdate/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -224,6 +235,8 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
         <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/">阅读全文</a></p>
     </article>
     
+    
+    
     <article class="post">
         <header>
             <h1 class="post-title">
@@ -242,10 +255,12 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
         </div>
         
         <div class="post-content">
-            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5  $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local   启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1  docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash   bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  1 2 3  docker run -itd --net bridge --ip 172.……
+            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5 $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local 启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1 docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了 none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。 创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下 1 2 3 docker run -itd --net bridge --ip 172.17.0.10 centos:latest /bin/bash 6eb1f228cf308d1c60db30093c126acbfd0cb21d76cb448c678bab0f1a7c0df6 docker: Error response from daemon: User specified IP address is supported on user defined networks only.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -267,10 +282,12 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
         <div class="post-content">
             Windows远程“要求的函数不受支持”解决办法 解决方法：
 开启组策略中远程桌面链接安全层。 1、开始-运行-gpedit.msc，进入组策略编辑器； 2、找到左侧边栏计算机配置-管理模板-Windows组件-远程桌面服务-远程桌面会话主机-安全项； 3、修改以下两项：
-A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP B,要求使用网络级别的身份验证对远程连接的用户进行身份验证，改为禁用；  4、关闭组策略编辑器，重启计算机。……
+A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP B,要求使用网络级别的身份验证对远程连接的用户进行身份验证，改为禁用； 4、关闭组策略编辑器，重启计算机。……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2018/11/30/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -295,13 +312,15 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
 测试开头空格
 测试换行
 测试表格
-   你好 好 好的 嗯     ha a a a   ha a a a   ha a a a   ha a a a    测试编号(结尾要有空行)
- List item 你好 谁  测试小结
- a asdf fdsa fdsa fdsa  测试代码高亮
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package cn.……
+你好 好 好的 嗯 ha a a a ha a a a ha a a a ha a a a 测试编号(结尾要有空行)
+List item 你好 谁 测试小结
+a asdf fdsa fdsa fdsa 测试代码高亮
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 package cn.xdemo; import java.util.Date; /** * 测试 * * */ public class IOTCard { public static void main(String[] args) { System.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2018/11/25/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -338,6 +357,7 @@ APN地址输入CTNET即可享受3G/4G网络。
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2018/11/23/">阅读全文</a></p>
     </article>
+    
     
     
 
@@ -400,9 +420,6 @@ APN地址输入CTNET即可享受3G/4G网络。
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
-
-
-
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
@@ -412,7 +429,7 @@ APN地址输入CTNET即可享受3G/4G网络。
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='http://blog.lazy.icu/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='http://blog.lazy.icu/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">

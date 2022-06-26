@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-	<meta name="generator" content="Hugo 0.94.2" />
+	<meta name="generator" content="Hugo 0.101.0" />
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,6 +71,7 @@
                     
 <div class="res-cons">
     
+    
     <article class="post">
         <header>
             <h1 class="post-title">
@@ -89,10 +90,12 @@
         </div>
         
         <div class="post-content">
-            1 2  # linux 删除空文件夹 find -type d -empty -delete   ……
+             1 2 # linux 删除空文件夹 find -type d -empty -delete ……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2022/03/19/unknow/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -115,7 +118,7 @@
         
         <div class="post-content">
             rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
-1 2 3 4 5 6 7  pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release   生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
+1 2 3 4 5 6 7 pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release 生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
 Ubuntu: sudo apt install python3-dev
 centos8: yum/dnf install python38-devel
 这两个features不能同时存在,否则导致rust编译失败 &ldquo;extension-module&rdquo;,&ldquo;auto-initialize&rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
@@ -123,6 +126,8 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -142,10 +147,12 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
         </div>
         
         <div class="post-content">
-            1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  import requests import base64 import json from IPython.core.display import Image  # appKey ：2e35010c-a759-11eb-8dd8-7429af540200 # appSecret：632b36755e7963fbdb61b2529e410bc4 # http://api.yunshuck.com/api/captcha/simple-captcha # type:603 数字加字母组合验证码 # type:601 数字验证码 # type:604 数字计算验证码  headers ={} headers[&#39;Content-Type&#39;] = &#39;application/json&#39; headers[&#39;appKey&#39;] = &#39;8961d10c-aa79-11eb-942c-7429af540200&#39; headers[&#39;appSecret&#39;] = &#39;baec542e97c499f75c419ea935079d00&#39; headers[&#39;Content-Type&#39;] = &#39;application/json&#39; rst_code = 0 while(rst_code==0):  response = requests.……
+            1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 import requests import base64 import json from IPython.core.display import Image # appKey ：2e35010c-a759-11eb-8dd8-7429af540200 # appSecret：632b36755e7963fbdb61b2529e410bc4 # http://api.yunshuck.com/api/captcha/simple-captcha # type:603 数字加字母组合验证码 # type:601 数字验证码 # type:604 数字计算验证码 headers ={} headers[&#39;Content-Type&#39;] = &#39;application/json&#39; headers[&#39;appKey&#39;] = &#39;8961d10c-aa79-11eb-942c-7429af540200&#39; headers[&#39;appSecret&#39;] = &#39;baec542e97c499f75c419ea935079d00&#39; headers[&#39;Content-Type&#39;] = &#39;application/json&#39; rst_code = 0 while(rst_code==0): response = requests.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -165,14 +172,25 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
         </div>
         
         <div class="post-content">
-            rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意. CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
-rustup target list rustup target add x86_64-pc-windows-gnu
-windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unknown-linux-musl ~/.cargo/config添加: [target.x86_64-unknown-linux-musl] linker = &ldquo;rust-lld&rdquo; 编译: cargo build &ndash;target x86_64-unknown-linux-musl &ndash;release
+            rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.
+CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO
+RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
+rustup target list
+rustup target add x86_64-pc-windows-gnu
+windows中编译成linux可执行文件:
+先添加或安装工具链:x86_64-unknown-linux-musl
+~/.cargo/config添加:
+[target.x86_64-unknown-linux-musl]
+linker = &ldquo;rust-lld&rdquo;
+编译:
+cargo build --target x86_64-unknown-linux-musl --release
 国内源 ~/.cargo/config添加:
-1 2 3 4 5 6 7 8 9  [source.crates-io] registry = &#34;https://github.com/rust-lang/crates.io-index&#34; replace-with = &#39;ustc&#39; [source.ustc] registry = &#34;git://mirrors.ustc.edu.cn/crates.io-index&#34;  [target.x86_64-pc-windows-gnu] linker = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&#34; ar = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&#34;    或者在项目工程结构中，与 Cargo.……
+1 2 3 4 5 6 7 8 9 [source.crates-io] registry = &#34;https://github.com/rust-lang/crates.io-index&#34; replace-with = &#39;ustc&#39; [source.ustc] registry = &#34;git://mirrors.ustc.edu.cn/crates.io-index&#34; [target.x86_64-pc-windows-gnu] linker = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&#34; ar = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&#34; 或者在项目工程结构中，与 Cargo.toml 同级目录的 .……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2022/01/08/rust-setup/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -210,10 +228,12 @@ fdisk /dev/sda
 输入w保存分区信息
 重启
 初始化分区加入卷组
-#查看卷组信息 vgdisplay #初始化创建的卷组 pvcreate /dev/sda3 #查看卷组信息,记住卷组名称 vgdisplay #将初始化的分区加入到虚拟卷组 vgextend VolGroup /dev/sda3 #扩展逻辑卷的大小,使用df -lh查看逻辑卷名称 lvextend -L +20G /dev/mapper/VolGroup-lv_root #查看文件系统格式 cat /etc/fstab #扩容重新加载逻辑卷 xfs_growfs /dev/mapper/centos-home #查看修改后的容量 df -lh  ……
+#查看卷组信息 vgdisplay #初始化创建的卷组 pvcreate /dev/sda3 #查看卷组信息,记住卷组名称 vgdisplay #将初始化的分区加入到虚拟卷组 vgextend VolGroup /dev/sda3 #扩展逻辑卷的大小,使用df -lh查看逻辑卷名称 lvextend -L +20G /dev/mapper/VolGroup-lv_root #查看文件系统格式 cat /etc/fstab #扩容重新加载逻辑卷 xfs_growfs /dev/mapper/centos-home #查看修改后的容量 df -lh ……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/linux-expansion/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -239,13 +259,15 @@ fdisk /dev/sda
 Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Terminal, 运行 source activate myenv 安装ipykernel：conda install ipykernel 法二： 在任何环境下都可以直接运行conda install -n myenv ipykernel为myenv安装ipykernel
 第二步：将环境写入notebook的kernel中 首先要保证在当前虚拟环境下，进入虚拟环境的过程如第一步的法一。 运行python -m ipykernel install &ndash;user &ndash;name=myenv 将环境写入notebook的kernel中
 生成配置文件:
-1  jupyter notebook --generate-config   生成密码
+1 jupyter notebook --generate-config 生成密码
 输入ipython后
-1 2 3  from notebook.auth import passwd  passwd()   修改配置文件
-1 2 3 4 5 6 7  c.NotebookApp.ip=&#39;*&#39; c.NotebookApp.notebook_dir = &#39;/home/ozh/share&#39;#共享目录 c.……
+1 2 3 from notebook.auth import passwd passwd() 修改配置文件
+1 2 3 4 5 6 7 c.NotebookApp.ip=&#39;*&#39; c.NotebookApp.notebook_dir = &#39;/home/ozh/share&#39;#共享目录 c.NotebookApp.password = u&#39;sha1:5df252f58b7f:bf65d53125bb36c085162b3780377f66d73972d1&#39; #填写刚刚生成的密文 c.NotebookApp.open_browser = False # 禁止notebook启动时自动打开浏览器(在linux服务器一般都是ssh命令行访问，没有图形界面的。所以，启动也没啥用) c.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -266,12 +288,14 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
         
         <div class="post-content">
             文件夹批量改名&amp;批量解压 将2020xxxx批量修改为xxxx
-1 2 3 4 5 6 7 8 9  for f in ls /root/testdata1/data/OB/2020  do  if test -f $f  then  echo $f &#34;is file&#34;  else  mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020}  fi done   win批量解压sz
+1 2 3 4 5 6 7 8 9 for f in ls /root/testdata1/data/OB/2020 do if test -f $f then echo $f &#34;is file&#34; else mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020} fi done win批量解压sz
 @echo off set path=D:\Program Files\7-Zip;%path% cd L2-shenzhen\2020 for /d %%i in () do ( echo %%i 7z e %%i*trade.7z.001 -o..\%%i\ ) pause win批量解压OB
-@echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.……
+@echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.7z) do ( echo %%i 7z x %%i *\SZ000725 *\SZ002475 *\SZ300185 *\SZ300059 *\SZ300433 *\SZ002241 *\SZ002549 *\SZ002797 *\SZ123048 *\SZ000100 -y ) pause ……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -295,13 +319,15 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
         <div class="post-content">
             Anaconda &amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。
 各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config --set show_channel_urls yes 生成该文件之后再修改。
-channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud  即可添加 Anaconda Python 免费仓库。
+channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud 即可添加 Anaconda Python 免费仓库。
 运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索引。
 运行 conda create -n myenv numpy 测试一下吧。
 #创建python3.6环境,名称为python3.6,可按照实际环境名称修改 conda create -n python3.6 python=3.6 #移除环境 conda remove -n py3 --all #进入指定的环境 conda activate python3.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -324,10 +350,12 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
         
         <div class="post-content">
             在解压前获取文件解压大小,主要为了不解压获取解压后的文件大小,计算解压后的磁盘占用量
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  &lt;dependency&gt;  &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt;  &lt;artifactId&gt;sevenzipjbinding&lt;/artifactId&gt;  &lt;version&gt;16.02-2.01&lt;/version&gt;  &lt;/dependency&gt;  &lt;dependency&gt;  &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt;  &lt;artifactId&gt;sevenzipjbinding-all-platforms&lt;/artifactId&gt;  &lt;version&gt;16.02-2.01&lt;/version&gt;  &lt;/dependency&gt;  &lt;dependency&gt;  &lt;groupId&gt;org.tukaani&lt;/groupId&gt;  &lt;artifactId&gt;xz&lt;/artifactId&gt;  &lt;version&gt;1.9&lt;/version&gt;  &lt;/dependency&gt;  &lt;dependency&gt;  &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;  &lt;artifactId&gt;commons-compress&lt;/artifactId&gt;  &lt;version&gt;1.21&lt;/version&gt;  &lt;/dependency&gt;  &lt;dependency&gt;  &lt;groupId&gt;cn.hutool&lt;/groupId&gt;  &lt;artifactId&gt;hutool-all&lt;/artifactId&gt;  &lt;version&gt;5.……
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 &lt;dependency&gt; &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt; &lt;artifactId&gt;sevenzipjbinding&lt;/artifactId&gt; &lt;version&gt;16.02-2.01&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt; &lt;artifactId&gt;sevenzipjbinding-all-platforms&lt;/artifactId&gt; &lt;version&gt;16.02-2.01&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.tukaani&lt;/groupId&gt; &lt;artifactId&gt;xz&lt;/artifactId&gt; &lt;version&gt;1.9&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-compress&lt;/artifactId&gt; &lt;version&gt;1.21&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;cn.hutool&lt;/groupId&gt; &lt;artifactId&gt;hutool-all&lt;/artifactId&gt; &lt;version&gt;5.6.3&lt;/version&gt; &lt;/dependency&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 import cn.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/">阅读全文</a></p>
     </article>
+    
+    
     
     <article class="post">
         <header>
@@ -347,10 +375,11 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
         </div>
         
         <div class="post-content">
-            1 2 3 4 5 6 7 8 9 10 11  &lt;dependency&gt;  &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt;  &lt;artifactId&gt;xmlgraphics-commons&lt;/artifactId&gt;  &lt;version&gt;2.6&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt;  &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt;  &lt;artifactId&gt;batik-all&lt;/artifactId&gt;  &lt;version&gt;1.14&lt;/version&gt;  &lt;type&gt;pom&lt;/type&gt; &lt;/dependency&gt;   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58  import java.……
+            1 2 3 4 5 6 7 8 9 10 11 &lt;dependency&gt; &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt; &lt;artifactId&gt;xmlgraphics-commons&lt;/artifactId&gt; &lt;version&gt;2.6&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt; &lt;artifactId&gt;batik-all&lt;/artifactId&gt; &lt;version&gt;1.14&lt;/version&gt; &lt;type&gt;pom&lt;/type&gt; &lt;/dependency&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 import java.……
         </div>
         <p class="readmore"><a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/">阅读全文</a></p>
     </article>
+    
     
     
 
@@ -409,9 +438,6 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
-
-
-
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
@@ -421,7 +447,7 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='http://blog.lazy.icu/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='http://blog.lazy.icu/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">

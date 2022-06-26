@@ -14,7 +14,7 @@
       
       <guid>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</guid>
       <description>rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
-1 2 3 4 5 6 7  pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release   生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
+1 2 3 4 5 6 7 pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release 生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
 Ubuntu: sudo apt install python3-dev
 centos8: yum/dnf install python38-devel
 这两个features不能同时存在,否则导致rust编译失败 &amp;ldquo;extension-module&amp;rdquo;,&amp;ldquo;auto-initialize&amp;rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
@@ -27,7 +27,7 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl</description>
       <pubDate>Thu, 10 Mar 2022 00:15:47 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  import requests import base64 import json from IPython.core.display import Image  # appKey ：2e35010c-a759-11eb-8dd8-7429af540200 # appSecret：632b36755e7963fbdb61b2529e410bc4 # http://api.yunshuck.com/api/captcha/simple-captcha # type:603 数字加字母组合验证码 # type:601 数字验证码 # type:604 数字计算验证码  headers ={} headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json&amp;#39; headers[&amp;#39;appKey&amp;#39;] = &amp;#39;8961d10c-aa79-11eb-942c-7429af540200&amp;#39; headers[&amp;#39;appSecret&amp;#39;] = &amp;#39;baec542e97c499f75c419ea935079d00&amp;#39; headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json&amp;#39; rst_code = 0 while(rst_code==0):  response = requests.</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 import requests import base64 import json from IPython.core.display import Image # appKey ：2e35010c-a759-11eb-8dd8-7429af540200 # appSecret：632b36755e7963fbdb61b2529e410bc4 # http://api.yunshuck.com/api/captcha/simple-captcha # type:603 数字加字母组合验证码 # type:601 数字验证码 # type:604 数字计算验证码 headers ={} headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json&amp;#39; headers[&amp;#39;appKey&amp;#39;] = &amp;#39;8961d10c-aa79-11eb-942c-7429af540200&amp;#39; headers[&amp;#39;appSecret&amp;#39;] = &amp;#39;baec542e97c499f75c419ea935079d00&amp;#39; headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json&amp;#39; rst_code = 0 while(rst_code==0): response = requests.</description>
     </item>
     
     <item>
@@ -40,10 +40,10 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl</description>
 Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp;amp; Linux, 在Terminal, 运行 source activate myenv 安装ipykernel：conda install ipykernel 法二： 在任何环境下都可以直接运行conda install -n myenv ipykernel为myenv安装ipykernel
 第二步：将环境写入notebook的kernel中 首先要保证在当前虚拟环境下，进入虚拟环境的过程如第一步的法一。 运行python -m ipykernel install &amp;ndash;user &amp;ndash;name=myenv 将环境写入notebook的kernel中
 生成配置文件:
-1  jupyter notebook --generate-config   生成密码
+1 jupyter notebook --generate-config 生成密码
 输入ipython后
-1 2 3  from notebook.auth import passwd  passwd()   修改配置文件
-1 2 3 4 5 6 7  c.NotebookApp.ip=&amp;#39;*&amp;#39; c.NotebookApp.notebook_dir = &amp;#39;/home/ozh/share&amp;#39;#共享目录 c.</description>
+1 2 3 from notebook.auth import passwd passwd() 修改配置文件
+1 2 3 4 5 6 7 c.NotebookApp.ip=&amp;#39;*&amp;#39; c.NotebookApp.notebook_dir = &amp;#39;/home/ozh/share&amp;#39;#共享目录 c.NotebookApp.password = u&amp;#39;sha1:5df252f58b7f:bf65d53125bb36c085162b3780377f66d73972d1&amp;#39; #填写刚刚生成的密文 c.NotebookApp.open_browser = False # 禁止notebook启动时自动打开浏览器(在linux服务器一般都是ssh命令行访问，没有图形界面的。所以，启动也没啥用) c.</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp;amp; Linux, 在Te
       <guid>http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/</guid>
       <description>Anaconda &amp;amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。
 各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config --set show_channel_urls yes 生成该文件之后再修改。
-channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud  即可添加 Anaconda Python 免费仓库。
+channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud 即可添加 Anaconda Python 免费仓库。
 运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索引。
 运行 conda create -n myenv numpy 测试一下吧。
 #创建python3.6环境,名称为python3.6,可按照实际环境名称修改 conda create -n python3.6 python=3.6 #移除环境 conda remove -n py3 --all #进入指定的环境 conda activate python3.</description>

@@ -101,7 +101,7 @@
         
         <div class="post-content">
             rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
-1 2 3 4 5 6 7  pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release   生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
+1 2 3 4 5 6 7 pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release 生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
 Ubuntu: sudo apt install python3-dev
 centos8: yum/dnf install python38-devel
 这两个features不能同时存在,否则导致rust编译失败 &ldquo;extension-module&rdquo;,&ldquo;auto-initialize&rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
@@ -128,11 +128,20 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
         </div>
         
         <div class="post-content">
-            rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意. CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
-rustup target list rustup target add x86_64-pc-windows-gnu
-windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unknown-linux-musl ~/.cargo/config添加: [target.x86_64-unknown-linux-musl] linker = &ldquo;rust-lld&rdquo; 编译: cargo build &ndash;target x86_64-unknown-linux-musl &ndash;release
+            rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.
+CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO
+RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
+rustup target list
+rustup target add x86_64-pc-windows-gnu
+windows中编译成linux可执行文件:
+先添加或安装工具链:x86_64-unknown-linux-musl
+~/.cargo/config添加:
+[target.x86_64-unknown-linux-musl]
+linker = &ldquo;rust-lld&rdquo;
+编译:
+cargo build --target x86_64-unknown-linux-musl --release
 国内源 ~/.cargo/config添加:
-1 2 3 4 5 6 7 8 9  [source.crates-io] registry = &#34;https://github.com/rust-lang/crates.io-index&#34; replace-with = &#39;ustc&#39; [source.ustc] registry = &#34;git://mirrors.ustc.edu.cn/crates.io-index&#34;  [target.x86_64-pc-windows-gnu] linker = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&#34; ar = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&#34;    或者在项目工程结构中，与 Cargo.……
+1 2 3 4 5 6 7 8 9 [source.crates-io] registry = &#34;https://github.com/rust-lang/crates.io-index&#34; replace-with = &#39;ustc&#39; [source.ustc] registry = &#34;git://mirrors.ustc.edu.cn/crates.io-index&#34; [target.x86_64-pc-windows-gnu] linker = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&#34; ar = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&#34; 或者在项目工程结构中，与 Cargo.toml 同级目录的 .……
             <p class="readmore"><a href="http://blog.lazy.icu/2022/01/08/rust-setup/">阅读全文</a></p>
         </div>
     </article>
@@ -171,9 +180,6 @@ windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unkn
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
-
-
-
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
@@ -183,7 +189,7 @@ windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unkn
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='http://blog.lazy.icu/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='http://blog.lazy.icu/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">

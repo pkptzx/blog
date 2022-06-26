@@ -13,7 +13,7 @@
       <pubDate>Sat, 19 Mar 2022 18:09:58 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2022/03/19/unknow/</guid>
-      <description>1 2  # linux 删除空文件夹 find -type d -empty -delete   </description>
+      <description> 1 2 # linux 删除空文件夹 find -type d -empty -delete </description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@
       
       <guid>http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/</guid>
       <description>rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
-1 2 3 4 5 6 7  pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release   生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
+1 2 3 4 5 6 7 pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release 生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
 Ubuntu: sudo apt install python3-dev
 centos8: yum/dnf install python38-devel
 这两个features不能同时存在,否则导致rust编译失败 &amp;ldquo;extension-module&amp;rdquo;,&amp;ldquo;auto-initialize&amp;rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
@@ -36,7 +36,7 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl</description>
       <pubDate>Thu, 10 Mar 2022 00:15:47 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  import requests import base64 import json from IPython.core.display import Image  # appKey ：2e35010c-a759-11eb-8dd8-7429af540200 # appSecret：632b36755e7963fbdb61b2529e410bc4 # http://api.yunshuck.com/api/captcha/simple-captcha # type:603 数字加字母组合验证码 # type:601 数字验证码 # type:604 数字计算验证码  headers ={} headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json&amp;#39; headers[&amp;#39;appKey&amp;#39;] = &amp;#39;8961d10c-aa79-11eb-942c-7429af540200&amp;#39; headers[&amp;#39;appSecret&amp;#39;] = &amp;#39;baec542e97c499f75c419ea935079d00&amp;#39; headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json&amp;#39; rst_code = 0 while(rst_code==0):  response = requests.</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 import requests import base64 import json from IPython.core.display import Image # appKey ：2e35010c-a759-11eb-8dd8-7429af540200 # appSecret：632b36755e7963fbdb61b2529e410bc4 # http://api.yunshuck.com/api/captcha/simple-captcha # type:603 数字加字母组合验证码 # type:601 数字验证码 # type:604 数字计算验证码 headers ={} headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json&amp;#39; headers[&amp;#39;appKey&amp;#39;] = &amp;#39;8961d10c-aa79-11eb-942c-7429af540200&amp;#39; headers[&amp;#39;appSecret&amp;#39;] = &amp;#39;baec542e97c499f75c419ea935079d00&amp;#39; headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json&amp;#39; rst_code = 0 while(rst_code==0): response = requests.</description>
     </item>
     
     <item>
@@ -45,11 +45,20 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl</description>
       <pubDate>Sat, 08 Jan 2022 08:23:22 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2022/01/08/rust-setup/</guid>
-      <description>rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意. CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
-rustup target list rustup target add x86_64-pc-windows-gnu
-windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unknown-linux-musl ~/.cargo/config添加: [target.x86_64-unknown-linux-musl] linker = &amp;ldquo;rust-lld&amp;rdquo; 编译: cargo build &amp;ndash;target x86_64-unknown-linux-musl &amp;ndash;release
+      <description>rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.
+CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO
+RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
+rustup target list
+rustup target add x86_64-pc-windows-gnu
+windows中编译成linux可执行文件:
+先添加或安装工具链:x86_64-unknown-linux-musl
+~/.cargo/config添加:
+[target.x86_64-unknown-linux-musl]
+linker = &amp;ldquo;rust-lld&amp;rdquo;
+编译:
+cargo build --target x86_64-unknown-linux-musl --release
 国内源 ~/.cargo/config添加:
-1 2 3 4 5 6 7 8 9  [source.crates-io] registry = &amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34; replace-with = &amp;#39;ustc&amp;#39; [source.ustc] registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34;  [target.x86_64-pc-windows-gnu] linker = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&amp;#34; ar = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&amp;#34;    或者在项目工程结构中，与 Cargo.</description>
+1 2 3 4 5 6 7 8 9 [source.crates-io] registry = &amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34; replace-with = &amp;#39;ustc&amp;#39; [source.ustc] registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34; [target.x86_64-pc-windows-gnu] linker = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&amp;#34; ar = &amp;#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&amp;#34; 或者在项目工程结构中，与 Cargo.toml 同级目录的 .</description>
     </item>
     
     <item>
@@ -72,7 +81,7 @@ fdisk /dev/sda
 输入w保存分区信息
 重启
 初始化分区加入卷组
-#查看卷组信息 vgdisplay #初始化创建的卷组 pvcreate /dev/sda3 #查看卷组信息,记住卷组名称 vgdisplay #将初始化的分区加入到虚拟卷组 vgextend VolGroup /dev/sda3 #扩展逻辑卷的大小,使用df -lh查看逻辑卷名称 lvextend -L +20G /dev/mapper/VolGroup-lv_root #查看文件系统格式 cat /etc/fstab #扩容重新加载逻辑卷 xfs_growfs /dev/mapper/centos-home #查看修改后的容量 df -lh  </description>
+#查看卷组信息 vgdisplay #初始化创建的卷组 pvcreate /dev/sda3 #查看卷组信息,记住卷组名称 vgdisplay #将初始化的分区加入到虚拟卷组 vgextend VolGroup /dev/sda3 #扩展逻辑卷的大小,使用df -lh查看逻辑卷名称 lvextend -L +20G /dev/mapper/VolGroup-lv_root #查看文件系统格式 cat /etc/fstab #扩容重新加载逻辑卷 xfs_growfs /dev/mapper/centos-home #查看修改后的容量 df -lh </description>
     </item>
     
     <item>
@@ -85,10 +94,10 @@ fdisk /dev/sda
 Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp;amp; Linux, 在Terminal, 运行 source activate myenv 安装ipykernel：conda install ipykernel 法二： 在任何环境下都可以直接运行conda install -n myenv ipykernel为myenv安装ipykernel
 第二步：将环境写入notebook的kernel中 首先要保证在当前虚拟环境下，进入虚拟环境的过程如第一步的法一。 运行python -m ipykernel install &amp;ndash;user &amp;ndash;name=myenv 将环境写入notebook的kernel中
 生成配置文件:
-1  jupyter notebook --generate-config   生成密码
+1 jupyter notebook --generate-config 生成密码
 输入ipython后
-1 2 3  from notebook.auth import passwd  passwd()   修改配置文件
-1 2 3 4 5 6 7  c.NotebookApp.ip=&amp;#39;*&amp;#39; c.NotebookApp.notebook_dir = &amp;#39;/home/ozh/share&amp;#39;#共享目录 c.</description>
+1 2 3 from notebook.auth import passwd passwd() 修改配置文件
+1 2 3 4 5 6 7 c.NotebookApp.ip=&amp;#39;*&amp;#39; c.NotebookApp.notebook_dir = &amp;#39;/home/ozh/share&amp;#39;#共享目录 c.NotebookApp.password = u&amp;#39;sha1:5df252f58b7f:bf65d53125bb36c085162b3780377f66d73972d1&amp;#39; #填写刚刚生成的密文 c.NotebookApp.open_browser = False # 禁止notebook启动时自动打开浏览器(在linux服务器一般都是ssh命令行访问，没有图形界面的。所以，启动也没啥用) c.</description>
     </item>
     
     <item>
@@ -98,9 +107,9 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp;amp; Linux, 在Te
       
       <guid>http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/</guid>
       <description>文件夹批量改名&amp;amp;批量解压 将2020xxxx批量修改为xxxx
-1 2 3 4 5 6 7 8 9  for f in ls /root/testdata1/data/OB/2020  do  if test -f $f  then  echo $f &amp;#34;is file&amp;#34;  else  mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020}  fi done   win批量解压sz
+1 2 3 4 5 6 7 8 9 for f in ls /root/testdata1/data/OB/2020 do if test -f $f then echo $f &amp;#34;is file&amp;#34; else mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020} fi done win批量解压sz
 @echo off set path=D:\Program Files\7-Zip;%path% cd L2-shenzhen\2020 for /d %%i in () do ( echo %%i 7z e %%i*trade.7z.001 -o..\%%i\ ) pause win批量解压OB
-@echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.</description>
+@echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.7z) do ( echo %%i 7z x %%i *\SZ000725 *\SZ002475 *\SZ300185 *\SZ300059 *\SZ300433 *\SZ002241 *\SZ002549 *\SZ002797 *\SZ123048 *\SZ000100 -y ) pause </description>
     </item>
     
     <item>
@@ -111,7 +120,7 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp;amp; Linux, 在Te
       <guid>http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/</guid>
       <description>Anaconda &amp;amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。
 各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config --set show_channel_urls yes 生成该文件之后再修改。
-channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud  即可添加 Anaconda Python 免费仓库。
+channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud 即可添加 Anaconda Python 免费仓库。
 运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索引。
 运行 conda create -n myenv numpy 测试一下吧。
 #创建python3.6环境,名称为python3.6,可按照实际环境名称修改 conda create -n python3.6 python=3.6 #移除环境 conda remove -n py3 --all #进入指定的环境 conda activate python3.</description>
@@ -124,7 +133,7 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
       
       <guid>http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/</guid>
       <description>在解压前获取文件解压大小,主要为了不解压获取解压后的文件大小,计算解压后的磁盘占用量
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;net.sf.sevenzipjbinding&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;sevenzipjbinding&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;16.02-2.01&amp;lt;/version&amp;gt;  &amp;lt;/dependency&amp;gt;  &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;net.sf.sevenzipjbinding&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;sevenzipjbinding-all-platforms&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;16.02-2.01&amp;lt;/version&amp;gt;  &amp;lt;/dependency&amp;gt;  &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.tukaani&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;xz&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;1.9&amp;lt;/version&amp;gt;  &amp;lt;/dependency&amp;gt;  &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.apache.commons&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;commons-compress&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;1.21&amp;lt;/version&amp;gt;  &amp;lt;/dependency&amp;gt;  &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;cn.hutool&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;hutool-all&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;5.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.sf.sevenzipjbinding&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;sevenzipjbinding&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;16.02-2.01&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;net.sf.sevenzipjbinding&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;sevenzipjbinding-all-platforms&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;16.02-2.01&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.tukaani&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;xz&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.9&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.commons&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;commons-compress&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.21&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.hutool&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;hutool-all&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.6.3&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 import cn.</description>
     </item>
     
     <item>
@@ -133,7 +142,7 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
       <pubDate>Fri, 19 Mar 2021 15:29:12 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2021/03/19/svg-convert-png/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11  &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.apache.xmlgraphics&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;xmlgraphics-commons&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;2.6&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.apache.xmlgraphics&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;batik-all&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;1.14&amp;lt;/version&amp;gt;  &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt; &amp;lt;/dependency&amp;gt;   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58  import java.</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.xmlgraphics&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;xmlgraphics-commons&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.xmlgraphics&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;batik-all&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.14&amp;lt;/version&amp;gt; &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt; &amp;lt;/dependency&amp;gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 import java.</description>
     </item>
     
     <item>
@@ -175,7 +184,7 @@ git submodule update --recursive --remote --merge --force </description>
       
       <guid>http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/</guid>
       <description>项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
- 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。  1 2 3 4  @DependsOn({&amp;#34;flyway&amp;#34;, &amp;#34;flywayInitializer&amp;#34;}) @Component public class UserDao { }   继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。  1 2 3 4 5 6 7 8 9 10 11 12 13  @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy {    @Override  public void migrate(Flyway flyway) {  log.info(&amp;#34;before flyway migration...&amp;#34;);  flyway.migrate();  log.info(&amp;#34;after flyway migration...&amp;#34;);  }  }   </description>
+使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。 1 2 3 4 @DependsOn({&amp;#34;flyway&amp;#34;, &amp;#34;flywayInitializer&amp;#34;}) @Component public class UserDao { } 继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。 1 2 3 4 5 6 7 8 9 10 11 12 13 @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&amp;#34;before flyway migration...&amp;#34;); flyway.migrate(); log.info(&amp;#34;after flyway migration...&amp;#34;); } } </description>
     </item>
     
     <item>
@@ -185,7 +194,7 @@ git submodule update --recursive --remote --merge --force </description>
       
       <guid>http://blog.lazy.icu/2019/08/13/java8newdate/</guid>
       <description>Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。
-LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14  // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.</description>
+LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.</description>
     </item>
     
     <item>
@@ -211,7 +220,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
       <pubDate>Thu, 06 Dec 2018 16:22:22 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/</guid>
-      <description>Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5  $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local   启动 Docker的时候，用 &amp;ndash;network 参数，可以指定网络类型 1  docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash   bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了  none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP  host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。  创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下  1 2 3  docker run -itd --net bridge --ip 172.</description>
+      <description>Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5 $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local 启动 Docker的时候，用 &amp;ndash;network 参数，可以指定网络类型 1 docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了 none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。 创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下 1 2 3 docker run -itd --net bridge --ip 172.17.0.10 centos:latest /bin/bash 6eb1f228cf308d1c60db30093c126acbfd0cb21d76cb448c678bab0f1a7c0df6 docker: Error response from daemon: User specified IP address is supported on user defined networks only.</description>
     </item>
     
     <item>
@@ -222,7 +231,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
       <guid>http://blog.lazy.icu/2018/11/30/</guid>
       <description>Windows远程“要求的函数不受支持”解决办法 解决方法：
 开启组策略中远程桌面链接安全层。 1、开始-运行-gpedit.msc，进入组策略编辑器； 2、找到左侧边栏计算机配置-管理模板-Windows组件-远程桌面服务-远程桌面会话主机-安全项； 3、修改以下两项：
-A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP B,要求使用网络级别的身份验证对远程连接的用户进行身份验证，改为禁用；  4、关闭组策略编辑器，重启计算机。</description>
+A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP B,要求使用网络级别的身份验证对远程连接的用户进行身份验证，改为禁用； 4、关闭组策略编辑器，重启计算机。</description>
     </item>
     
     <item>
@@ -236,10 +245,10 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
 测试开头空格
 测试换行
 测试表格
-   你好 好 好的 嗯     ha a a a   ha a a a   ha a a a   ha a a a    测试编号(结尾要有空行)
- List item 你好 谁  测试小结
- a asdf fdsa fdsa fdsa  测试代码高亮
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package cn.</description>
+你好 好 好的 嗯 ha a a a ha a a a ha a a a ha a a a 测试编号(结尾要有空行)
+List item 你好 谁 测试小结
+a asdf fdsa fdsa fdsa 测试代码高亮
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 package cn.xdemo; import java.util.Date; /** * 测试 * * */ public class IOTCard { public static void main(String[] args) { System.</description>
     </item>
     
     <item>

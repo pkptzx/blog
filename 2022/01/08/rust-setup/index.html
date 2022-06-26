@@ -53,7 +53,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://blog.lazy.icu">首页</a>
+                    <a class="current" href="http://blog.lazy.icu">首页</a>
                     
                     <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
                     
@@ -100,18 +100,18 @@
         <div class="post-content">
             <h1 id="rust-安装与环境设置">rust 安装与环境设置</h1>
 <h2 id="配置环境变量">配置环境变量</h2>
-<p>新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.
-CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO
+<p>新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.<br>
+CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO<br>
 RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP</p>
-<p>rustup target list
-rustup target add x86_64-pc-windows-gnu</p>
-<p>windows中编译成linux可执行文件:
-先添加或安装工具链:x86_64-unknown-linux-musl
-~/.cargo/config添加:
-[target.x86_64-unknown-linux-musl]
-linker = &ldquo;rust-lld&rdquo;
-编译:
-cargo build &ndash;target x86_64-unknown-linux-musl &ndash;release</p>
+<p><code>rustup target list</code><br>
+<code>rustup target add x86_64-pc-windows-gnu</code></p>
+<p>windows中编译成linux可执行文件:<br>
+先添加或安装工具链:x86_64-unknown-linux-musl<br>
+~/.cargo/config添加:<br>
+[target.x86_64-unknown-linux-musl]<br>
+linker = &ldquo;rust-lld&rdquo;<br>
+编译:<br>
+<code>cargo build --target x86_64-unknown-linux-musl --release</code></p>
 <h2 id="国内源">国内源</h2>
 <p>~/.cargo/config添加:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -143,14 +143,14 @@ cargo build &ndash;target x86_64-unknown-linux-musl &ndash;release</p>
 </ul>
 <p>cargo build &ndash;target x86_64-pc-windows-gnu</p>
 <p>cargo run &ndash;release &ndash;target x86_64-pc-windows-gnu</p>
-<p>查看当前默认工具链
-rustup default
-修改为gnu
-rustup default stable-gnu
-修改为msvc
-rustup default stable-msvc</p>
-<p>rustup toolchain install stable-x86_64-pc-windows-gnu
-rustup default stable-x86_64-pc-windows-gnu</p>
+<p>查看当前默认工具链<br>
+<code>rustup default</code><br>
+修改为gnu<br>
+<code>rustup default stable-gnu</code><br>
+修改为msvc<br>
+<code>rustup default stable-msvc</code></p>
+<p><code>rustup toolchain install stable-x86_64-pc-windows-gnu</code><br>
+<code>rustup default stable-x86_64-pc-windows-gnu</code></p>
 <h2 id="升级">升级</h2>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -169,12 +169,12 @@ rustup default stable-x86_64-pc-windows-gnu</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="cargo-常用命令">cargo 常用命令</h2>
-<p>创建一个新项目,默认是二进制程序,可以不写&ndash;bin,如果是创建库项目则&ndash;lib
-默认还会初始化git存储库,如果不要则&ndash;vcs none
-<code>cargo new hello_world --bin</code>
-编译release版本
-<code>cargo build --release</code>
-编译运行
+<p>创建一个新项目,默认是二进制程序,可以不写&ndash;bin,如果是创建库项目则&ndash;lib<br>
+默认还会初始化git存储库,如果不要则&ndash;vcs none<br>
+<code>cargo new hello_world --bin</code><br>
+编译release版本<br>
+<code>cargo build --release</code><br>
+编译运行<br>
 <code>cargo run</code></p>
 <h2 id="国内源参考">国内源参考:</h2>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -233,8 +233,8 @@ rustup default stable-x86_64-pc-windows-gnu</p>
 </div>
 </div><h2 id="strip减小文件体积">strip减小文件体积</h2>
 <h2 id="rust相关参考">rust相关参考</h2>
-<p>cargo: <a href="https://cargo.budshome.com/guide/dependencies.html">https://cargo.budshome.com/guide/dependencies.html</a>
-Rust实践指南: <a href="https://rust-guide.budshome.com/">https://rust-guide.budshome.com/</a>
+<p>cargo: <a href="https://cargo.budshome.com/guide/dependencies.html">https://cargo.budshome.com/guide/dependencies.html</a><br>
+Rust实践指南: <a href="https://rust-guide.budshome.com/">https://rust-guide.budshome.com/</a><br>
 rust-in-databend: <a href="https://github.com/wubx/rust-in-databend">https://github.com/wubx/rust-in-databend</a></p>
 
         </div>
@@ -270,6 +270,9 @@ rust-in-databend: <a href="https://github.com/wubx/rust-in-databend">https://git
       </script>
     </div>
     
+    
+    
+
 </div>
 
                     <footer id="footer">
@@ -295,6 +298,7 @@ rust-in-databend: <a href="https://github.com/wubx/rust-in-databend">https://git
 
 
     
+    
     <script type="text/javascript">
         window.MathJax = {
             tex2jax: {
@@ -303,13 +307,10 @@ rust-in-databend: <a href="https://github.com/wubx/rust-in-databend">https://git
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
-
-
-
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
@@ -319,7 +320,7 @@ rust-in-databend: <a href="https://github.com/wubx/rust-in-databend">https://git
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='http://blog.lazy.icu/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='http://blog.lazy.icu/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">

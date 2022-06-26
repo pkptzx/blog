@@ -13,7 +13,7 @@
       <pubDate>Sat, 19 Mar 2022 18:09:58 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2022/03/19/unknow/</guid>
-      <description>1 2  # linux 删除空文件夹 find -type d -empty -delete   </description>
+      <description> 1 2 # linux 删除空文件夹 find -type d -empty -delete </description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@ fdisk /dev/sda
 输入w保存分区信息
 重启
 初始化分区加入卷组
-#查看卷组信息 vgdisplay #初始化创建的卷组 pvcreate /dev/sda3 #查看卷组信息,记住卷组名称 vgdisplay #将初始化的分区加入到虚拟卷组 vgextend VolGroup /dev/sda3 #扩展逻辑卷的大小,使用df -lh查看逻辑卷名称 lvextend -L +20G /dev/mapper/VolGroup-lv_root #查看文件系统格式 cat /etc/fstab #扩容重新加载逻辑卷 xfs_growfs /dev/mapper/centos-home #查看修改后的容量 df -lh  </description>
+#查看卷组信息 vgdisplay #初始化创建的卷组 pvcreate /dev/sda3 #查看卷组信息,记住卷组名称 vgdisplay #将初始化的分区加入到虚拟卷组 vgextend VolGroup /dev/sda3 #扩展逻辑卷的大小,使用df -lh查看逻辑卷名称 lvextend -L +20G /dev/mapper/VolGroup-lv_root #查看文件系统格式 cat /etc/fstab #扩容重新加载逻辑卷 xfs_growfs /dev/mapper/centos-home #查看修改后的容量 df -lh </description>
     </item>
     
     <item>
@@ -46,9 +46,9 @@ fdisk /dev/sda
       
       <guid>http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/</guid>
       <description>文件夹批量改名&amp;amp;批量解压 将2020xxxx批量修改为xxxx
-1 2 3 4 5 6 7 8 9  for f in ls /root/testdata1/data/OB/2020  do  if test -f $f  then  echo $f &amp;#34;is file&amp;#34;  else  mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020}  fi done   win批量解压sz
+1 2 3 4 5 6 7 8 9 for f in ls /root/testdata1/data/OB/2020 do if test -f $f then echo $f &amp;#34;is file&amp;#34; else mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020} fi done win批量解压sz
 @echo off set path=D:\Program Files\7-Zip;%path% cd L2-shenzhen\2020 for /d %%i in () do ( echo %%i 7z e %%i*trade.7z.001 -o..\%%i\ ) pause win批量解压OB
-@echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.</description>
+@echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.7z) do ( echo %%i 7z x %%i *\SZ000725 *\SZ002475 *\SZ300185 *\SZ300059 *\SZ300433 *\SZ002241 *\SZ002549 *\SZ002797 *\SZ123048 *\SZ000100 -y ) pause </description>
     </item>
     
   </channel>
