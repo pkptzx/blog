@@ -13,23 +13,23 @@ url: "2022/01/08/rust-setup"
 
 # rust 安装与环境设置
 ## 配置环境变量
-新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.
-CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO
-RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
+新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.  
+CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO   
+RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP  
 
-rustup target list
-rustup target add x86_64-pc-windows-gnu
+```rustup target list```  
+```rustup target add x86_64-pc-windows-gnu```  
 
-windows中编译成linux可执行文件:
-先添加或安装工具链:x86_64-unknown-linux-musl
-~/.cargo/config添加:
-[target.x86_64-unknown-linux-musl]
-linker = "rust-lld"
-编译:
-cargo build --target x86_64-unknown-linux-musl --release
+windows中编译成linux可执行文件:  
+先添加或安装工具链:x86_64-unknown-linux-musl   
+~/.cargo/config添加:   
+[target.x86_64-unknown-linux-musl]  
+linker = "rust-lld"  
+编译:  
+```cargo build --target x86_64-unknown-linux-musl --release```
 
 ## 国内源
-~/.cargo/config添加:
+~/.cargo/config添加:  
 ```ini
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
@@ -47,15 +47,15 @@ cargo build --target x86_64-pc-windows-gnu
 
 cargo run --release --target x86_64-pc-windows-gnu
 
-查看当前默认工具链
-rustup default
-修改为gnu
-rustup default stable-gnu
-修改为msvc
-rustup default stable-msvc
+查看当前默认工具链  
+```rustup default```  
+修改为gnu  
+```rustup default stable-gnu```  
+修改为msvc  
+```rustup default stable-msvc```  
 
-rustup toolchain install stable-x86_64-pc-windows-gnu
-rustup default stable-x86_64-pc-windows-gnu
+```rustup toolchain install stable-x86_64-pc-windows-gnu```  
+```rustup default stable-x86_64-pc-windows-gnu```
 
 ## 升级
 ```shell
@@ -66,13 +66,13 @@ rustup update
 ```
 
 ## cargo 常用命令
-创建一个新项目,默认是二进制程序,可以不写--bin,如果是创建库项目则--lib
-默认还会初始化git存储库,如果不要则--vcs none
-`cargo new hello_world --bin`
-编译release版本
-`cargo build --release`
-编译运行
-`cargo run`
+创建一个新项目,默认是二进制程序,可以不写--bin,如果是创建库项目则--lib  
+默认还会初始化git存储库,如果不要则--vcs none  
+`cargo new hello_world --bin`  
+编译release版本  
+`cargo build --release`  
+编译运行  
+`cargo run`  
 
 ## 国内源参考:
 ```ini
@@ -106,6 +106,6 @@ registry = "https://code.aliyun.com/rustcc/crates.io-index.git"
 ## strip减小文件体积
 
 ## rust相关参考
-cargo: https://cargo.budshome.com/guide/dependencies.html
-Rust实践指南: https://rust-guide.budshome.com/
+cargo: https://cargo.budshome.com/guide/dependencies.html  
+Rust实践指南: https://rust-guide.budshome.com/  
 rust-in-databend: https://github.com/wubx/rust-in-databend
