@@ -6,11 +6,11 @@
     <description>Recent content in chrome解密 on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 13 Aug 2019 20:09:58 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Aug 2022 05:18:58 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python解密Chrome的Cookies文件</title>
       <link>http://blog.lazy.icu/2022/08/03/chrome-cookies-crack/</link>
-      <pubDate>Tue, 13 Aug 2019 20:09:58 +0800</pubDate>
+      <pubDate>Wed, 03 Aug 2022 05:18:58 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2022/08/03/chrome-cookies-crack/</guid>
       <description>桌面程序或爬虫有时候很需要免登陆获取cookies,想着应用怎么能直接读取到cookie文件,查了后发现Chrome的Cookies文件是加密的.
