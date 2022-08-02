@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Python解密Chrome的Cookies文件 | 码魂</title>
+    <meta property="og:title" content="Python解密Chrome的Cookies文件 - 码魂">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-08-13T20:09:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-08-13T20:09:58&#43;08:00'>
+        
+    <meta name="Keywords" content="[python chrome 解密]">
+    <meta name="description" content="Python解密Chrome的Cookies文件">
+        <meta name="author" content="码魂">
+        
+    <meta property="og:url" content="http://blog.lazy.icu/2022/08/03/chrome-cookies-crack/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://blog.lazy.icu">
+                        码魂
+                    </a>
+                
+                <p class="description">专注于Java、移动互联网、移动支付、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://blog.lazy.icu">首页</a>
+                    
+                    <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
+                    
+                    <a  href="http://blog.lazy.icu/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://blog.lazy.icu/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Python解密Chrome的Cookies文件</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年8月13日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/python'>python</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>桌面程序或爬虫有时候很需要免登陆获取cookies,想着应用怎么能直接读取到cookie文件,查了后发现Chrome的Cookies文件是加密的.<br>
+按照网上找了半天Cookies的路径都不对,新版本位置也变了,Cookies是在Network下.<br>
+原理是直接读取chrome保存<code>Cookies</code>的sqlite数据库和<code>Local State</code>文件中存放的秘钥,然后解析出明文。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># -*- coding:&#39;utf-8&#39; -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">time</span><span style="color:#000;font-weight:bold">,</span><span style="color:#555">traceback</span><span style="color:#000;font-weight:bold">,</span><span style="color:#555">sqlite3</span><span style="color:#000;font-weight:bold">,</span><span style="color:#555">os</span><span style="color:#000;font-weight:bold">,</span><span style="color:#555">json</span><span style="color:#000;font-weight:bold">,</span><span style="color:#555">base64</span><span style="color:#000;font-weight:bold">,</span><span style="color:#555">sys</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">cryptography.hazmat.backends</span> <span style="color:#000;font-weight:bold">import</span> default_backend
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">cryptography.hazmat.primitives.ciphers</span> <span style="color:#000;font-weight:bold">import</span> Cipher
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">cryptography.hazmat.primitives.ciphers.algorithms</span> <span style="color:#000;font-weight:bold">import</span> AES
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">cryptography.hazmat.primitives.ciphers.modes</span> <span style="color:#000;font-weight:bold">import</span> CBC
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">cryptography.hazmat.primitives.hashes</span> <span style="color:#000;font-weight:bold">import</span> SHA1
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">cryptography.hazmat.primitives.kdf.pbkdf2</span> <span style="color:#000;font-weight:bold">import</span> PBKDF2HMAC
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">cryptography.hazmat.primitives.ciphers.aead</span> <span style="color:#000;font-weight:bold">import</span> AESGCM
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># pip install cryptography</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># pip install pypiwin32 (需要管理员权限)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">decryptString</span>(key,data):
+</span></span><span style="display:flex;"><span>    iv <span style="color:#000;font-weight:bold">=</span> data[<span style="color:#099">3</span>:<span style="color:#099">15</span>]
+</span></span><span style="display:flex;"><span>    cipherbytes <span style="color:#000;font-weight:bold">=</span> data[<span style="color:#099">15</span>:]
+</span></span><span style="display:flex;"><span>    aesgcm<span style="color:#000;font-weight:bold">=</span>AESGCM(key)
+</span></span><span style="display:flex;"><span>    plainbytes<span style="color:#000;font-weight:bold">=</span>aesgcm<span style="color:#000;font-weight:bold">.</span>decrypt(iv, cipherbytes, <span style="color:#000;font-weight:bold">None</span>)
+</span></span><span style="display:flex;"><span>    plaintext<span style="color:#000;font-weight:bold">=</span>plainbytes<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> plaintext
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">getKey</span>():
+</span></span><span style="display:flex;"><span>    LocalState <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">if</span> (os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>exists(os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome\User Data\Local State&#34;</span>)):
+</span></span><span style="display:flex;"><span>      LocalState  <span style="color:#000;font-weight:bold">=</span> os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome\User Data\Local State&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">elif</span> (os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>exists(os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome Dev\User Data\Local State&#34;</span>)):
+</span></span><span style="display:flex;"><span>      LocalState  <span style="color:#000;font-weight:bold">=</span> os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome Dev\User Data\Local State&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">raise</span> <span style="color:#900;font-weight:bold">Exception</span>(<span style="color:#d14">&#39;not found Cookie file!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(LocalState, <span style="color:#d14">&#39;r&#39;</span>, encoding<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;utf-8&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
+</span></span><span style="display:flex;"><span>        base64_encrypted_key <span style="color:#000;font-weight:bold">=</span> json<span style="color:#000;font-weight:bold">.</span>load(f)[<span style="color:#d14">&#39;os_crypt&#39;</span>][<span style="color:#d14">&#39;encrypted_key&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#998;font-style:italic"># from win32crypt import CryptUnprotectData</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">import</span> <span style="color:#555">win32crypt</span>
+</span></span><span style="display:flex;"><span>    encrypted_key_with_header<span style="color:#000;font-weight:bold">=</span>base64<span style="color:#000;font-weight:bold">.</span>b64decode(base64_encrypted_key)
+</span></span><span style="display:flex;"><span>    encrypted_key<span style="color:#000;font-weight:bold">=</span>encrypted_key_with_header[<span style="color:#099">5</span>:] 
+</span></span><span style="display:flex;"><span>    key <span style="color:#000;font-weight:bold">=</span> win32crypt<span style="color:#000;font-weight:bold">.</span>CryptUnprotectData(encrypted_key,<span style="color:#000;font-weight:bold">None</span>,<span style="color:#000;font-weight:bold">None</span>,<span style="color:#000;font-weight:bold">None</span>,<span style="color:#099">0</span>)[<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#998;font-style:italic"># mykey = base64.b64encode(key)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> key
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">getChromeCookie</span>(hostsUrl):
+</span></span><span style="display:flex;"><span>    cookiepath <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">if</span> (os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>exists(os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome\User Data\Default\Network\Cookies&#34;</span>)):
+</span></span><span style="display:flex;"><span>      cookiepath  <span style="color:#000;font-weight:bold">=</span> os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome\User Data\Default\Network\Cookies&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">elif</span> (os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>exists(os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome\User Data\Default\Cookies&#34;</span>)):
+</span></span><span style="display:flex;"><span>      cookiepath  <span style="color:#000;font-weight:bold">=</span> os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome\User Data\Default\Cookies&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">elif</span> (os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>exists(os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome Dev\User Data\Default\Cookies&#34;</span>)):
+</span></span><span style="display:flex;"><span>      cookiepath  <span style="color:#000;font-weight:bold">=</span> os<span style="color:#000;font-weight:bold">.</span>environ[<span style="color:#d14">&#39;LOCALAPPDATA&#39;</span>]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">r</span><span style="color:#d14">&#34;\Google\Chrome Dev\User Data\Default\Cookies&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">else</span>: 
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">raise</span> <span style="color:#900;font-weight:bold">Exception</span>(<span style="color:#d14">&#39;not found Cookie file!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sql <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">f</span><span style="color:#d14">&#34;select name,encrypted_value from cookies where host_key = &#39;</span><span style="color:#d14">{</span>hostsUrl<span style="color:#d14">}</span><span style="color:#d14">&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>        conn <span style="color:#000;font-weight:bold">=</span> sqlite3<span style="color:#000;font-weight:bold">.</span>connect(cookiepath)
+</span></span><span style="display:flex;"><span>        conn<span style="color:#000;font-weight:bold">.</span>text_factory <span style="color:#000;font-weight:bold">=</span>  <span style="color:#0086b3">bytes</span> 
+</span></span><span style="display:flex;"><span>        res<span style="color:#000;font-weight:bold">=</span>conn<span style="color:#000;font-weight:bold">.</span>execute(sql)<span style="color:#000;font-weight:bold">.</span>fetchall()
+</span></span><span style="display:flex;"><span>        conn<span style="color:#000;font-weight:bold">.</span>close()
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">except</span> <span style="color:#900;font-weight:bold">Exception</span> <span style="color:#000;font-weight:bold">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#0086b3">print</span>(e)
+</span></span><span style="display:flex;"><span>    key <span style="color:#000;font-weight:bold">=</span> getKey()
+</span></span><span style="display:flex;"><span>    <span style="color:#998;font-style:italic"># row = res.pop()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#998;font-style:italic"># cookieList.append( f&#39;{str(row[0],encoding = &#34;utf-8&#34;)}={decryptString(key, row[1])}&#39;)</span>
+</span></span><span style="display:flex;"><span>    cookies <span style="color:#000;font-weight:bold">=</span> {}
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> res:
+</span></span><span style="display:flex;"><span>        cookies[item[<span style="color:#099">0</span>]<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#34;utf-8&#34;</span>)] <span style="color:#000;font-weight:bold">=</span> decryptString(key, item[<span style="color:#099">1</span>]) 
+</span></span><span style="display:flex;"><span>    <span style="color:#998;font-style:italic"># print(cookies)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> cookies
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">clean</span>(decrypted: <span style="color:#0086b3">bytes</span>) <span style="color:#000;font-weight:bold">-&gt;</span> <span style="color:#0086b3">str</span>:
+</span></span><span style="display:flex;"><span>    last <span style="color:#000;font-weight:bold">=</span> decrypted[<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">if</span> <span style="color:#0086b3">isinstance</span>(last, <span style="color:#0086b3">int</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">return</span> decrypted[:<span style="color:#000;font-weight:bold">-</span>last]<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#34;utf8&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> decrypted[: <span style="color:#000;font-weight:bold">-</span><span style="color:#0086b3">ord</span>(last)]<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#34;utf8&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">chrome_decrypt</span>(encrypted_value: <span style="color:#0086b3">bytes</span>, key: <span style="color:#0086b3">bytes</span>, init_vector: <span style="color:#0086b3">bytes</span>):
+</span></span><span style="display:flex;"><span>  encrypted_value <span style="color:#000;font-weight:bold">=</span> encrypted_value[<span style="color:#099">3</span>:]
+</span></span><span style="display:flex;"><span>  cipher <span style="color:#000;font-weight:bold">=</span> Cipher(algorithm<span style="color:#000;font-weight:bold">=</span>AES(key), mode<span style="color:#000;font-weight:bold">=</span>CBC(init_vector), backend<span style="color:#000;font-weight:bold">=</span>default_backend())
+</span></span><span style="display:flex;"><span>  decryptor <span style="color:#000;font-weight:bold">=</span> cipher<span style="color:#000;font-weight:bold">.</span>decryptor()
+</span></span><span style="display:flex;"><span>  decrypted <span style="color:#000;font-weight:bold">=</span> decryptor<span style="color:#000;font-weight:bold">.</span>update(encrypted_value) <span style="color:#000;font-weight:bold">+</span> decryptor<span style="color:#000;font-weight:bold">.</span>finalize()
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> clean(decrypted)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">chrome_cookies</span>(url: <span style="color:#0086b3">str</span>, browser: <span style="color:#0086b3">str</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Chrome&#34;</span>,):
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">import</span> <span style="color:#555">keyring</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    file_path <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">if</span> (os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>exists(os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>expanduser(<span style="color:#d14">&#39;~/Library/Application Support/Google/Chrome/Default/Extension Cookies&#39;</span>))):
+</span></span><span style="display:flex;"><span>      file_path  <span style="color:#000;font-weight:bold">=</span> os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>expanduser(<span style="color:#d14">&#39;~/Library/Application Support/Google/Chrome/Default/Extension Cookies&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">elif</span> (os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>exists(os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>expanduser(<span style="color:#d14">&#39;~/Library/Application Support/Chromium/Default/Cookies&#39;</span>))):
+</span></span><span style="display:flex;"><span>      file_path  <span style="color:#000;font-weight:bold">=</span> os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>expanduser(<span style="color:#d14">&#39;~/Library/Application Support/Chromium/Default/Cookies&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">elif</span> (os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>exists(os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>expanduser(<span style="color:#d14">&#39;~/Library/Application Support/Google/Chrome Dev/Default/Cookies&#39;</span>))):
+</span></span><span style="display:flex;"><span>      file_path  <span style="color:#000;font-weight:bold">=</span> os<span style="color:#000;font-weight:bold">.</span>path<span style="color:#000;font-weight:bold">.</span>expanduser(<span style="color:#d14">&#39;~/Library/Application Support/Google/Chrome Dev/Default/Cookies&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">raise</span> <span style="color:#900;font-weight:bold">Exception</span>(<span style="color:#d14">&#39;not found Cookie file!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    config <span style="color:#000;font-weight:bold">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#d14">&#34;my_pass&#34;</span>: keyring<span style="color:#000;font-weight:bold">.</span>get_password(
+</span></span><span style="display:flex;"><span>            <span style="color:#d14">&#34;</span><span style="color:#d14">{}</span><span style="color:#d14"> Safe Storage&#34;</span><span style="color:#000;font-weight:bold">.</span>format(browser), browser
+</span></span><span style="display:flex;"><span>        ),
+</span></span><span style="display:flex;"><span>        <span style="color:#d14">&#34;iterations&#34;</span>: <span style="color:#099">1003</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#d14">&#34;cookie_file&#34;</span>: file_path,
+</span></span><span style="display:flex;"><span>        <span style="color:#d14">&#34;init_vector&#34;</span>: <span style="color:#d14">b</span><span style="color:#d14">&#34; &#34;</span> <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">16</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#d14">&#34;length&#34;</span>: <span style="color:#099">16</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#d14">&#34;salt&#34;</span>: <span style="color:#d14">b</span><span style="color:#d14">&#34;saltysalt&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">if</span> <span style="color:#0086b3">isinstance</span>(config[<span style="color:#d14">&#34;my_pass&#34;</span>], <span style="color:#0086b3">str</span>):
+</span></span><span style="display:flex;"><span>      config[<span style="color:#d14">&#34;my_pass&#34;</span>] <span style="color:#000;font-weight:bold">=</span> config[<span style="color:#d14">&#34;my_pass&#34;</span>]<span style="color:#000;font-weight:bold">.</span>encode(<span style="color:#d14">&#34;utf8&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    kdf <span style="color:#000;font-weight:bold">=</span> PBKDF2HMAC(
+</span></span><span style="display:flex;"><span>        algorithm<span style="color:#000;font-weight:bold">=</span>SHA1(),
+</span></span><span style="display:flex;"><span>        backend<span style="color:#000;font-weight:bold">=</span>default_backend(),
+</span></span><span style="display:flex;"><span>        iterations<span style="color:#000;font-weight:bold">=</span>config[<span style="color:#d14">&#34;iterations&#34;</span>],
+</span></span><span style="display:flex;"><span>        length<span style="color:#000;font-weight:bold">=</span>config[<span style="color:#d14">&#34;length&#34;</span>],
+</span></span><span style="display:flex;"><span>        salt<span style="color:#000;font-weight:bold">=</span>config[<span style="color:#d14">&#34;salt&#34;</span>],
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    enc_key <span style="color:#000;font-weight:bold">=</span> kdf<span style="color:#000;font-weight:bold">.</span>derive(config[<span style="color:#d14">&#34;my_pass&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>        conn <span style="color:#000;font-weight:bold">=</span> sqlite3<span style="color:#000;font-weight:bold">.</span>connect(config[<span style="color:#d14">&#34;cookie_file&#34;</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">except</span> sqlite3<span style="color:#000;font-weight:bold">.</span>OperationalError:
+</span></span><span style="display:flex;"><span>        <span style="color:#0086b3">print</span>(<span style="color:#d14">&#34;Unable to connect to cookie_file at: </span><span style="color:#d14">{}</span><span style="color:#d14">\n</span><span style="color:#d14">&#34;</span><span style="color:#000;font-weight:bold">.</span>format(config[<span style="color:#d14">&#34;cookie_file&#34;</span>]))
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">raise</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sql <span style="color:#000;font-weight:bold">=</span> (<span style="color:#d14">&#34;select name, encrypted_value from cookies where host_key like ?&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cookies <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> conn<span style="color:#000;font-weight:bold">.</span>execute(sql, (url,))<span style="color:#000;font-weight:bold">.</span>fetchall():
+</span></span><span style="display:flex;"><span>        cookies <span style="color:#000;font-weight:bold">=</span> chrome_decrypt(item[<span style="color:#099">1</span>], key<span style="color:#000;font-weight:bold">=</span>enc_key, init_vector<span style="color:#000;font-weight:bold">=</span>config[<span style="color:#d14">&#34;init_vector&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    conn<span style="color:#000;font-weight:bold">.</span>rollback()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> cookies
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">getCookie</span>(url):
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic"># mac</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">if</span> sys<span style="color:#000;font-weight:bold">.</span>platform <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;darwin&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> chrome_cookies(url)
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic"># windows</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">elif</span> sys<span style="color:#000;font-weight:bold">.</span>platform <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;win32&#39;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> getChromeCookie(url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0086b3">print</span>(json<span style="color:#000;font-weight:bold">.</span>dumps(getCookie(<span style="color:#d14">&#39;.bilibili.com&#39;</span>)))
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/chrome%E8%A7%A3%E5%AF%86'>chrome解密</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "pkptzx/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='http://blog.lazy.icu/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://blog.lazy.icu">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.lazy.icu/2022/03/19/unknow/" title="未整理">未整理</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)">rust和python交互pyo3(一)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别">python验证码在线识别</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" title="Rust 安装与环境设置">Rust 安装与环境设置</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容">虚拟机中Linux磁盘空间进行扩容</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境">Jupyter Notebook使用Anaconda虚拟环境</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压">文件夹批量改名&amp;批量解压</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像">Anaconda &amp; conda 配置镜像</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" title="获取7z压缩文件压缩前文件大小">获取7z压缩文件压缩前文件大小</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/" title="使用java将SVG图片格式转PNG图片格式">使用java将SVG图片格式转PNG图片格式</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/esxi/">esxi (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/git/">git (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/python/">python (5)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/vm/">VM (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E5%B0%8F%E4%B9%A6%E5%8C%A0/">小书匠 (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E7%89%A9%E8%81%94%E7%BD%91/">物联网 (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/">系统 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
+    
+    <a href="http://blog.lazy.icu/tags/conda/">conda</a>
+    
+    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
+    
+    <a href="http://blog.lazy.icu/tags/esxi/">esxi</a>
+    
+    <a href="http://blog.lazy.icu/tags/flyway/">flyway</a>
+    
+    <a href="http://blog.lazy.icu/tags/git/">git</a>
+    
+    <a href="http://blog.lazy.icu/tags/hugo/">hugo</a>
+    
+    <a href="http://blog.lazy.icu/tags/image/">image</a>
+    
+    <a href="http://blog.lazy.icu/tags/jar/">jar</a>
+    
+    <a href="http://blog.lazy.icu/tags/java/">java</a>
+    
+    <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
+    
+    <a href="http://blog.lazy.icu/tags/jupyter/">Jupyter</a>
+    
+    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
+    
+    <a href="http://blog.lazy.icu/tags/linux/">linux</a>
+    
+    <a href="http://blog.lazy.icu/tags/maven/">maven</a>
+    
+    <a href="http://blog.lazy.icu/tags/python/">python</a>
+    
+    <a href="http://blog.lazy.icu/tags/rust/">Rust</a>
+    
+    <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
+    
+    <a href="http://blog.lazy.icu/tags/vm/">VM</a>
+    
+    <a href="http://blog.lazy.icu/tags/zip/">zip</a>
+    
+    <a href="http://blog.lazy.icu/tags/%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B/">压缩解压</a>
+    
+    <a href="http://blog.lazy.icu/tags/%E7%89%A9%E8%81%94%E7%BD%91/">物联网</a>
+    
+    <a href="http://blog.lazy.icu/tags/%E7%B3%BB%E7%BB%9F/">系统</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="http://www.baidu.com" title="百度">百度</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://www.oschina.net" title="开源中国">开源中国</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
