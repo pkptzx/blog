@@ -83,7 +83,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/">maven导出依赖jar</a>
+                <a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" target="_blank">maven导出依赖jar</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -93,21 +93,21 @@
         <div class="post-meta meta-category">
             |
             
-            <a href='/categories/maven'>maven</a>
+            <a href='/categories/maven' target="_blank">maven</a>
             
         </div>
         
         <div class="post-content">
             在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来.
 mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime ……
-            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" target="_blank">阅读全文</a></p>
         </div>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/">java校验maven下载的jar文件</a>
+                <a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">java校验maven下载的jar文件</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -117,7 +117,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
         <div class="post-meta meta-category">
             |
             
-            <a href='/categories/java'>java</a>
+            <a href='/categories/java' target="_blank">java</a>
             
         </div>
         
@@ -131,7 +131,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
 真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
 不如就写个代码跑一下吧~
 public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &#34;F:/mvnlib&#34;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &#34;jar,pom&#34;); System.out.println(&#34;完毕&#34;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&#34;,&#34;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">阅读全文</a></p>
         </div>
     </article>
     
@@ -169,6 +169,8 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
@@ -191,43 +193,43 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 <ul class="widget-list">
     
     <li>
-        <a href="http://blog.lazy.icu/2022/08/03/chrome-cookies-crack/" title="Python解密Chrome的Cookies文件">Python解密Chrome的Cookies文件</a>
+        <a href="http://blog.lazy.icu/2022/09/28/rust-mod/" title="Rust中的mod(模块)使用的五种方式" target="_blank">Rust中的mod(模块)使用的五种方式</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2022/03/19/unknow/" title="未整理">未整理</a>
+        <a href="http://blog.lazy.icu/2022/08/03/chrome-cookies-crack/" title="Python解密Chrome的Cookies文件" target="_blank">Python解密Chrome的Cookies文件</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)">rust和python交互pyo3(一)</a>
+        <a href="http://blog.lazy.icu/2022/03/19/unknow/" title="未整理" target="_blank">未整理</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别">python验证码在线识别</a>
+        <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)" target="_blank">rust和python交互pyo3(一)</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" title="Rust 安装与环境设置">Rust 安装与环境设置</a>
+        <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别" target="_blank">python验证码在线识别</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容">虚拟机中Linux磁盘空间进行扩容</a>
+        <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" title="Rust 安装与环境设置" target="_blank">Rust 安装与环境设置</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境">Jupyter Notebook使用Anaconda虚拟环境</a>
+        <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容" target="_blank">虚拟机中Linux磁盘空间进行扩容</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压">文件夹批量改名&amp;批量解压</a>
+        <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境" target="_blank">Jupyter Notebook使用Anaconda虚拟环境</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像">Anaconda &amp; conda 配置镜像</a>
+        <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" title="获取7z压缩文件压缩前文件大小">获取7z压缩文件压缩前文件大小</a>
+        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
     </li>
     
 </ul>
@@ -261,7 +263,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (5)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (2)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (3)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
     

@@ -86,7 +86,9 @@
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/springboot'>springboot</a></span>
+            <span class="meta-category">
+                <a href='/categories/springboot' target="_blank">springboot</a>
+            </span>
             
         </div>
         
@@ -132,11 +134,11 @@
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/springboot'>springboot</a></li>
+                <li><a href='/tags/springboot' target="_blank">springboot</a></li>
                 
-                <li><a href='/tags/jar'>jar</a></li>
+                <li><a href='/tags/jar' target="_blank">jar</a></li>
                 
-                <li><a href='/tags/zip'>zip</a></li>
+                <li><a href='/tags/zip' target="_blank">zip</a></li>
                 
             </ul>
             
@@ -198,6 +200,82 @@
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
@@ -220,43 +298,43 @@
 <ul class="widget-list">
     
     <li>
-        <a href="http://blog.lazy.icu/2022/08/03/chrome-cookies-crack/" title="Python解密Chrome的Cookies文件">Python解密Chrome的Cookies文件</a>
+        <a href="http://blog.lazy.icu/2022/09/28/rust-mod/" title="Rust中的mod(模块)使用的五种方式" target="_blank">Rust中的mod(模块)使用的五种方式</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2022/03/19/unknow/" title="未整理">未整理</a>
+        <a href="http://blog.lazy.icu/2022/08/03/chrome-cookies-crack/" title="Python解密Chrome的Cookies文件" target="_blank">Python解密Chrome的Cookies文件</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)">rust和python交互pyo3(一)</a>
+        <a href="http://blog.lazy.icu/2022/03/19/unknow/" title="未整理" target="_blank">未整理</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别">python验证码在线识别</a>
+        <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" title="rust和python交互pyo3(一)" target="_blank">rust和python交互pyo3(一)</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" title="Rust 安装与环境设置">Rust 安装与环境设置</a>
+        <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别" target="_blank">python验证码在线识别</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容">虚拟机中Linux磁盘空间进行扩容</a>
+        <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" title="Rust 安装与环境设置" target="_blank">Rust 安装与环境设置</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境">Jupyter Notebook使用Anaconda虚拟环境</a>
+        <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" title="虚拟机中Linux磁盘空间进行扩容" target="_blank">虚拟机中Linux磁盘空间进行扩容</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压">文件夹批量改名&amp;批量解压</a>
+        <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境" target="_blank">Jupyter Notebook使用Anaconda虚拟环境</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像">Anaconda &amp; conda 配置镜像</a>
+        <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" title="获取7z压缩文件压缩前文件大小">获取7z压缩文件压缩前文件大小</a>
+        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
     </li>
     
 </ul>
@@ -290,7 +368,7 @@
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (5)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (2)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (3)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
     
