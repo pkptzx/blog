@@ -1,4 +1,17 @@
-linux中访问github:参见: https://gitclone.com/  
+---
+title: "centos7安装新版本的git客户端"
+date: 2022-03-10T00:15:47+08:00
+draft: false
+weight: 70
+keywords: ["linux,git,github,centos"]
+description: "linux centos7中访问github和安装新版本的git客户端"
+tags: ["linux"]
+categories: ["linux"]
+author: "码魂"
+url: "2023/02/02/centos-install-git2newversion"
+---
+
+# linux中访问github:参见: https://gitclone.com/  
 ```shell
 方法一（替换URL）
 
@@ -15,7 +28,7 @@ git clone https://github.com/tendermint/tendermint.git
 cgit clone https://github.com/tendermint/tendermint.git
 ```
 
-安装新版本的git客户端: 使用 https://ius.io/ 源  
+# 安装新版本的git客户端: 使用 https://ius.io/ 源  
 ```shell
 curl -sSL https://setup.ius.io | sh
 
