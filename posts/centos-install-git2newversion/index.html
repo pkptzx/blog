@@ -9,21 +9,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>Docker | 码魂</title>
-    <meta property="og:title" content="Docker - 码魂">
+    <title> | 码魂</title>
+    <meta property="og:title" content=" - 码魂">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="码魂,java,android,博客,项目管理,微信,软件架构,公众号,小程序">
-    <meta name="description" content="Docker">
+    <meta name="description" content="">
         
     <meta name="author" content="码魂">
-    <meta property="og:url" content="http://blog.lazy.icu/categories/docker/">
+    <meta property="og:url" content="http://blog.lazy.icu/posts/centos-install-git2newversion/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml" href="http://blog.lazy.icu/categories/docker/index.xml" title="码魂" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -50,7 +49,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://blog.lazy.icu">Home</a>
+                    <a class="current" href="http://blog.lazy.icu">Home</a>
                     
                     <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
                     
@@ -72,82 +71,127 @@
                     
 <div class="res-cons">
     
-    <h3 class="archive-title">
-        
-            <span>5</span>
-        
-            <span>4</span>
-        
-            <span>3</span>
-        
-            <span>3</span>
-        
-            <span>2</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-            <span>1</span>
-        
-        <span class="keyword">Docker</span>
-        articles
-    </h3>
-    
-
-    
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/" target="_blank">docker设置固定ip地址</a>
-            </h1>
+            <h1 class="post-title"></h1>
         </header>
         
-  <time datetime="2018-12-06T08:22:22Z" class="post-meta meta-date dt-published">
-    2018-12-06
-  </time>
 
 
-<div class="post-meta meta-category">
-  <span>&nbsp;|</span>
-  
-    <a href='/categories/docker' target="_blank">Docker</a>
-  
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>reads</span>
+            </span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>linux中访问github:参见: <a href="https://gitclone.com/">https://gitclone.com/</a></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>方法一（替换URL）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git clone https://gitclone.com/github.com/tendermint/tendermint.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>方法二（设置git参数）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git config --global url.<span style="color:#d14">&#34;https://gitclone.com/&#34;</span>.insteadOf https://
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/tendermint/tendermint.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>方法三（使用cgit客户端）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cgit clone https://github.com/tendermint/tendermint.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装新版本的git客户端: 使用 <a href="https://ius.io/">https://ius.io/</a> 源</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -sSL https://setup.ius.io | sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 查看哪些包提供git这个命令</span>
+</span></span><span style="display:flex;"><span>yum provides git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 这里结果显示最新版本为ius提供的包，版本为2.36.4</span>
+</span></span><span style="display:flex;"><span>yum install git236 -y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 查看版本</span>
+</span></span><span style="display:flex;"><span>git --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/about/">关于</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
 </div>
 
 
-        <div class="post-content">
-            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5 $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local 启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1 docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了 none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。 创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下 1 2 3 docker run -itd --net bridge --ip 172.17.0.10 centos:latest /bin/bash 6eb1f228cf308d1c60db30093c126acbfd0cb21d76cb448c678bab0f1a7c0df6 docker: Error response from daemon: User specified IP address is supported on user defined networks only.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/" target="_blank">Continue reading</a></p>
+        <div class="post-meta meta-tags">
+            
+            No tags
+            
         </div>
     </article>
     
-
     
 
-
-
-
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "pkptzx/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
 
 </div>
 
@@ -173,9 +217,94 @@
 </footer>
 
 
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 
 
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>

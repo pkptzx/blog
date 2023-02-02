@@ -50,7 +50,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://blog.lazy.icu">首页</a>
+                    <a class="" href="http://blog.lazy.icu">Home</a>
                     
                     <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
                     
@@ -73,9 +73,55 @@
 <div class="res-cons">
     
     <h3 class="archive-title">
-        包含标签
+        
+        <span>4</span>
+        
+        <span>3</span>
+        
+        <span>3</span>
+        
+        <span>3</span>
+        
+        <span>2</span>
+        
+        <span>2</span>
+        
+        <span>2</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
         <span class="keyword">maven</span>
-        的文章
+        articles
     </h3>
     
 
@@ -86,21 +132,24 @@
                 <a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" target="_blank">maven导出依赖jar</a>
             </h1>
         </header>
-        <date class="post-meta meta-date">
-            2020年12月21日
-        </date>
         
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/maven' target="_blank">maven</a>
-            
-        </div>
-        
+  <time datetime="2020-12-21T11:20:23Z" class="post-meta meta-date dt-published">
+    2020-12-21
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/maven' target="_blank">maven</a>
+  
+</div>
+
+
         <div class="post-content">
             在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来.
 mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime ……
-            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" target="_blank">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -110,17 +159,20 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
                 <a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">java校验maven下载的jar文件</a>
             </h1>
         </header>
-        <date class="post-meta meta-date">
-            2019年5月23日
-        </date>
         
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/java' target="_blank">java</a>
-            
-        </div>
-        
+  <time datetime="2019-05-23T07:58:08Z" class="post-meta meta-date dt-published">
+    2019-05-23
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/java' target="_blank">java</a>
+  
+</div>
+
+
         <div class="post-content">
             有时候maven真的很坑!
 有时候提示invalid LOC header (bad signat signature),
@@ -131,7 +183,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
 真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
 不如就写个代码跑一下吧~
 public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &#34;F:/mvnlib&#34;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &#34;jar,pom&#34;); System.out.println(&#34;完毕&#34;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&#34;,&#34;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -146,7 +198,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        &copy; 2023 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
         
@@ -187,9 +239,9 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Latest articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -238,7 +290,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
@@ -281,7 +333,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
 <div class="tagcloud">
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
@@ -335,7 +387,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -351,9 +403,9 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Meta</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
         </ul>
     </section>
 </div>

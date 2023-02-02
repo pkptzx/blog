@@ -50,7 +50,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://blog.lazy.icu">首页</a>
+                    <a class="" href="http://blog.lazy.icu">Home</a>
                     
                     <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
                     
@@ -73,9 +73,55 @@
 <div class="res-cons">
     
     <h3 class="archive-title">
-        包含标签
+        
+        <span>4</span>
+        
+        <span>3</span>
+        
+        <span>3</span>
+        
+        <span>3</span>
+        
+        <span>2</span>
+        
+        <span>2</span>
+        
+        <span>2</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
         <span class="keyword">esxi</span>
-        的文章
+        articles
     </h3>
     
 
@@ -86,21 +132,24 @@
                 <a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" target="_blank">虚拟机中Linux磁盘空间进行扩容</a>
             </h1>
         </header>
-        <date class="post-meta meta-date">
-            2021年8月4日
-        </date>
         
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/linux' target="_blank">linux</a>
-            
-            <a href='/categories/esxi' target="_blank">esxi</a>
-            
-            <a href='/categories/vm' target="_blank">VM</a>
-            
-        </div>
-        
+  <time datetime="2021-08-04T12:48:07Z" class="post-meta meta-date dt-published">
+    2021-08-04
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/linux' target="_blank">linux</a>
+  
+    <a href='/categories/esxi' target="_blank">esxi</a>
+  
+    <a href='/categories/vm' target="_blank">VM</a>
+  
+</div>
+
+
         <div class="post-content">
             虚拟机中Linux磁盘空间进行扩容
 直接在虚拟机中对Linux进行磁盘容量扩容,如果有快照必须先删除快照再扩容.
@@ -117,7 +166,7 @@ fdisk /dev/sda
 重启
 初始化分区加入卷组
 #查看卷组信息 vgdisplay #初始化创建的卷组 pvcreate /dev/sda3 #查看卷组信息,记住卷组名称 vgdisplay #将初始化的分区加入到虚拟卷组 vgextend VolGroup /dev/sda3 #扩展逻辑卷的大小,使用df -lh查看逻辑卷名称 lvextend -L +20G /dev/mapper/VolGroup-lv_root #查看文件系统格式 cat /etc/fstab #扩容重新加载逻辑卷 xfs_growfs /dev/mapper/centos-home #查看修改后的容量 df -lh ……
-            <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" target="_blank">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -132,7 +181,7 @@ fdisk /dev/sda
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        &copy; 2023 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
         
@@ -173,9 +222,9 @@ fdisk /dev/sda
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Latest articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -224,7 +273,7 @@ fdisk /dev/sda
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
@@ -267,7 +316,7 @@ fdisk /dev/sda
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
 <div class="tagcloud">
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
@@ -321,7 +370,7 @@ fdisk /dev/sda
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -337,9 +386,9 @@ fdisk /dev/sda
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Meta</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
         </ul>
     </section>
 </div>

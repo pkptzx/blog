@@ -53,7 +53,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://blog.lazy.icu">首页</a>
+                    <a class="current" href="http://blog.lazy.icu">Home</a>
                     
                     <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
                     
@@ -79,27 +79,27 @@
         <header>
             <h1 class="post-title">获取7z压缩文件压缩前文件大小</h1>
         </header>
-        <date class="post-meta meta-date">
-            2021年8月4日
-        </date>
+        
+  <time datetime="2021-08-04T11:14:18Z" class="post-meta meta-date dt-published">
+    2021-08-04
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/java' target="_blank">java</a>
+  
+    <a href='/categories/7z' target="_blank">7z</a>
+  
+</div>
+
+
         
         <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category">
-                <a href='/categories/java' target="_blank">java</a>
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>reads</span>
             </span>
-            
-            <span class="meta-category">
-                <a href='/categories/7z' target="_blank">7z</a>
-            </span>
-            
-        </div>
-        
-        
-        <div class="post-meta">
-            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
-                    阅读</span></span>
         </div>
         
         
@@ -482,8 +482,8 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#458;font-weight:bold">int</span> numberOfItems <span style="color:#000;font-weight:bold">=</span> archive<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getNumberOfItems</span><span style="color:#000;font-weight:bold">();</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#458;font-weight:bold">long</span> totalSize <span style="color:#000;font-weight:bold">=</span> 0<span style="color:#000;font-weight:bold">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i <span style="color:#000;font-weight:bold">=</span> 0<span style="color:#000;font-weight:bold">;</span> i <span style="color:#000;font-weight:bold">&lt;</span> numberOfItems<span style="color:#000;font-weight:bold">;</span> i<span style="color:#000;font-weight:bold">++)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#458;font-weight:bold">long</span> totalSize <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">;</span> i <span style="color:#000;font-weight:bold">&lt;</span> numberOfItems<span style="color:#000;font-weight:bold">;</span> i<span style="color:#000;font-weight:bold">++)</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>            String name <span style="color:#000;font-weight:bold">=</span> archive<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getStringProperty</span><span style="color:#000;font-weight:bold">(</span>i<span style="color:#000;font-weight:bold">,</span> PropID<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">PATH</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>            Long size <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span>Long<span style="color:#000;font-weight:bold">)</span> archive<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getProperty</span><span style="color:#000;font-weight:bold">(</span>i<span style="color:#000;font-weight:bold">,</span> PropID<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SIZE</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>            System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>name <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34; =&gt; &#34;</span> <span style="color:#000;font-weight:bold">+</span> size <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34; , &#34;</span> <span style="color:#000;font-weight:bold">+</span> fileSizeConver<span style="color:#000;font-weight:bold">(</span>size<span style="color:#000;font-weight:bold">));</span>
@@ -518,8 +518,8 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">//        simpleInterface.getArchiveItem(0).getSize();
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">//方拾贰
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>        <span style="color:#458;font-weight:bold">long</span> totalSize <span style="color:#000;font-weight:bold">=</span> 0<span style="color:#000;font-weight:bold">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i <span style="color:#000;font-weight:bold">=</span> 0<span style="color:#000;font-weight:bold">;</span> i <span style="color:#000;font-weight:bold">&lt;</span> numberOfItems<span style="color:#000;font-weight:bold">;</span> i<span style="color:#000;font-weight:bold">++)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>        <span style="color:#458;font-weight:bold">long</span> totalSize <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">;</span> i <span style="color:#000;font-weight:bold">&lt;</span> numberOfItems<span style="color:#000;font-weight:bold">;</span> i<span style="color:#000;font-weight:bold">++)</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>            String name <span style="color:#000;font-weight:bold">=</span> archive<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getStringProperty</span><span style="color:#000;font-weight:bold">(</span>i<span style="color:#000;font-weight:bold">,</span> PropID<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">PATH</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>            Long size <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span>Long<span style="color:#000;font-weight:bold">)</span> archive<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getProperty</span><span style="color:#000;font-weight:bold">(</span>i<span style="color:#000;font-weight:bold">,</span> PropID<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SIZE</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>            System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>name <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34; =&gt; &#34;</span> <span style="color:#000;font-weight:bold">+</span> size<span style="color:#000;font-weight:bold">);</span>
@@ -535,7 +535,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">commonsCompress</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">throws</span> IOException <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>        TimeInterval timer <span style="color:#000;font-weight:bold">=</span> DateUtil<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">timer</span><span style="color:#000;font-weight:bold">();</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#458;font-weight:bold">long</span> totalSize <span style="color:#000;font-weight:bold">=</span> 0<span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#458;font-weight:bold">long</span> totalSize <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">;</span>
 </span></span><span style="display:flex;"><span>        File f <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> File<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;\\\\tsclient\\I\\OB\\2021/20210104.7z&#34;</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>        SevenZFile sevenZFile <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> SevenZFile<span style="color:#000;font-weight:bold">(</span>f<span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">final</span> Iterable<span style="color:#000;font-weight:bold">&lt;</span>SevenZArchiveEntry<span style="color:#000;font-weight:bold">&gt;</span> entries <span style="color:#000;font-weight:bold">=</span> sevenZFile<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getEntries</span><span style="color:#000;font-weight:bold">();</span>
@@ -556,17 +556,17 @@
 </span></span><span style="display:flex;"><span>        DecimalFormat df <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> DecimalFormat<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;#.00&#34;</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>        String fileSizeString <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;&#34;</span><span style="color:#000;font-weight:bold">;</span>
 </span></span><span style="display:flex;"><span>        String wrongSize <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;0B&#34;</span><span style="color:#000;font-weight:bold">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>fileS <span style="color:#000;font-weight:bold">==</span> 0<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>fileS <span style="color:#000;font-weight:bold">==</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">return</span> wrongSize<span style="color:#000;font-weight:bold">;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>fileS <span style="color:#000;font-weight:bold">&lt;</span> 1024<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>fileS <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">1024</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>            fileSizeString <span style="color:#000;font-weight:bold">=</span> df<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">format</span><span style="color:#000;font-weight:bold">((</span><span style="color:#458;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span> fileS<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;B&#34;</span><span style="color:#000;font-weight:bold">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>fileS <span style="color:#000;font-weight:bold">&lt;</span> 1048576<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            fileSizeString <span style="color:#000;font-weight:bold">=</span> df<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">format</span><span style="color:#000;font-weight:bold">((</span><span style="color:#458;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span> fileS <span style="color:#000;font-weight:bold">/</span> 1024<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;KB&#34;</span><span style="color:#000;font-weight:bold">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>fileS <span style="color:#000;font-weight:bold">&lt;</span> 1073741824<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            fileSizeString <span style="color:#000;font-weight:bold">=</span> df<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">format</span><span style="color:#000;font-weight:bold">((</span><span style="color:#458;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span> fileS <span style="color:#000;font-weight:bold">/</span> 1048576<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;MB&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>fileS <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">1048576</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            fileSizeString <span style="color:#000;font-weight:bold">=</span> df<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">format</span><span style="color:#000;font-weight:bold">((</span><span style="color:#458;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span> fileS <span style="color:#000;font-weight:bold">/</span> <span style="color:#099">1024</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;KB&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>fileS <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">1073741824</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            fileSizeString <span style="color:#000;font-weight:bold">=</span> df<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">format</span><span style="color:#000;font-weight:bold">((</span><span style="color:#458;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span> fileS <span style="color:#000;font-weight:bold">/</span> <span style="color:#099">1048576</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;MB&#34;</span><span style="color:#000;font-weight:bold">;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            fileSizeString <span style="color:#000;font-weight:bold">=</span> df<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">format</span><span style="color:#000;font-weight:bold">((</span><span style="color:#458;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span> fileS <span style="color:#000;font-weight:bold">/</span> 1073741824<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;GB&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>            fileSizeString <span style="color:#000;font-weight:bold">=</span> df<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">format</span><span style="color:#000;font-weight:bold">((</span><span style="color:#458;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span> fileS <span style="color:#000;font-weight:bold">/</span> <span style="color:#099">1073741824</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;GB&#34;</span><span style="color:#000;font-weight:bold">;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">return</span> fileSizeString<span style="color:#000;font-weight:bold">;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
@@ -610,7 +610,7 @@
 </span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span>randomAccessFile <span style="color:#000;font-weight:bold">!=</span> <span style="color:#000;font-weight:bold">null</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#998;font-style:italic">// Cache hit.
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>                    <span style="color:#998;font-style:italic">// Move the file pointer back to the beginning
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>                    <span style="color:#998;font-style:italic">// in order to emulating new stream
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>                    randomAccessFile<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">seek</span><span style="color:#000;font-weight:bold">(</span>0<span style="color:#000;font-weight:bold">);</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>                    randomAccessFile<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">seek</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">0</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>                    <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">new</span> RandomAccessFileInStream<span style="color:#000;font-weight:bold">(</span>randomAccessFile<span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>
@@ -703,7 +703,7 @@
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        &copy; 2023 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
         
@@ -829,9 +829,9 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Latest articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -880,7 +880,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
@@ -923,7 +923,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
 <div class="tagcloud">
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
@@ -977,7 +977,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -993,9 +993,9 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Meta</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
         </ul>
     </section>
 </div>

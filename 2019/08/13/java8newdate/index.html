@@ -53,7 +53,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://blog.lazy.icu">首页</a>
+                    <a class="current" href="http://blog.lazy.icu">Home</a>
                     
                     <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
                     
@@ -79,23 +79,25 @@
         <header>
             <h1 class="post-title">Java8新的时间和日期API</h1>
         </header>
-        <date class="post-meta meta-date">
-            2019年8月13日
-        </date>
+        
+  <time datetime="2019-08-13T12:09:58Z" class="post-meta meta-date dt-published">
+    2019-08-13
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/java' target="_blank">java</a>
+  
+</div>
+
+
         
         <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category">
-                <a href='/categories/java' target="_blank">java</a>
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>reads</span>
             </span>
-            
-        </div>
-        
-        
-        <div class="post-meta">
-            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
-                    阅读</span></span>
         </div>
         
         
@@ -124,7 +126,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取当前年月日
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDate localDate <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 构造指定的年月日
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDate localDate1 <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> 9<span style="color:#000;font-weight:bold">,</span> 12<span style="color:#000;font-weight:bold">);</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDate localDate1 <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">2019</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">9</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">12</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取年、月、日、星期几
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> year <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getYear</span><span style="color:#000;font-weight:bold">();</span>
 </span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> year1 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEAR</span><span style="color:#000;font-weight:bold">);</span>
@@ -154,7 +156,7 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 创建 LocalTime
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalTime localTime <span style="color:#000;font-weight:bold">=</span> LocalTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>14<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">);</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalTime localTime <span style="color:#000;font-weight:bold">=</span> LocalTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">14</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">14</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">14</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>LocalTime localTime1 <span style="color:#000;font-weight:bold">=</span> LocalTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取小时
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> hour <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getHour</span><span style="color:#000;font-weight:bold">();</span>
@@ -184,7 +186,7 @@
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 创建 LocalDateTime
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDateTime localDateTime <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
-</span></span><span style="display:flex;"><span>LocalDateTime localDateTime1 <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> 10<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 46<span style="color:#000;font-weight:bold">,</span> 56<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>LocalDateTime localDateTime1 <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">2019</span><span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">10</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">14</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">46</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">56</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>LocalDateTime localDateTime2 <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>localDate<span style="color:#000;font-weight:bold">,</span> localTime<span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>LocalDateTime localDateTime3 <span style="color:#000;font-weight:bold">=</span> localDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">atTime</span><span style="color:#000;font-weight:bold">(</span>localTime<span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>LocalDateTime localDateTime4 <span style="color:#000;font-weight:bold">=</span> localTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">atDate</span><span style="color:#000;font-weight:bold">(</span>localDate<span style="color:#000;font-weight:bold">);</span>
@@ -234,8 +236,8 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// Duration.between()方法创建 Duration 对象
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDateTime from <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2017<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">JANUARY</span><span style="color:#000;font-weight:bold">,</span> 1<span style="color:#000;font-weight:bold">,</span> 00<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">);</span>    <span style="color:#998;font-style:italic">// 2017-01-01 00:00:00
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDateTime to <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> 12<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 28<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">);</span>     <span style="color:#998;font-style:italic">// 2019-09-15 14:28:00
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDateTime from <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">2017</span><span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">JANUARY</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">00</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#998;font-style:italic">// 2017-01-01 00:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDateTime to <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">2019</span><span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">12</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">14</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">28</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">);</span>     <span style="color:#998;font-style:italic">// 2019-09-15 14:28:00
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>Duration duration <span style="color:#000;font-weight:bold">=</span> Duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">between</span><span style="color:#000;font-weight:bold">(</span>from<span style="color:#000;font-weight:bold">,</span> to<span style="color:#000;font-weight:bold">);</span>     <span style="color:#998;font-style:italic">// 表示从 from 到 to 这段时间
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> days <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toDays</span><span style="color:#000;font-weight:bold">();</span>              <span style="color:#998;font-style:italic">// 这段时间的总天数
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> hours <span style="color:#000;font-weight:bold">=</span> duration<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toHours</span><span style="color:#000;font-weight:bold">();</span>            <span style="color:#998;font-style:italic">// 这段时间的小时数
@@ -267,17 +269,17 @@
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>LocalDateTime localDateTime <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span>2019<span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> 12<span style="color:#000;font-weight:bold">,</span> 14<span style="color:#000;font-weight:bold">,</span> 32<span style="color:#000;font-weight:bold">,</span> 0<span style="color:#000;font-weight:bold">);</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>LocalDateTime localDateTime <span style="color:#000;font-weight:bold">=</span> LocalDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">of</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">2019</span><span style="color:#000;font-weight:bold">,</span> Month<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">SEPTEMBER</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">12</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">14</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">32</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 增加一年
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">plusYears</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">plus</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">,</span> ChronoUnit<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEARS</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">plusYears</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">plus</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">,</span> ChronoUnit<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEARS</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 减少一个月
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">minusMonths</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">minus</span><span style="color:#000;font-weight:bold">(</span>1<span style="color:#000;font-weight:bold">,</span> ChronoUnit<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">MONTHS</span><span style="color:#000;font-weight:bold">);</span>  
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">minusMonths</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">minus</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">,</span> ChronoUnit<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">MONTHS</span><span style="color:#000;font-weight:bold">);</span>  
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 通过with修改某些值
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 修改年为2020
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">withYear</span><span style="color:#000;font-weight:bold">(</span>2020<span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">with</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEAR</span><span style="color:#000;font-weight:bold">,</span> 2020<span style="color:#000;font-weight:bold">);</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">withYear</span><span style="color:#000;font-weight:bold">(</span><span style="color:#099">2020</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>localDateTime <span style="color:#000;font-weight:bold">=</span> localDateTime<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">with</span><span style="color:#000;font-weight:bold">(</span>ChronoField<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">YEAR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#099">2020</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 时间计算
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 获取该年的第一天
 </span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>LocalDate localDate <span style="color:#000;font-weight:bold">=</span> LocalDate<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">now</span><span style="color:#000;font-weight:bold">();</span>
@@ -413,7 +415,7 @@ LocalDate localDate2 = LocalDate.parse(&#34;2019-09-12&#34;, DateTimeFormatter.I
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        &copy; 2023 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
         
@@ -539,9 +541,9 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Latest articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -590,7 +592,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
@@ -633,7 +635,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
 <div class="tagcloud">
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
@@ -687,7 +689,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -703,9 +705,9 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Meta</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
         </ul>
     </section>
 </div>

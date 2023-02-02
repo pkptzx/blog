@@ -50,7 +50,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://blog.lazy.icu">首页</a>
+                    <a class="" href="http://blog.lazy.icu">Home</a>
                     
                     <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
                     
@@ -73,9 +73,55 @@
 <div class="res-cons">
     
     <h3 class="archive-title">
-        包含标签
+        
+        <span>4</span>
+        
+        <span>3</span>
+        
+        <span>3</span>
+        
+        <span>3</span>
+        
+        <span>2</span>
+        
+        <span>2</span>
+        
+        <span>2</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
         <span class="keyword">java</span>
-        的文章
+        articles
     </h3>
     
 
@@ -86,23 +132,26 @@
                 <a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" target="_blank">获取7z压缩文件压缩前文件大小</a>
             </h1>
         </header>
-        <date class="post-meta meta-date">
-            2021年8月4日
-        </date>
         
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/java' target="_blank">java</a>
-            
-            <a href='/categories/7z' target="_blank">7z</a>
-            
-        </div>
-        
+  <time datetime="2021-08-04T11:14:18Z" class="post-meta meta-date dt-published">
+    2021-08-04
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/java' target="_blank">java</a>
+  
+    <a href='/categories/7z' target="_blank">7z</a>
+  
+</div>
+
+
         <div class="post-content">
             在解压前获取文件解压大小,主要为了不解压获取解压后的文件大小,计算解压后的磁盘占用量
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 &lt;dependency&gt; &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt; &lt;artifactId&gt;sevenzipjbinding&lt;/artifactId&gt; &lt;version&gt;16.02-2.01&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt; &lt;artifactId&gt;sevenzipjbinding-all-platforms&lt;/artifactId&gt; &lt;version&gt;16.02-2.01&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.tukaani&lt;/groupId&gt; &lt;artifactId&gt;xz&lt;/artifactId&gt; &lt;version&gt;1.9&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-compress&lt;/artifactId&gt; &lt;version&gt;1.21&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;cn.hutool&lt;/groupId&gt; &lt;artifactId&gt;hutool-all&lt;/artifactId&gt; &lt;version&gt;5.6.3&lt;/version&gt; &lt;/dependency&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 import cn.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" target="_blank">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -112,20 +161,23 @@
                 <a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/" target="_blank">使用java将SVG图片格式转PNG图片格式</a>
             </h1>
         </header>
-        <date class="post-meta meta-date">
-            2021年3月19日
-        </date>
         
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/java' target="_blank">java</a>
-            
-        </div>
-        
+  <time datetime="2021-03-19T07:29:12Z" class="post-meta meta-date dt-published">
+    2021-03-19
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/java' target="_blank">java</a>
+  
+</div>
+
+
         <div class="post-content">
             1 2 3 4 5 6 7 8 9 10 11 &lt;dependency&gt; &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt; &lt;artifactId&gt;xmlgraphics-commons&lt;/artifactId&gt; &lt;version&gt;2.6&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt; &lt;artifactId&gt;batik-all&lt;/artifactId&gt; &lt;version&gt;1.14&lt;/version&gt; &lt;type&gt;pom&lt;/type&gt; &lt;/dependency&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 import java.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/" target="_blank">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -135,17 +187,20 @@
                 <a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">java校验maven下载的jar文件</a>
             </h1>
         </header>
-        <date class="post-meta meta-date">
-            2019年5月23日
-        </date>
         
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/java' target="_blank">java</a>
-            
-        </div>
-        
+  <time datetime="2019-05-23T07:58:08Z" class="post-meta meta-date dt-published">
+    2019-05-23
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/java' target="_blank">java</a>
+  
+</div>
+
+
         <div class="post-content">
             有时候maven真的很坑!
 有时候提示invalid LOC header (bad signat signature),
@@ -156,7 +211,7 @@
 真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
 不如就写个代码跑一下吧~
 public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &#34;F:/mvnlib&#34;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &#34;jar,pom&#34;); System.out.println(&#34;完毕&#34;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&#34;,&#34;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -171,7 +226,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        &copy; 2023 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
         
@@ -212,9 +267,9 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Latest articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -263,7 +318,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
@@ -306,7 +361,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
 <div class="tagcloud">
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
@@ -360,7 +415,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -376,9 +431,9 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Meta</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
         </ul>
     </section>
 </div>

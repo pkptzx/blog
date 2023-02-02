@@ -50,7 +50,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://blog.lazy.icu">首页</a>
+                    <a class="" href="http://blog.lazy.icu">Home</a>
                     
                     <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
                     
@@ -73,9 +73,55 @@
 <div class="res-cons">
     
     <h3 class="archive-title">
-        包含标签
+        
+        <span>4</span>
+        
+        <span>3</span>
+        
+        <span>3</span>
+        
+        <span>3</span>
+        
+        <span>2</span>
+        
+        <span>2</span>
+        
+        <span>2</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
+        <span>1</span>
+        
         <span class="keyword">Rust</span>
-        的文章
+        articles
     </h3>
     
 
@@ -86,23 +132,26 @@
                 <a href="http://blog.lazy.icu/2022/09/28/rust-mod/" target="_blank">Rust中的mod(模块)使用的五种方式</a>
             </h1>
         </header>
-        <date class="post-meta meta-date">
-            2022年9月28日
-        </date>
         
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/rust' target="_blank">rust</a>
-            
-        </div>
-        
+  <time datetime="2022-09-28T10:57:58Z" class="post-meta meta-date dt-published">
+    2022-09-28
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/rust' target="_blank">rust</a>
+  
+</div>
+
+
         <div class="post-content">
             rust中的mod(模块)在项目中使用是必不可少的,但有很多种使用方式,有些方式比较推荐,我们来看看这些使用方式.
 方式一: 当前类中定义并实现
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 mod x { pub(crate) fn x(){ println!(&#34;x&#34;); } pub mod y{ pub fn y(){ println!(&#34;y&#34;); } pub fn yy(){ //可以使用self(可省)表示当前模块 self::y(); //可以使用super表示上层模块 super::x(); } } } fn main() { x::x(); x::y::y(); x::y::yy(); } 方式二:同级目录中存放mod模块文件,如bar.rs
 1 2 3 4 5 6 7 8 9 // bar.rs pub fn bar() { println!……
-            <p class="readmore"><a href="http://blog.lazy.icu/2022/09/28/rust-mod/" target="_blank">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2022/09/28/rust-mod/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -112,19 +161,22 @@
                 <a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" target="_blank">rust和python交互pyo3(一)</a>
             </h1>
         </header>
-        <date class="post-meta meta-date">
-            2022年3月12日
-        </date>
         
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/python' target="_blank">python</a>
-            
-            <a href='/categories/rust' target="_blank">rust</a>
-            
-        </div>
-        
+  <time datetime="2022-03-11T22:05:48Z" class="post-meta meta-date dt-published">
+    2022-03-12
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/python' target="_blank">python</a>
+  
+    <a href='/categories/rust' target="_blank">rust</a>
+  
+</div>
+
+
         <div class="post-content">
             rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
 1 2 3 4 5 6 7 pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release 生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
@@ -132,7 +184,7 @@ Ubuntu: sudo apt install python3-dev
 centos8: yum/dnf install python38-devel
 这两个features不能同时存在,否则导致rust编译失败 &ldquo;extension-module&rdquo;,&ldquo;auto-initialize&rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
 whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
-            <p class="readmore"><a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" target="_blank">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -142,17 +194,20 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
                 <a href="http://blog.lazy.icu/2022/01/08/rust-setup/" target="_blank">Rust 安装与环境设置</a>
             </h1>
         </header>
-        <date class="post-meta meta-date">
-            2022年1月8日
-        </date>
         
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/rust' target="_blank">Rust</a>
-            
-        </div>
-        
+  <time datetime="2022-01-08T00:23:22Z" class="post-meta meta-date dt-published">
+    2022-01-08
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/rust' target="_blank">Rust</a>
+  
+</div>
+
+
         <div class="post-content">
             rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.
 CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO
@@ -168,7 +223,7 @@ linker = &ldquo;rust-lld&rdquo;
 cargo build --target x86_64-unknown-linux-musl --release
 国内源 ~/.cargo/config添加:
 1 2 3 4 5 6 7 8 9 [source.crates-io] registry = &#34;https://github.com/rust-lang/crates.io-index&#34; replace-with = &#39;ustc&#39; [source.ustc] registry = &#34;git://mirrors.ustc.edu.cn/crates.io-index&#34; [target.x86_64-pc-windows-gnu] linker = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&#34; ar = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&#34; 或者在项目工程结构中，与 Cargo.toml 同级目录的 .……
-            <p class="readmore"><a href="http://blog.lazy.icu/2022/01/08/rust-setup/" target="_blank">阅读全文</a></p>
+            <p class="readmore"><a href="http://blog.lazy.icu/2022/01/08/rust-setup/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -183,7 +238,7 @@ cargo build --target x86_64-unknown-linux-musl --release
 
                     <footer id="footer">
     <div>
-        &copy; 2022 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
+        &copy; 2023 <a href="http://blog.lazy.icu">码魂 By 码魂</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">计划中...</a>
         
@@ -224,9 +279,9 @@ cargo build --target x86_64-unknown-linux-musl --release
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Latest articles</h3>
 <ul class="widget-list">
     
     <li>
@@ -275,7 +330,7 @@ cargo build --target x86_64-unknown-linux-musl --release
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
@@ -318,7 +373,7 @@ cargo build --target x86_64-unknown-linux-musl --release
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
 <div class="tagcloud">
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
@@ -372,7 +427,7 @@ cargo build --target x86_64-unknown-linux-musl --release
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -388,9 +443,9 @@ cargo build --target x86_64-unknown-linux-musl --release
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Meta</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
         </ul>
     </section>
 </div>
