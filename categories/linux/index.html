@@ -78,7 +78,7 @@
         
             <span>4</span>
         
-            <span>3</span>
+            <span>4</span>
         
             <span>3</span>
         
@@ -139,6 +139,32 @@
         <div class="post-content">
              1 2 # linux 删除空文件夹 find -type d -empty -delete ……
             <p class="readmore"><a href="http://blog.lazy.icu/2022/03/19/unknow/" target="_blank">Continue reading</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2023/02/02/centos-install-git2newversion/" target="_blank">centos7安装新版本的git客户端</a>
+            </h1>
+        </header>
+        
+  <time datetime="2022-03-09T16:15:47Z" class="post-meta meta-date dt-published">
+    2022-03-10
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/linux' target="_blank">linux</a>
+  
+</div>
+
+
+        <div class="post-content">
+            linux中访问github:参见: https://gitclone.com/ 1 2 3 4 5 6 7 8 9 10 11 12 13 方法一（替换URL） git clone https://gitclone.com/github.com/tendermint/tendermint.git 方法二（设置git参数） git config --global url.&#34;https://gitclone.com/&#34;.insteadOf https:// git clone https://github.com/tendermint/tendermint.git 方法三（使用cgit客户端） cgit clone https://github.com/tendermint/tendermint.git 安装新版本的git客户端: 使用 https://ius.io/ 源 1 2 3 4 5 6 7 8 9 10 curl -sSL https://setup.ius.io | sh # 查看哪些包提供git这个命令 yum provides git # 这里结果显示最新版本为ius提供的包，版本为2.36.4 yum install git236 -y # 查看版本 git --version ……
+            <p class="readmore"><a href="http://blog.lazy.icu/2023/02/02/centos-install-git2newversion/" target="_blank">Continue reading</a></p>
         </div>
     </article>
     
@@ -289,6 +315,10 @@ fdisk /dev/sda
     </li>
     
     <li>
+        <a href="http://blog.lazy.icu/2023/02/02/centos-install-git2newversion/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别" target="_blank">python验证码在线识别</a>
     </li>
     
@@ -306,10 +336,6 @@ fdisk /dev/sda
     
     <li>
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
-    </li>
-    
-    <li>
-        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
     </li>
     
 </ul>
@@ -337,7 +363,7 @@ fdisk /dev/sda
     
     <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (4)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     

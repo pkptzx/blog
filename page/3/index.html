@@ -75,6 +75,36 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2018/11/30/" title="Windows远程“要求的函数不受支持”解决办法" target="_blank">Windows远程“要求的函数不受支持”解决办法</a>
+            </h1>
+        </header>
+        
+  <time datetime="2018-11-30T14:53:02Z" class="post-meta meta-date dt-published">
+    2018-11-30
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/%E7%B3%BB%E7%BB%9F' target="_blank">系统</a>
+  
+</div>
+
+
+        <div class="post-content">
+            Windows远程“要求的函数不受支持”解决办法 解决方法：
+开启组策略中远程桌面链接安全层。 1、开始-运行-gpedit.msc，进入组策略编辑器； 2、找到左侧边栏计算机配置-管理模板-Windows组件-远程桌面服务-远程桌面会话主机-安全项； 3、修改以下两项：
+A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP B,要求使用网络级别的身份验证对远程连接的用户进行身份验证，改为禁用； 4、关闭组策略编辑器，重启计算机。……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2018/11/30/" target="_blank">Continue reading</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2018/11/25/" title="小书匠测试" target="_blank">小书匠测试</a>
             </h1>
         </header>
@@ -219,25 +249,6 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/posts/centos-install-git2newversion/" title="" target="_blank"></a>
-            </h1>
-        </header>
-        
-
-
-        <div class="post-content">
-            linux中访问github:参见: https://gitclone.com/
-1 2 3 4 5 6 7 8 9 10 11 12 13 方法一（替换URL） git clone https://gitclone.com/github.com/tendermint/tendermint.git 方法二（设置git参数） git config --global url.&#34;https://gitclone.com/&#34;.insteadOf https:// git clone https://github.com/tendermint/tendermint.git 方法三（使用cgit客户端） cgit clone https://github.com/tendermint/tendermint.git 安装新版本的git客户端: 使用 https://ius.io/ 源
-1 2 3 4 5 6 7 8 9 10 curl -sSL https://setup.ius.io | sh # 查看哪些包提供git这个命令 yum provides git # 这里结果显示最新版本为ius提供的包，版本为2.36.4 yum install git236 -y # 查看版本 git --version ……
-        </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/posts/centos-install-git2newversion/" target="_blank">Continue reading</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -334,6 +345,10 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
     </li>
     
     <li>
+        <a href="http://blog.lazy.icu/2023/02/02/centos-install-git2newversion/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别" target="_blank">python验证码在线识别</a>
     </li>
     
@@ -351,10 +366,6 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
     
     <li>
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
-    </li>
-    
-    <li>
-        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
     </li>
     
 </ul>
@@ -382,7 +393,7 @@ https://segmentfault.com/a/1190000012975914 方式建立的.
     
     <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (4)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
