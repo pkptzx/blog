@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
 <head>
 
     <meta charset="utf-8">
@@ -50,9 +50,9 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://blog.lazy.icu">Home</a>
+                    <a class="current" href="http://blog.lazy.icu">首页</a>
                     
-                    <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
+                    <a  href="http://blog.lazy.icu/tools/" title="工具">工具</a>
                     
                     <a  href="http://blog.lazy.icu/archives/" title="归档">归档</a>
                     
@@ -76,12 +76,42 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
+            </h1>
+        </header>
+        
+  <time datetime="2021-08-04T12:05:48Z" class="post-meta meta-date dt-published">
+    2021年8月4日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/python' target="_blank">python</a>
+  
+    <a href='/categories/anaconda' target="_blank">anaconda </a>
+  
+</div>
+
+
+        <div class="post-content">
+            Anaconda &amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。 各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config --set show_channel_urls yes 生成该文件之后再修改。 channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud 即可添加 Anaconda Python 免费仓库。 运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" target="_blank">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" title="获取7z压缩文件压缩前文件大小" target="_blank">获取7z压缩文件压缩前文件大小</a>
             </h1>
         </header>
         
   <time datetime="2021-08-04T11:14:18Z" class="post-meta meta-date dt-published">
-    2021-08-04
+    2021年8月4日
   </time>
 
 
@@ -96,10 +126,9 @@
 
 
         <div class="post-content">
-            在解压前获取文件解压大小,主要为了不解压获取解压后的文件大小,计算解压后的磁盘占用量
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 &lt;dependency&gt; &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt; &lt;artifactId&gt;sevenzipjbinding&lt;/artifactId&gt; &lt;version&gt;16.02-2.01&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt; &lt;artifactId&gt;sevenzipjbinding-all-platforms&lt;/artifactId&gt; &lt;version&gt;16.02-2.01&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.tukaani&lt;/groupId&gt; &lt;artifactId&gt;xz&lt;/artifactId&gt; &lt;version&gt;1.9&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-compress&lt;/artifactId&gt; &lt;version&gt;1.21&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;cn.hutool&lt;/groupId&gt; &lt;artifactId&gt;hutool-all&lt;/artifactId&gt; &lt;version&gt;5.6.3&lt;/version&gt; &lt;/dependency&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 import cn.……
+            在解压前获取文件解压大小,主要为了不解压获取解压后的文件大小,计算解压后的磁盘占用量 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 &lt;dependency&gt; &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt; &lt;artifactId&gt;sevenzipjbinding&lt;/artifactId&gt; &lt;version&gt;16.02-2.01&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;net.sf.sevenzipjbinding&lt;/groupId&gt; &lt;artifactId&gt;sevenzipjbinding-all-platforms&lt;/artifactId&gt; &lt;version&gt;16.02-2.01&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.tukaani&lt;/groupId&gt; &lt;artifactId&gt;xz&lt;/artifactId&gt; &lt;version&gt;1.9&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-compress&lt;/artifactId&gt; &lt;version&gt;1.21&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;cn.hutool&lt;/groupId&gt; &lt;artifactId&gt;hutool-all&lt;/artifactId&gt; &lt;version&gt;5.6.3&lt;/version&gt; &lt;/dependency&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -112,7 +141,7 @@
         </header>
         
   <time datetime="2021-03-19T07:29:12Z" class="post-meta meta-date dt-published">
-    2021-03-19
+    2021年3月19日
   </time>
 
 
@@ -125,9 +154,9 @@
 
 
         <div class="post-content">
-            1 2 3 4 5 6 7 8 9 10 11 &lt;dependency&gt; &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt; &lt;artifactId&gt;xmlgraphics-commons&lt;/artifactId&gt; &lt;version&gt;2.6&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt; &lt;artifactId&gt;batik-all&lt;/artifactId&gt; &lt;version&gt;1.14&lt;/version&gt; &lt;type&gt;pom&lt;/type&gt; &lt;/dependency&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 import java.……
+            1 2 3 4 5 6 7 8 9 10 11 &lt;dependency&gt; &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt; &lt;artifactId&gt;xmlgraphics-commons&lt;/artifactId&gt; &lt;version&gt;2.6&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.xmlgraphics&lt;/groupId&gt; &lt;artifactId&gt;batik-all&lt;/artifactId&gt; &lt;version&gt;1.14&lt;/version&gt; &lt;type&gt;pom&lt;/type&gt; &lt;/dependency&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 import java.io.ByteArrayInputStream; import java.io.File; import java.io.FileOutputStream; import java.io.FilenameFilter; import java.io.OutputStream; import org.apache.batik.transcoder.TranscoderInput; import org.apache.batik.transcoder.TranscoderOutput; import org.apache.batik.transcoder.image.PNGTranscoder; import org.apache.commons.io.FileUtils; public class SVG2PNG { /** * 将指定目录中的svg文件转换成png格式 * * @param args * @throws Exception */ public static void main(String[] args) throws Exception {……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2021/03/19/svg-convert-png/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -140,7 +169,7 @@
         </header>
         
   <time datetime="2020-12-21T11:20:23Z" class="post-meta meta-date dt-published">
-    2020-12-21
+    2020年12月21日
   </time>
 
 
@@ -153,10 +182,9 @@
 
 
         <div class="post-content">
-            在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来.
-mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime ……
+            在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来. mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -169,7 +197,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
         </header>
         
   <time datetime="2020-12-21T08:37:18Z" class="post-meta meta-date dt-published">
-    2020-12-21
+    2020年12月21日
   </time>
 
 
@@ -182,12 +210,9 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
 
 
         <div class="post-content">
-            有时候需要替换springboot打包后jar中的文件,当替换jar时会导致无法启动,提示的大概意思是jar应该是不压缩的才行. 手动在rar中操作的步骤是, 用rar打开,找到目录后,点命令-添加文件到压缩文件中- 然后选择文件(可多选), 然后在[压缩文件名和参数]的对话框中选择[文件] 在[不压缩直接存储的文件]中填写不压缩的文件名称或使用通配符*.jar
-手动操作太麻烦了,一次还好,如果测试或长期需要替换的话还是命令比较方便,折腾了一阵子才找到命令参数的方式.
-winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的别随便用,好吧我就再找了下7z的文档,改写成7z:
-7z a -mx=0 target.jar dist/*.jar 7z rn target.jar dist BOOT-INF/lib 在7z中没办法直接向压缩文件添加时指定路径,只能先添加然后通过rn再修改为最终路径.……
+            有时候需要替换springboot打包后jar中的文件,当替换jar时会导致无法启动,提示的大概意思是jar应该是不压缩的才行. 手动在rar中操作的步骤是, 用rar打开,找到目录后,点命令-添加文件到压缩文件中- 然后选择文件(可多选), 然后在[压缩文件名和参数]的对话框中选择[文……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -200,7 +225,7 @@ winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的
         </header>
         
   <time datetime="2020-12-21T08:31:50Z" class="post-meta meta-date dt-published">
-    2020-12-21
+    2020年12月21日
   </time>
 
 
@@ -213,10 +238,9 @@ winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的
 
 
         <div class="post-content">
-            之前一直没有注意submodule如何更新的问题,一直以为我clone后submodule就是新的,后来才发现即便我重新clone,submodule也是按照当时提交时候的版本.找了几个小时才找到简单的命令进行更新submodule.
-git submodule update --recursive --remote --merge --force ……
+            之前一直没有注意submodule如何更新的问题,一直以为我clone后submodule就是新的,后来才发现即便我重新clone,submodule也是按照当时提交时候的版本.找了几个小时才找到简单的命令进行更新submodule. git submodule update --recursive --remote --merge --force……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/git-submodule-update/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/git-submodule-update/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -229,7 +253,7 @@ git submodule update --recursive --remote --merge --force ……
         </header>
         
   <time datetime="2019-10-17T10:01:25Z" class="post-meta meta-date dt-published">
-    2019-10-17
+    2019年10月17日
   </time>
 
 
@@ -242,10 +266,9 @@ git submodule update --recursive --remote --merge --force ……
 
 
         <div class="post-content">
-            项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
-使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。 1 2 3 4 @DependsOn({&#34;flyway&#34;, &#34;flywayInitializer&#34;}) @Component public class UserDao { } 继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。 1 2 3 4 5 6 7 8 9 10 11 12 13 @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&#34;before flyway migration...&#34;); flyway.migrate(); log.info(&#34;after flyway migration...&#34;); } } ……
+            项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法： 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -258,7 +281,7 @@ git submodule update --recursive --remote --merge --force ……
         </header>
         
   <time datetime="2019-08-13T12:09:58Z" class="post-meta meta-date dt-published">
-    2019-08-13
+    2019年8月13日
   </time>
 
 
@@ -271,10 +294,9 @@ git submodule update --recursive --remote --merge --force ……
 
 
         <div class="post-content">
-            Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。
-LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 创建 LocalDate // 获取当前年月日 LocalDate localDate = LocalDate.now(); // 构造指定的年月日 LocalDate localDate1 = LocalDate.of(2019, 9, 12); // 获取年、月、日、星期几 int year = localDate.getYear(); int year1 = localDate.get(ChronoField.YEAR); Month month = localDate.getMonth(); int month1 = localDate.get(ChronoField.MONTH_OF_YEAR); int day = localDate.getDayOfMonth(); int day1 = localDate.get(ChronoField.DAY_OF_MONTH); DayOfWeek dayOfWeek = localDate.……
+            Java 8的日期和时间类包含 LocalDate、LocalTime、Instant、Duration 以及 Period，这些类都包含在 java.time 包中，Java 8 新的时间API的使用方式，包括创建、格式化、解析、计算、修改，下面我们看下如何去使用。 LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 创建……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2019/08/13/java8newdate/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2019/08/13/java8newdate/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -287,7 +309,7 @@ LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 创建 Local
         </header>
         
   <time datetime="2019-05-23T07:58:08Z" class="post-meta meta-date dt-published">
-    2019-05-23
+    2019年5月23日
   </time>
 
 
@@ -300,17 +322,9 @@ LocalDate 只会获取年月日 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 创建 Local
 
 
         <div class="post-content">
-            有时候maven真的很坑!
-有时候提示invalid LOC header (bad signat signature),
-但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的.
-很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有.
-今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不报错,用mvn命令的时候才能看到jar invalid.
-我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
-真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
-不如就写个代码跑一下吧~
-public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &#34;F:/mvnlib&#34;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &#34;jar,pom&#34;); System.out.println(&#34;完毕&#34;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&#34;,&#34;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.……
+            有时候maven真的很坑! 有时候提示invalid LOC header (bad signat signature), 但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的. 很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有. 今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -323,52 +337,22 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
         </header>
         
   <time datetime="2018-12-06T08:22:22Z" class="post-meta meta-date dt-published">
-    2018-12-06
+    2018年12月6日
   </time>
 
 
 <div class="post-meta meta-category">
   <span>&nbsp;|</span>
   
-    <a href='/categories/docker' target="_blank">Docker</a>
+    <a href='/categories/Docker' target="_blank">Docker</a>
   
 </div>
 
 
         <div class="post-content">
-            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5 $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local 启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1 docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网络，每次Docker容器重启时，会按照顺序获取对应的IP地址，这个就导致重启下，Docker的IP地址就变了 none：无指定网络 使用 --network=none ，docker 容器就不会分配局域网的IP host： 主机网络 使用 --network=host，此时，Docker 容器的网络会附属在主机上，两者是互通的。 例如，在容器中运行一个Web服务，监听8080端口，则主机的8080端口就会自动映射到容器中。 创建自定义网络：（设置固定IP） 启动Docker容器的时候，使用默认的网络是不支持指派固定IP的，如下 1 2 3 docker run -itd --net bridge --ip 172.17.0.10 centos:latest /bin/bash 6eb1f228cf308d1c60db30093c126acbfd0cb21d76cb448c678bab0f1a7c0df6 docker: Error response from daemon: User specified IP address is supported on user defined networks only.……
+            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5 $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local 启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1 docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/" target="_blank">Continue reading</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2018/11/30/" title="Windows远程“要求的函数不受支持”解决办法" target="_blank">Windows远程“要求的函数不受支持”解决办法</a>
-            </h1>
-        </header>
-        
-  <time datetime="2018-11-30T14:53:02Z" class="post-meta meta-date dt-published">
-    2018-11-30
-  </time>
-
-
-<div class="post-meta meta-category">
-  <span>&nbsp;|</span>
-  
-    <a href='/categories/%E7%B3%BB%E7%BB%9F' target="_blank">系统</a>
-  
-</div>
-
-
-        <div class="post-content">
-            Windows远程“要求的函数不受支持”解决办法 解决方法：
-开启组策略中远程桌面链接安全层。 1、开始-运行-gpedit.msc，进入组策略编辑器； 2、找到左侧边栏计算机配置-管理模板-Windows组件-远程桌面服务-远程桌面会话主机-安全项； 3、修改以下两项：
-A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP B,要求使用网络级别的身份验证对远程连接的用户进行身份验证，改为禁用； 4、关闭组策略编辑器，重启计算机。……
-        </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2018/11/30/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -379,7 +363,7 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
 <ol class="page-navigator">
     
     <li class="prev">
-        <a href="http://blog.lazy.icu/posts/">Previous</a>
+        <a href="http://blog.lazy.icu/posts/">上一页</a>
     </li>
     
 
@@ -399,7 +383,7 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
 
     
     <li class="next">
-        <a href="http://blog.lazy.icu/posts/page/3/">Next</a>
+        <a href="http://blog.lazy.icu/posts/page/3/">下一页</a>
     </li>
     
 </ol>
@@ -453,8 +437,12 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Latest articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.lazy.icu/2023/02/02/centosgit2/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
+    </li>
     
     <li>
         <a href="http://blog.lazy.icu/2022/09/28/rust-mod/" title="Rust中的mod(模块)使用的五种方式" target="_blank">Rust中的mod(模块)使用的五种方式</a>
@@ -492,46 +480,44 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Docker/">Docker (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Jupyter/">Jupyter (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/VM/">VM (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/esxi/">esxi (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/git/">git (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/git/">git (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (4)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (5)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/vm/">VM (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
     
@@ -545,14 +531,22 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="http://blog.lazy.icu/tags/Docker/">Docker</a>
+    
+    <a href="http://blog.lazy.icu/tags/Jupyter/">Jupyter</a>
+    
+    <a href="http://blog.lazy.icu/tags/LBS/">LBS</a>
+    
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
+    
+    <a href="http://blog.lazy.icu/tags/VM/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
     
     <a href="http://blog.lazy.icu/tags/conda/">conda</a>
-    
-    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
     
     <a href="http://blog.lazy.icu/tags/esxi/">esxi</a>
     
@@ -570,21 +564,15 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
     
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
     
-    <a href="http://blog.lazy.icu/tags/jupyter/">Jupyter</a>
-    
-    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
-    
     <a href="http://blog.lazy.icu/tags/linux/">linux</a>
     
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
     <a href="http://blog.lazy.icu/tags/python/">python</a>
     
-    <a href="http://blog.lazy.icu/tags/rust/">Rust</a>
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
     
     <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
-    
-    <a href="http://blog.lazy.icu/tags/vm/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/zip/">zip</a>
     
@@ -599,15 +587,23 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
-            <a target="_blank" href="http://www.baidu.com" title="百度">百度</a>
+            <a target="_blank" href="https://www.tailwindcss.cn/docs" title="TailWindCSS文档">TailWindCSS文档</a>
         </li>
         
         <li>
-            <a target="_blank" href="http://www.oschina.net" title="开源中国">开源中国</a>
+            <a target="_blank" href="https://daisyui.com" title="DaisyUI">DaisyUI</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.shuttle.rs" title="shuttle-rs">shuttle-rs</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://icones.js.org" title="icones">icones</a>
         </li>
         
     </ul>
@@ -615,9 +611,9 @@ A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层
 
 
     <section class="widget">
-        <h3 class="widget-title">Meta</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>

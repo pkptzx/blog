@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
 <head>
 
     <meta charset="utf-8">
@@ -50,9 +50,9 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://blog.lazy.icu">Home</a>
+                    <a class="" href="http://blog.lazy.icu">首页</a>
                     
-                    <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
+                    <a  href="http://blog.lazy.icu/tools/" title="工具">工具</a>
                     
                     <a  href="http://blog.lazy.icu/archives/" title="归档">归档</a>
                     
@@ -78,9 +78,11 @@
         
             <span>4</span>
         
-            <span>3</span>
+            <span>4</span>
         
-            <span>3</span>
+            <span>2</span>
+        
+            <span>2</span>
         
             <span>2</span>
         
@@ -111,10 +113,38 @@
             <span>1</span>
         
         <span class="keyword">git</span>
-        articles
+        中的文章
     </h3>
     
 
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2023/02/02/centosgit2/" target="_blank">centos7安装新版本的git客户端</a>
+            </h1>
+        </header>
+        
+  <time datetime="2023-02-02T07:16:47Z" class="post-meta meta-date dt-published">
+    2023年2月2日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/linux' target="_blank">linux</a>
+  
+    <a href='/categories/git' target="_blank">git</a>
+  
+</div>
+
+
+        <div class="post-content">
+            linux中访问github:参见: https://gitclone.com/ 1 2 3 4 5 6 7 方法一（替换URL） git clone https://gitclone.com/github.com/tendermint/tendermint.git 方法二（设置git参数） git config --global url.&#34;https://gitclone.com/&#34;.insteadOf https:// git clone https://github.com/tendermint/tendermint.git 方法三（使用cgit客户端） cgit clone https://github.com/tendermint/tendermint.git 安装新版本的git客户端: 使用 https://ius.io/ 源 1 2 3 4 5 6 7 curl -sSL https://setup.ius.io | sh # 查看哪些包提供git这个命令 yum provides git # 这里结果显示最新版本为ius提供……
+            <p class="readmore"><a href="http://blog.lazy.icu/2023/02/02/centosgit2/" target="_blank">阅读全文</a></p>
+        </div>
+    </article>
     
     <article class="post">
         <header>
@@ -124,7 +154,7 @@
         </header>
         
   <time datetime="2020-12-21T08:31:50Z" class="post-meta meta-date dt-published">
-    2020-12-21
+    2020年12月21日
   </time>
 
 
@@ -137,9 +167,8 @@
 
 
         <div class="post-content">
-            之前一直没有注意submodule如何更新的问题,一直以为我clone后submodule就是新的,后来才发现即便我重新clone,submodule也是按照当时提交时候的版本.找了几个小时才找到简单的命令进行更新submodule.
-git submodule update --recursive --remote --merge --force ……
-            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/git-submodule-update/" target="_blank">Continue reading</a></p>
+            之前一直没有注意submodule如何更新的问题,一直以为我clone后submodule就是新的,后来才发现即便我重新clone,submodule也是按照当时提交时候的版本.找了几个小时才找到简单的命令进行更新submodule. git submodule update --recursive --remote --merge --force……
+            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/git-submodule-update/" target="_blank">阅读全文</a></p>
         </div>
     </article>
     
@@ -197,8 +226,12 @@ git submodule update --recursive --remote --merge --force ……
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Latest articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.lazy.icu/2023/02/02/centosgit2/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
+    </li>
     
     <li>
         <a href="http://blog.lazy.icu/2022/09/28/rust-mod/" title="Rust中的mod(模块)使用的五种方式" target="_blank">Rust中的mod(模块)使用的五种方式</a>
@@ -236,46 +269,44 @@ git submodule update --recursive --remote --merge --force ……
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Docker/">Docker (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Jupyter/">Jupyter (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/VM/">VM (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/esxi/">esxi (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/git/">git (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/git/">git (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (4)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (5)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/vm/">VM (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
     
@@ -289,14 +320,22 @@ git submodule update --recursive --remote --merge --force ……
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="http://blog.lazy.icu/tags/Docker/">Docker</a>
+    
+    <a href="http://blog.lazy.icu/tags/Jupyter/">Jupyter</a>
+    
+    <a href="http://blog.lazy.icu/tags/LBS/">LBS</a>
+    
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
+    
+    <a href="http://blog.lazy.icu/tags/VM/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
     
     <a href="http://blog.lazy.icu/tags/conda/">conda</a>
-    
-    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
     
     <a href="http://blog.lazy.icu/tags/esxi/">esxi</a>
     
@@ -314,21 +353,15 @@ git submodule update --recursive --remote --merge --force ……
     
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
     
-    <a href="http://blog.lazy.icu/tags/jupyter/">Jupyter</a>
-    
-    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
-    
     <a href="http://blog.lazy.icu/tags/linux/">linux</a>
     
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
     <a href="http://blog.lazy.icu/tags/python/">python</a>
     
-    <a href="http://blog.lazy.icu/tags/rust/">Rust</a>
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
     
     <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
-    
-    <a href="http://blog.lazy.icu/tags/vm/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/zip/">zip</a>
     
@@ -343,15 +376,23 @@ git submodule update --recursive --remote --merge --force ……
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
-            <a target="_blank" href="http://www.baidu.com" title="百度">百度</a>
+            <a target="_blank" href="https://www.tailwindcss.cn/docs" title="TailWindCSS文档">TailWindCSS文档</a>
         </li>
         
         <li>
-            <a target="_blank" href="http://www.oschina.net" title="开源中国">开源中国</a>
+            <a target="_blank" href="https://daisyui.com" title="DaisyUI">DaisyUI</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.shuttle.rs" title="shuttle-rs">shuttle-rs</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://icones.js.org" title="icones">icones</a>
         </li>
         
     </ul>
@@ -359,9 +400,9 @@ git submodule update --recursive --remote --merge --force ……
 
 
     <section class="widget">
-        <h3 class="widget-title">Meta</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>

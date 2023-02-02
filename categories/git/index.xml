@@ -5,16 +5,24 @@
     <link>http://blog.lazy.icu/categories/git/</link>
     <description>Recent content in git on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Mon, 21 Dec 2020 16:31:50 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-Hans</language>
+    <lastBuildDate>Thu, 02 Feb 2023 15:16:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>centos7安装新版本的git客户端</title>
+      <link>http://blog.lazy.icu/2023/02/02/centosgit2/</link>
+      <pubDate>Thu, 02 Feb 2023 15:16:47 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2023/02/02/centosgit2/</guid>
+      <description>linux中访问github:参见: https://gitclone.com/ 1 2 3 4 5 6 7 方法一（替换URL） git clone https://gitclone.com/github.com/tendermint/tendermint.git 方法二（设置git参数） git config --global url.&amp;#34;https://gitclone.com/&amp;#34;.insteadOf https:// git clone https://github.com/tendermint/tendermint.git 方法三（使用cgit客户端） cgit clone https://github.com/tendermint/tendermint.git 安装新版本的git客户端: 使用 https://ius.io/ 源 1 2 3 4 5 6 7 curl -sSL https://setup.ius.io | sh # 查看哪些包提供git这个命令 yum provides git # 这里结果显示最新版本为ius提供</description>
+    </item>
+    
     <item>
       <title>更新git项目中submodule的命令</title>
       <link>http://blog.lazy.icu/2020/12/21/git-submodule-update/</link>
       <pubDate>Mon, 21 Dec 2020 16:31:50 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2020/12/21/git-submodule-update/</guid>
-      <description>之前一直没有注意submodule如何更新的问题,一直以为我clone后submodule就是新的,后来才发现即便我重新clone,submodule也是按照当时提交时候的版本.找了几个小时才找到简单的命令进行更新submodule.
-git submodule update --recursive --remote --merge --force </description>
+      <description>之前一直没有注意submodule如何更新的问题,一直以为我clone后submodule就是新的,后来才发现即便我重新clone,submodule也是按照当时提交时候的版本.找了几个小时才找到简单的命令进行更新submodule. git submodule update --recursive --remote --merge --force</description>
     </item>
     
   </channel>

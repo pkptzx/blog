@@ -5,14 +5,32 @@
     <link>http://blog.lazy.icu/categories/</link>
     <description>Recent content in Categories on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Wed, 28 Sep 2022 18:57:58 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-Hans</language>
+    <lastBuildDate>Thu, 02 Feb 2023 15:16:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>http://blog.lazy.icu/categories/git/</link>
+      <pubDate>Thu, 02 Feb 2023 15:16:47 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://blog.lazy.icu/categories/linux/</link>
+      <pubDate>Thu, 02 Feb 2023 15:16:47 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/categories/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Rust</title>
-      <link>http://blog.lazy.icu/categories/rust/</link>
+      <link>http://blog.lazy.icu/categories/Rust/</link>
       <pubDate>Wed, 28 Sep 2022 18:57:58 +0800</pubDate>
       
-      <guid>http://blog.lazy.icu/categories/rust/</guid>
+      <guid>http://blog.lazy.icu/categories/Rust/</guid>
       <description></description>
     </item>
     
@@ -22,15 +40,6 @@
       <pubDate>Wed, 03 Aug 2022 05:18:58 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>http://blog.lazy.icu/categories/linux/</link>
-      <pubDate>Sat, 19 Mar 2022 18:09:58 +0800</pubDate>
-      
-      <guid>http://blog.lazy.icu/categories/linux/</guid>
       <description></description>
     </item>
     
@@ -45,19 +54,19 @@
     
     <item>
       <title>VM</title>
-      <link>http://blog.lazy.icu/categories/vm/</link>
+      <link>http://blog.lazy.icu/categories/VM/</link>
       <pubDate>Wed, 04 Aug 2021 20:48:07 +0800</pubDate>
       
-      <guid>http://blog.lazy.icu/categories/vm/</guid>
+      <guid>http://blog.lazy.icu/categories/VM/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jupyter</title>
-      <link>http://blog.lazy.icu/categories/jupyter/</link>
+      <link>http://blog.lazy.icu/categories/Jupyter/</link>
       <pubDate>Wed, 04 Aug 2021 20:41:06 +0800</pubDate>
       
-      <guid>http://blog.lazy.icu/categories/jupyter/</guid>
+      <guid>http://blog.lazy.icu/categories/Jupyter/</guid>
       <description></description>
     </item>
     
@@ -107,20 +116,11 @@
     </item>
     
     <item>
-      <title>git</title>
-      <link>http://blog.lazy.icu/categories/git/</link>
-      <pubDate>Mon, 21 Dec 2020 16:31:50 +0800</pubDate>
-      
-      <guid>http://blog.lazy.icu/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Docker</title>
-      <link>http://blog.lazy.icu/categories/docker/</link>
+      <link>http://blog.lazy.icu/categories/Docker/</link>
       <pubDate>Thu, 06 Dec 2018 16:22:22 +0800</pubDate>
       
-      <guid>http://blog.lazy.icu/categories/docker/</guid>
+      <guid>http://blog.lazy.icu/categories/Docker/</guid>
       <description></description>
     </item>
     

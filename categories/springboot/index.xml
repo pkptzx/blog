@@ -5,7 +5,7 @@
     <link>http://blog.lazy.icu/categories/springboot/</link>
     <description>Recent content in springboot on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-Hans</language>
     <lastBuildDate>Mon, 21 Dec 2020 16:37:18 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/springboot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>向压缩包中添加文件而不压缩</title>
@@ -13,10 +13,7 @@
       <pubDate>Mon, 21 Dec 2020 16:37:18 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2020/12/21/jar-append-file-not-compress/</guid>
-      <description>有时候需要替换springboot打包后jar中的文件,当替换jar时会导致无法启动,提示的大概意思是jar应该是不压缩的才行. 手动在rar中操作的步骤是, 用rar打开,找到目录后,点命令-添加文件到压缩文件中- 然后选择文件(可多选), 然后在[压缩文件名和参数]的对话框中选择[文件] 在[不压缩直接存储的文件]中填写不压缩的文件名称或使用通配符*.jar
-手动操作太麻烦了,一次还好,如果测试或长期需要替换的话还是命令比较方便,折腾了一阵子才找到命令参数的方式.
-winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的别随便用,好吧我就再找了下7z的文档,改写成7z:
-7z a -mx=0 target.jar dist/*.jar 7z rn target.jar dist BOOT-INF/lib 在7z中没办法直接向压缩文件添加时指定路径,只能先添加然后通过rn再修改为最终路径.</description>
+      <description>有时候需要替换springboot打包后jar中的文件,当替换jar时会导致无法启动,提示的大概意思是jar应该是不压缩的才行. 手动在rar中操作的步骤是, 用rar打开,找到目录后,点命令-添加文件到压缩文件中- 然后选择文件(可多选), 然后在[压缩文件名和参数]的对话框中选择[文</description>
     </item>
     
     <item>
@@ -25,8 +22,7 @@ winrar a -m0 -ep1 -apBOOT-INF/lib target.jar dist/*.jar 有人说rar是商用的
       <pubDate>Thu, 17 Oct 2019 18:01:25 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2019/10/17/springboot-bean-before-flyway-migrate/</guid>
-      <description>项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法：
-使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之后了。 1 2 3 4 @DependsOn({&amp;#34;flyway&amp;#34;, &amp;#34;flywayInitializer&amp;#34;}) @Component public class UserDao { } 继承FlywayMigrationStrategy。这种方式可以在migrate执行前后注入特定的操作。从执行日志也可以看到，真的起效果了，达到了我们的目标要求。 1 2 3 4 5 6 7 8 9 10 11 12 13 @Component @Slf4j public class CallbackFlywayMigrationStrategy implements FlywayMigrationStrategy { @Override public void migrate(Flyway flyway) { log.info(&amp;#34;before flyway migration...&amp;#34;); flyway.migrate(); log.info(&amp;#34;after flyway migration...&amp;#34;); } } </description>
+      <description>项目中使用了flyway，遇到flyway还未合并完数据库，业务代码就执行了，导致报错。要实现这个目标，有两种方法： 使用DependsOn对相关Bean添加依赖，让数据库相关DAO Bean依赖flyway的Bean。这样DAO Bean初始化和使用就会在flyway Bean初始化之</description>
     </item>
     
   </channel>

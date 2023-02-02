@@ -5,7 +5,7 @@
     <link>http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/</link>
     <description>Recent content in 系统 on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-Hans</language>
     <lastBuildDate>Fri, 30 Nov 2018 22:53:02 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows远程“要求的函数不受支持”解决办法</title>
@@ -13,9 +13,7 @@
       <pubDate>Fri, 30 Nov 2018 22:53:02 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2018/11/30/</guid>
-      <description>Windows远程“要求的函数不受支持”解决办法 解决方法：
-开启组策略中远程桌面链接安全层。 1、开始-运行-gpedit.msc，进入组策略编辑器； 2、找到左侧边栏计算机配置-管理模板-Windows组件-远程桌面服务-远程桌面会话主机-安全项； 3、修改以下两项：
-A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP B,要求使用网络级别的身份验证对远程连接的用户进行身份验证，改为禁用； 4、关闭组策略编辑器，重启计算机。</description>
+      <description>Windows远程“要求的函数不受支持”解决办法 解决方法： 开启组策略中远程桌面链接安全层。 1、开始-运行-gpedit.msc，进入组策略编辑器； 2、找到左侧边栏计算机配置-管理模板-Windows组件-远程桌面服务-远程桌面会话主机-安全项； 3、修改以下两项： A,远程（RDP）</description>
     </item>
     
   </channel>

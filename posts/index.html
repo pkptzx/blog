@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
 <head>
 
     <meta charset="utf-8">
@@ -50,9 +50,9 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="http://blog.lazy.icu">Home</a>
+                    <a class="current" href="http://blog.lazy.icu">首页</a>
                     
-                    <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
+                    <a  href="http://blog.lazy.icu/tools/" title="工具">工具</a>
                     
                     <a  href="http://blog.lazy.icu/archives/" title="归档">归档</a>
                     
@@ -76,12 +76,42 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2023/02/02/centosgit2/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
+            </h1>
+        </header>
+        
+  <time datetime="2023-02-02T07:16:47Z" class="post-meta meta-date dt-published">
+    2023年2月2日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/linux' target="_blank">linux</a>
+  
+    <a href='/categories/git' target="_blank">git</a>
+  
+</div>
+
+
+        <div class="post-content">
+            linux中访问github:参见: https://gitclone.com/ 1 2 3 4 5 6 7 方法一（替换URL） git clone https://gitclone.com/github.com/tendermint/tendermint.git 方法二（设置git参数） git config --global url.&#34;https://gitclone.com/&#34;.insteadOf https:// git clone https://github.com/tendermint/tendermint.git 方法三（使用cgit客户端） cgit clone https://github.com/tendermint/tendermint.git 安装新版本的git客户端: 使用 https://ius.io/ 源 1 2 3 4 5 6 7 curl -sSL https://setup.ius.io | sh # 查看哪些包提供git这个命令 yum provides git # 这里结果显示最新版本为ius提供……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2023/02/02/centosgit2/" target="_blank">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2022/09/28/rust-mod/" title="Rust中的mod(模块)使用的五种方式" target="_blank">Rust中的mod(模块)使用的五种方式</a>
             </h1>
         </header>
         
   <time datetime="2022-09-28T10:57:58Z" class="post-meta meta-date dt-published">
-    2022-09-28
+    2022年9月28日
   </time>
 
 
@@ -94,12 +124,9 @@
 
 
         <div class="post-content">
-            rust中的mod(模块)在项目中使用是必不可少的,但有很多种使用方式,有些方式比较推荐,我们来看看这些使用方式.
-方式一: 当前类中定义并实现
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 mod x { pub(crate) fn x(){ println!(&#34;x&#34;); } pub mod y{ pub fn y(){ println!(&#34;y&#34;); } pub fn yy(){ //可以使用self(可省)表示当前模块 self::y(); //可以使用super表示上层模块 super::x(); } } } fn main() { x::x(); x::y::y(); x::y::yy(); } 方式二:同级目录中存放mod模块文件,如bar.rs
-1 2 3 4 5 6 7 8 9 // bar.rs pub fn bar() { println!……
+            rust中的mod(模块)在项目中使用是必不可少的,但有很多种使用方式,有些方式比较推荐,我们来看看这些使用方式. 方式一: 当前类中定义并实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 mod x { pub(crate) fn x(){ println!(&#34;x&#34;); } pub mod y{ pub fn y(){ println!(&#34;y&#34;); } pub fn yy(){ //可以使用self(可省)表示当前模块 self::y(); //可以使用sup……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2022/09/28/rust-mod/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2022/09/28/rust-mod/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -112,7 +139,7 @@
         </header>
         
   <time datetime="2022-08-02T21:18:58Z" class="post-meta meta-date dt-published">
-    2022-08-03
+    2022年8月3日
   </time>
 
 
@@ -125,12 +152,9 @@
 
 
         <div class="post-content">
-            桌面程序或爬虫有时候很需要免登陆获取cookies,想着应用怎么能直接读取到cookie文件,查了后发现Chrome的Cookies文件是加密的.
-按照网上找了半天Cookies的路径都不对,新版本位置也变了,Cookies是在Network下.
-原理是直接读取chrome保存Cookies的sqlite数据库和Local State文件中存放的秘钥,然后解析出明文。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 # -*- coding:&#39;utf-8&#39; -*- import time,traceback,sqlite3,os,json,base64,sys from cryptography.……
+            桌面程序或爬虫有时候很需要免登陆获取cookies,想着应用怎么能直接读取到cookie文件,查了后发现Chrome的Cookies文件是加密的. 按照网上找了半天Cookies的路径都不对,新版本位置也变了,Cookies是在Network下. 原理是直接读取chrome保存Coo……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2022/08/03/chrome-cookies-crack/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2022/08/03/chrome-cookies-crack/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -143,7 +167,7 @@
         </header>
         
   <time datetime="2022-03-19T10:09:58Z" class="post-meta meta-date dt-published">
-    2022-03-19
+    2022年3月19日
   </time>
 
 
@@ -156,9 +180,9 @@
 
 
         <div class="post-content">
-             1 2 # linux 删除空文件夹 find -type d -empty -delete ……
+            1 2 # linux 删除空文件夹 find -type d -empty -delete……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2022/03/19/unknow/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2022/03/19/unknow/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -171,7 +195,7 @@
         </header>
         
   <time datetime="2022-03-11T22:05:48Z" class="post-meta meta-date dt-published">
-    2022-03-12
+    2022年3月12日
   </time>
 
 
@@ -186,14 +210,9 @@
 
 
         <div class="post-content">
-            rust和python交互pyo3(1) pyo3 需要python3.7以上的版本
-1 2 3 4 5 6 7 pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release 生成的pyproject.toml中requires-python可能最小是3.6,有可能导致编译失败,可以手动改为3.7以上
-Ubuntu: sudo apt install python3-dev
-centos8: yum/dnf install python38-devel
-这两个features不能同时存在,否则导致rust编译失败 &ldquo;extension-module&rdquo;,&ldquo;auto-initialize&rdquo; 将rust写的py库和,rust调用py拆成两个子工程.
-whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
+            rust和python交互pyo3(1) pyo3 需要python3.7以上的版本 1 2 3 4 5 6 7 pip install maturin # 新建文件夹后:初始化 maturin init --bindings pyo3 # 开发编译安装,就可以测试用python调用了 maturin develop # release版本编译,只会编译,不会更新安装到python环境 maturin build --release 生成的pyproject.toml……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2022/03/12/rust-pyo3-learn-1/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -206,7 +225,7 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
         </header>
         
   <time datetime="2022-03-09T16:15:47Z" class="post-meta meta-date dt-published">
-    2022-03-10
+    2022年3月10日
   </time>
 
 
@@ -219,9 +238,9 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
 
 
         <div class="post-content">
-            1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 import requests import base64 import json from IPython.core.display import Image # appKey ：2e35010c-a759-11eb-8dd8-7429af540200 # appSecret：632b36755e7963fbdb61b2529e410bc4 # http://api.yunshuck.com/api/captcha/simple-captcha # type:603 数字加字母组合验证码 # type:601 数字验证码 # type:604 数字计算验证码 headers ={} headers[&#39;Content-Type&#39;] = &#39;application/json&#39; headers[&#39;appKey&#39;] = &#39;8961d10c-aa79-11eb-942c-7429af540200&#39; headers[&#39;appSecret&#39;] = &#39;baec542e97c499f75c419ea935079d00&#39; headers[&#39;Content-Type&#39;] = &#39;application/json&#39; rst_code = 0 while(rst_code==0): response = requests.……
+            1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 import requests import base64 import json from IPython.core.display import Image # appKey ：2e35010c-a759-11eb-8dd8-7429af540200 # appSecret：632b36755e7963fbdb61b2529e410bc4 # http://api.yunshuck.com/api/captcha/simple-captcha # type:603 数字加字母组合验……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -234,35 +253,22 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
         </header>
         
   <time datetime="2022-01-08T00:23:22Z" class="post-meta meta-date dt-published">
-    2022-01-08
+    2022年1月8日
   </time>
 
 
 <div class="post-meta meta-category">
   <span>&nbsp;|</span>
   
-    <a href='/categories/rust' target="_blank">Rust</a>
+    <a href='/categories/Rust' target="_blank">Rust</a>
   
 </div>
 
 
         <div class="post-content">
-            rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意.
-CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO
-RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP
-rustup target list
-rustup target add x86_64-pc-windows-gnu
-windows中编译成linux可执行文件:
-先添加或安装工具链:x86_64-unknown-linux-musl
-~/.cargo/config添加:
-[target.x86_64-unknown-linux-musl]
-linker = &ldquo;rust-lld&rdquo;
-编译:
-cargo build --target x86_64-unknown-linux-musl --release
-国内源 ~/.cargo/config添加:
-1 2 3 4 5 6 7 8 9 [source.crates-io] registry = &#34;https://github.com/rust-lang/crates.io-index&#34; replace-with = &#39;ustc&#39; [source.ustc] registry = &#34;git://mirrors.ustc.edu.cn/crates.io-index&#34; [target.x86_64-pc-windows-gnu] linker = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe&#34; ar = &#34;D:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\ar.exe&#34; 或者在项目工程结构中，与 Cargo.toml 同级目录的 .……
+            rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意. CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP rustup target list rustup target add x86_64-pc-windows-gnu windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unkno……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2022/01/08/rust-setup/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2022/01/08/rust-setup/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -275,7 +281,7 @@ cargo build --target x86_64-unknown-linux-musl --release
         </header>
         
   <time datetime="2021-08-04T12:48:07Z" class="post-meta meta-date dt-published">
-    2021-08-04
+    2021年8月4日
   </time>
 
 
@@ -286,29 +292,15 @@ cargo build --target x86_64-unknown-linux-musl --release
   
     <a href='/categories/esxi' target="_blank">esxi</a>
   
-    <a href='/categories/vm' target="_blank">VM</a>
+    <a href='/categories/VM' target="_blank">VM</a>
   
 </div>
 
 
         <div class="post-content">
-            虚拟机中Linux磁盘空间进行扩容
-直接在虚拟机中对Linux进行磁盘容量扩容,如果有快照必须先删除快照再扩容.
-然后重启虚拟机
-查看磁盘空间信息
-fdisk -l
-增加分区
-fdisk /dev/sda
-输入n
-输入p
-按照分区信息输入下一个编号(3)
-使用默认的起始扇区和结束扇区,两次回车,输入t,设置分区类型为8e
-输入w保存分区信息
-重启
-初始化分区加入卷组
-#查看卷组信息 vgdisplay #初始化创建的卷组 pvcreate /dev/sda3 #查看卷组信息,记住卷组名称 vgdisplay #将初始化的分区加入到虚拟卷组 vgextend VolGroup /dev/sda3 #扩展逻辑卷的大小,使用df -lh查看逻辑卷名称 lvextend -L +20G /dev/mapper/VolGroup-lv_root #查看文件系统格式 cat /etc/fstab #扩容重新加载逻辑卷 xfs_growfs /dev/mapper/centos-home #查看修改后的容量 df -lh ……
+            虚拟机中Linux磁盘空间进行扩容 直接在虚拟机中对Linux进行磁盘容量扩容,如果有快照必须先删除快照再扩容. 然后重启虚拟机 查看磁盘空间信息 fdisk -l 增加分区 fdisk /dev/sda 输入n 输入p 按照分区信息输入下一个编号(3) 使用默认的起始扇区和结束扇区,两次回车,输入t,设置分区类型为8e 输入w保存分区……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/linux-expansion/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -321,7 +313,7 @@ fdisk /dev/sda
         </header>
         
   <time datetime="2021-08-04T12:41:06Z" class="post-meta meta-date dt-published">
-    2021-08-04
+    2021年8月4日
   </time>
 
 
@@ -330,22 +322,15 @@ fdisk /dev/sda
   
     <a href='/categories/python' target="_blank">python</a>
   
-    <a href='/categories/jupyter' target="_blank">Jupyter</a>
+    <a href='/categories/Jupyter' target="_blank">Jupyter</a>
   
 </div>
 
 
         <div class="post-content">
-            Jupyter Notebook使用Anaconda虚拟环境 第一步：安装ipykernel： 法一： 1.进入虚拟环境
-Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Terminal, 运行 source activate myenv 安装ipykernel：conda install ipykernel 法二： 在任何环境下都可以直接运行conda install -n myenv ipykernel为myenv安装ipykernel
-第二步：将环境写入notebook的kernel中 首先要保证在当前虚拟环境下，进入虚拟环境的过程如第一步的法一。 运行python -m ipykernel install &ndash;user &ndash;name=myenv 将环境写入notebook的kernel中
-生成配置文件:
-1 jupyter notebook --generate-config 生成密码
-输入ipython后
-1 2 3 from notebook.auth import passwd passwd() 修改配置文件
-1 2 3 4 5 6 7 c.NotebookApp.ip=&#39;*&#39; c.NotebookApp.notebook_dir = &#39;/home/ozh/share&#39;#共享目录 c.NotebookApp.password = u&#39;sha1:5df252f58b7f:bf65d53125bb36c085162b3780377f66d73972d1&#39; #填写刚刚生成的密文 c.NotebookApp.open_browser = False # 禁止notebook启动时自动打开浏览器(在linux服务器一般都是ssh命令行访问，没有图形界面的。所以，启动也没啥用) c.……
+            Jupyter Notebook使用Anaconda虚拟环境 第一步：安装ipykernel： 法一： 1.进入虚拟环境 Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Terminal, 运行 source activate myenv 安装ipykernel：conda install ipykernel 法二： 在任何环境下都可以直接运行conda install -n myenv ipykern……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -358,7 +343,7 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
         </header>
         
   <time datetime="2021-08-04T12:11:22Z" class="post-meta meta-date dt-published">
-    2021-08-04
+    2021年8月4日
   </time>
 
 
@@ -371,47 +356,9 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
 
 
         <div class="post-content">
-            文件夹批量改名&amp;批量解压 将2020xxxx批量修改为xxxx
-1 2 3 4 5 6 7 8 9 for f in ls /root/testdata1/data/OB/2020 do if test -f $f then echo $f &#34;is file&#34; else mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020} fi done win批量解压sz
-@echo off set path=D:\Program Files\7-Zip;%path% cd L2-shenzhen\2020 for /d %%i in () do ( echo %%i 7z e %%i*trade.7z.001 -o..\%%i\ ) pause win批量解压OB
-@echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.7z) do ( echo %%i 7z x %%i *\SZ000725 *\SZ002475 *\SZ300185 *\SZ300059 *\SZ300433 *\SZ002241 *\SZ002549 *\SZ002797 *\SZ123048 *\SZ000100 -y ) pause ……
+            文件夹批量改名&amp;批量解压 将2020xxxx批量修改为xxxx 1 2 3 4 5 6 7 8 9 for f in ls /root/testdata1/data/OB/2020 do if test -f $f then echo $f &#34;is file&#34; else mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020} fi done win批量解压sz @echo off set path=D:\Program Files\7-Zip;%path% cd L2-shenzhen\2020 for /d %%i in () do ( echo %%i 7z e %%i*trade.7z.001 -o..\%%i\ ) pause win批量解压OB @echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.7z) do ( echo %%i 7z x %%i *\SZ000725 *\SZ002475 *\SZ300185 *\SZ300059 *\SZ300433 *\SZ002241 *\SZ002549 *\SZ002797 *\SZ123048 *\SZ000100 -y ) pause……
         </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" target="_blank">Continue reading</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
-            </h1>
-        </header>
-        
-  <time datetime="2021-08-04T12:05:48Z" class="post-meta meta-date dt-published">
-    2021-08-04
-  </time>
-
-
-<div class="post-meta meta-category">
-  <span>&nbsp;|</span>
-  
-    <a href='/categories/python' target="_blank">python</a>
-  
-    <a href='/categories/anaconda' target="_blank">anaconda </a>
-  
-</div>
-
-
-        <div class="post-content">
-            Anaconda &amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。
-各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config --set show_channel_urls yes 生成该文件之后再修改。
-channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud 即可添加 Anaconda Python 免费仓库。
-运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索引。
-运行 conda create -n myenv numpy 测试一下吧。
-#创建python3.6环境,名称为python3.6,可按照实际环境名称修改 conda create -n python3.6 python=3.6 #移除环境 conda remove -n py3 --all #进入指定的环境 conda activate python3.……
-        </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" target="_blank">Continue reading</a></p>
+        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" target="_blank">阅读全文</a></p>
     </article>
     
     
@@ -438,7 +385,7 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
 
     
     <li class="next">
-        <a href="http://blog.lazy.icu/posts/page/2/">Next</a>
+        <a href="http://blog.lazy.icu/posts/page/2/">下一页</a>
     </li>
     
 </ol>
@@ -492,8 +439,12 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Latest articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.lazy.icu/2023/02/02/centosgit2/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
+    </li>
     
     <li>
         <a href="http://blog.lazy.icu/2022/09/28/rust-mod/" title="Rust中的mod(模块)使用的五种方式" target="_blank">Rust中的mod(模块)使用的五种方式</a>
@@ -531,46 +482,44 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Docker/">Docker (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Jupyter/">Jupyter (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/VM/">VM (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/esxi/">esxi (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/git/">git (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/git/">git (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (4)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (5)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/vm/">VM (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
     
@@ -584,14 +533,22 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="http://blog.lazy.icu/tags/Docker/">Docker</a>
+    
+    <a href="http://blog.lazy.icu/tags/Jupyter/">Jupyter</a>
+    
+    <a href="http://blog.lazy.icu/tags/LBS/">LBS</a>
+    
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
+    
+    <a href="http://blog.lazy.icu/tags/VM/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
     
     <a href="http://blog.lazy.icu/tags/conda/">conda</a>
-    
-    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
     
     <a href="http://blog.lazy.icu/tags/esxi/">esxi</a>
     
@@ -609,21 +566,15 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
     
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
     
-    <a href="http://blog.lazy.icu/tags/jupyter/">Jupyter</a>
-    
-    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
-    
     <a href="http://blog.lazy.icu/tags/linux/">linux</a>
     
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
     <a href="http://blog.lazy.icu/tags/python/">python</a>
     
-    <a href="http://blog.lazy.icu/tags/rust/">Rust</a>
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
     
     <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
-    
-    <a href="http://blog.lazy.icu/tags/vm/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/zip/">zip</a>
     
@@ -638,15 +589,23 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
-            <a target="_blank" href="http://www.baidu.com" title="百度">百度</a>
+            <a target="_blank" href="https://www.tailwindcss.cn/docs" title="TailWindCSS文档">TailWindCSS文档</a>
         </li>
         
         <li>
-            <a target="_blank" href="http://www.oschina.net" title="开源中国">开源中国</a>
+            <a target="_blank" href="https://daisyui.com" title="DaisyUI">DaisyUI</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.shuttle.rs" title="shuttle-rs">shuttle-rs</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://icones.js.org" title="icones">icones</a>
         </li>
         
     </ul>
@@ -654,9 +613,9 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
 
 
     <section class="widget">
-        <h3 class="widget-title">Meta</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>

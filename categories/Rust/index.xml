@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on 码魂</title>
+    <link>http://blog.lazy.icu/categories/Rust/</link>
+    <description>Recent content in Rust on 码魂</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Wed, 28 Sep 2022 18:57:58 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/Rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust 安装与环境设置</title>
+      <link>http://blog.lazy.icu/2022/01/08/rust-setup/</link>
+      <pubDate>Sat, 08 Jan 2022 08:23:22 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2022/01/08/rust-setup/</guid>
+      <description>rust 安装与环境设置 配置环境变量 新建cargo, rustup文件夹, 后期包的累积可能会占用巨量的存储空间, 土豪请随意. CARGO_HOME : Cargo 在本地缓存注册表索引和箱子的 git 版本。如: E:\RUST\CARGO RUSTUP_HOME: 工具链, 如: E:\RUST\RUSTUP rustup target list rustup target add x86_64-pc-windows-gnu windows中编译成linux可执行文件: 先添加或安装工具链:x86_64-unkno</description>
+    </item>
+    
+  </channel>
+</rss>

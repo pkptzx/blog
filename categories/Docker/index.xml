@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on 码魂</title>
+    <link>http://blog.lazy.icu/categories/Docker/</link>
+    <description>Recent content in Docker on 码魂</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Thu, 06 Dec 2018 16:22:22 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/Docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker设置固定ip地址</title>
+      <link>http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/</link>
+      <pubDate>Thu, 06 Dec 2018 16:22:22 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/</guid>
+      <description>Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5 $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local 启动 Docker的时候，用 &amp;ndash;network 参数，可以指定网络类型 1 docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网</description>
+    </item>
+    
+  </channel>
+</rss>

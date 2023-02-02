@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
 <head>
 
     <meta charset="utf-8">
@@ -50,9 +50,9 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://blog.lazy.icu">Home</a>
+                    <a class="" href="http://blog.lazy.icu">首页</a>
                     
-                    <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
+                    <a  href="http://blog.lazy.icu/tools/" title="工具">工具</a>
                     
                     <a  href="http://blog.lazy.icu/archives/" title="归档">归档</a>
                     
@@ -76,11 +76,13 @@
         
         <span>4</span>
         
-        <span>3</span>
+        <span>4</span>
         
         <span>3</span>
         
-        <span>3</span>
+        <span>2</span>
+        
+        <span>2</span>
         
         <span>2</span>
         
@@ -121,7 +123,7 @@
         <span>1</span>
         
         <span class="keyword">maven</span>
-        articles
+        中的文章
     </h3>
     
 
@@ -134,7 +136,7 @@
         </header>
         
   <time datetime="2020-12-21T11:20:23Z" class="post-meta meta-date dt-published">
-    2020-12-21
+    2020年12月21日
   </time>
 
 
@@ -147,9 +149,8 @@
 
 
         <div class="post-content">
-            在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来.
-mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime ……
-            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" target="_blank">Continue reading</a></p>
+            在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来. mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime……
+            <p class="readmore"><a href="http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/" target="_blank">阅读全文</a></p>
         </div>
     </article>
     
@@ -161,7 +162,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
         </header>
         
   <time datetime="2019-05-23T07:58:08Z" class="post-meta meta-date dt-published">
-    2019-05-23
+    2019年5月23日
   </time>
 
 
@@ -174,16 +175,8 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime �
 
 
         <div class="post-content">
-            有时候maven真的很坑!
-有时候提示invalid LOC header (bad signat signature),
-但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的.
-很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有.
-今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不报错,用mvn命令的时候才能看到jar invalid.
-我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
-真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
-不如就写个代码跑一下吧~
-public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &#34;F:/mvnlib&#34;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &#34;jar,pom&#34;); System.out.println(&#34;完毕&#34;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&#34;,&#34;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">Continue reading</a></p>
+            有时候maven真的很坑! 有时候提示invalid LOC header (bad signat signature), 但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的. 很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有. 今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不……
+            <p class="readmore"><a href="http://blog.lazy.icu/2019/05/23/java-check-maven-jar/" target="_blank">阅读全文</a></p>
         </div>
     </article>
     
@@ -241,8 +234,12 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Latest articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.lazy.icu/2023/02/02/centosgit2/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
+    </li>
     
     <li>
         <a href="http://blog.lazy.icu/2022/09/28/rust-mod/" title="Rust中的mod(模块)使用的五种方式" target="_blank">Rust中的mod(模块)使用的五种方式</a>
@@ -280,46 +277,44 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Docker/">Docker (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Jupyter/">Jupyter (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/VM/">VM (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/esxi/">esxi (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/git/">git (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/git/">git (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (4)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (5)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/vm/">VM (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
     
@@ -333,14 +328,22 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="http://blog.lazy.icu/tags/Docker/">Docker</a>
+    
+    <a href="http://blog.lazy.icu/tags/Jupyter/">Jupyter</a>
+    
+    <a href="http://blog.lazy.icu/tags/LBS/">LBS</a>
+    
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
+    
+    <a href="http://blog.lazy.icu/tags/VM/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
     
     <a href="http://blog.lazy.icu/tags/conda/">conda</a>
-    
-    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
     
     <a href="http://blog.lazy.icu/tags/esxi/">esxi</a>
     
@@ -358,21 +361,15 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
     
-    <a href="http://blog.lazy.icu/tags/jupyter/">Jupyter</a>
-    
-    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
-    
     <a href="http://blog.lazy.icu/tags/linux/">linux</a>
     
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
     <a href="http://blog.lazy.icu/tags/python/">python</a>
     
-    <a href="http://blog.lazy.icu/tags/rust/">Rust</a>
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
     
     <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
-    
-    <a href="http://blog.lazy.icu/tags/vm/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/zip/">zip</a>
     
@@ -387,15 +384,23 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
-            <a target="_blank" href="http://www.baidu.com" title="百度">百度</a>
+            <a target="_blank" href="https://www.tailwindcss.cn/docs" title="TailWindCSS文档">TailWindCSS文档</a>
         </li>
         
         <li>
-            <a target="_blank" href="http://www.oschina.net" title="开源中国">开源中国</a>
+            <a target="_blank" href="https://daisyui.com" title="DaisyUI">DaisyUI</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.shuttle.rs" title="shuttle-rs">shuttle-rs</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://icones.js.org" title="icones">icones</a>
         </li>
         
     </ul>
@@ -403,9 +408,9 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
 
 
     <section class="widget">
-        <h3 class="widget-title">Meta</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>

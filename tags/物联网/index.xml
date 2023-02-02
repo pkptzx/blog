@@ -5,7 +5,7 @@
     <link>http://blog.lazy.icu/tags/%E7%89%A9%E8%81%94%E7%BD%91/</link>
     <description>Recent content in 物联网 on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-Hans</language>
     <lastBuildDate>Fri, 23 Nov 2018 20:19:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/%E7%89%A9%E8%81%94%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>物联网卡无法上网设置APN</title>
@@ -13,20 +13,7 @@
       <pubDate>Fri, 23 Nov 2018 20:19:47 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2018/11/23/</guid>
-      <description>关于少数设备不能联网的情况：
-大部分终端插卡即用，部分设备插上后不能联网，这时需要设置一下APN。操作流程如下：
-第①步：在移动网络设置里找到【接入点名称（APN）】，然后新建一个APN；
-提示：关于“APN地址”，有的终端显示是“接入点”、有的显示是“APN”
-第②步：创建APN/接入点时，名称可以随便填写，
-联通制式终端：
-APN地址输入3gnet即可享受3G网络；
-APN地址输入wonet即可享受4G网络。
-电信制式终端：
-APN地址输入CTNET即可享受3G/4G网络。
-第③步：保存，然后重启即可。
-【如果按照上述步骤设置后还是不能用，请在APN地址输入UNIM2M.NJM2MAPN或者UNIM2M.GZM2MAPN
-然后，MCC改为460，MNC改为06 保存，重启即可】
-【中移物联网】尊敬的客户，您好！针对您反馈的上网功能问题，我们建议您将故障卡放在普通安卓智能机（非联通/电信定制机）中，打开设置-移动网络-APN/接入点-新建APN，将“名称”和“APN”均修改为“cmiot”后保存并勾选，勾选“数据连接”和“数据漫游”后，浏览任意网页，若能正常访问，则物联卡上网功能正常。感谢您的配合，谢谢！</description>
+      <description>关于少数设备不能联网的情况： 大部分终端插卡即用，部分设备插上后不能联网，这时需要设置一下APN。操作流程如下： 第①步：在移动网络设置里找到【接入点名称（APN）】，然后新建一个APN； 提示：关于“APN地址”，有的终端显示是“接入点”、有的显示是“APN” 第②步：创建APN/接入</description>
     </item>
     
   </channel>

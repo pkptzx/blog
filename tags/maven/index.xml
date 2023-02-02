@@ -5,7 +5,7 @@
     <link>http://blog.lazy.icu/tags/maven/</link>
     <description>Recent content in maven on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-Hans</language>
     <lastBuildDate>Mon, 21 Dec 2020 19:20:23 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/maven/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>maven导出依赖jar</title>
@@ -13,8 +13,7 @@
       <pubDate>Mon, 21 Dec 2020 19:20:23 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2020/12/21/maven-copy-dependencies/</guid>
-      <description>在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来.
-mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime </description>
+      <description>在某些场景中,我们需要获取出项目依赖的jar给别人的话,可以使用maven自带的命令参数直接导出所有依赖的jar,并且可以指定要导出jar的范围,如下导出到dist目录,导出范围是runtime的依赖.注意如果写compile会将provided也导出来. mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime</description>
     </item>
     
     <item>
@@ -23,15 +22,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=dist -DincludeScope=runtime <
       <pubDate>Thu, 23 May 2019 15:58:08 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2019/05/23/java-check-maven-jar/</guid>
-      <description>有时候maven真的很坑!
-有时候提示invalid LOC header (bad signat signature),
-但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的.
-很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有.
-今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不报错,用mvn命令的时候才能看到jar invalid.
-我还遇到整个spring的项目只有test报错,其他的都不报错,编辑器里提示的Unknown Error~
-真没法玩了~我知道肯定有一个或几个jar下载的有问题.但就算你知道了难道一个一个去找删?一个还好说,有时候5,6个真是浪费时间.
-不如就写个代码跑一下吧~
-public class MvnCheckJar { public static void main(String[] args) throws Exception { String localMvnPath = &amp;#34;F:/mvnlib&amp;#34;; // 遍历文件夹,找出jar\pom和效验文件进行对比,如果不相符,则删除 getFile(new File(localMvnPath), &amp;#34;jar,pom&amp;#34;); System.out.println(&amp;#34;完毕&amp;#34;); } public static void getFile(File path, String suffixs) throws Exception { String[] suffixs_ = new String[] {}; if (suffixs != null) suffixs_ = suffixs.split(&amp;#34;,&amp;#34;); if (path.isFile()) { for (String suffix : suffixs_) { if (path.</description>
+      <description>有时候maven真的很坑! 有时候提示invalid LOC header (bad signat signature), 但又有时候什么都不提示,工程报错,情况有肯多中,不知道大家遇到过几种诡异的. 很多人说加-U参数或在maven插件选择强制刷新等操作,但很不好使,一点用都没有. 今天我就遇到POM提示第一行错误,这怎么可能?其他任何地方都不</description>
     </item>
     
   </channel>

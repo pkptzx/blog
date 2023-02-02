@@ -5,15 +5,24 @@
     <link>http://blog.lazy.icu/tags/linux/</link>
     <description>Recent content in linux on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sat, 19 Mar 2022 18:09:58 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-Hans</language>
+    <lastBuildDate>Thu, 02 Feb 2023 15:16:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>centos7安装新版本的git客户端</title>
+      <link>http://blog.lazy.icu/2023/02/02/centosgit2/</link>
+      <pubDate>Thu, 02 Feb 2023 15:16:47 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/2023/02/02/centosgit2/</guid>
+      <description>linux中访问github:参见: https://gitclone.com/ 1 2 3 4 5 6 7 方法一（替换URL） git clone https://gitclone.com/github.com/tendermint/tendermint.git 方法二（设置git参数） git config --global url.&amp;#34;https://gitclone.com/&amp;#34;.insteadOf https:// git clone https://github.com/tendermint/tendermint.git 方法三（使用cgit客户端） cgit clone https://github.com/tendermint/tendermint.git 安装新版本的git客户端: 使用 https://ius.io/ 源 1 2 3 4 5 6 7 curl -sSL https://setup.ius.io | sh # 查看哪些包提供git这个命令 yum provides git # 这里结果显示最新版本为ius提供</description>
+    </item>
+    
     <item>
       <title>未整理</title>
       <link>http://blog.lazy.icu/2022/03/19/unknow/</link>
       <pubDate>Sat, 19 Mar 2022 18:09:58 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2022/03/19/unknow/</guid>
-      <description> 1 2 # linux 删除空文件夹 find -type d -empty -delete </description>
+      <description>1 2 # linux 删除空文件夹 find -type d -empty -delete</description>
     </item>
     
     <item>
@@ -22,21 +31,7 @@
       <pubDate>Wed, 04 Aug 2021 20:48:07 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2021/08/04/linux-expansion/</guid>
-      <description>虚拟机中Linux磁盘空间进行扩容
-直接在虚拟机中对Linux进行磁盘容量扩容,如果有快照必须先删除快照再扩容.
-然后重启虚拟机
-查看磁盘空间信息
-fdisk -l
-增加分区
-fdisk /dev/sda
-输入n
-输入p
-按照分区信息输入下一个编号(3)
-使用默认的起始扇区和结束扇区,两次回车,输入t,设置分区类型为8e
-输入w保存分区信息
-重启
-初始化分区加入卷组
-#查看卷组信息 vgdisplay #初始化创建的卷组 pvcreate /dev/sda3 #查看卷组信息,记住卷组名称 vgdisplay #将初始化的分区加入到虚拟卷组 vgextend VolGroup /dev/sda3 #扩展逻辑卷的大小,使用df -lh查看逻辑卷名称 lvextend -L +20G /dev/mapper/VolGroup-lv_root #查看文件系统格式 cat /etc/fstab #扩容重新加载逻辑卷 xfs_growfs /dev/mapper/centos-home #查看修改后的容量 df -lh </description>
+      <description>虚拟机中Linux磁盘空间进行扩容 直接在虚拟机中对Linux进行磁盘容量扩容,如果有快照必须先删除快照再扩容. 然后重启虚拟机 查看磁盘空间信息 fdisk -l 增加分区 fdisk /dev/sda 输入n 输入p 按照分区信息输入下一个编号(3) 使用默认的起始扇区和结束扇区,两次回车,输入t,设置分区类型为8e 输入w保存分区</description>
     </item>
     
     <item>
@@ -45,10 +40,7 @@ fdisk /dev/sda
       <pubDate>Wed, 04 Aug 2021 20:11:22 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/</guid>
-      <description>文件夹批量改名&amp;amp;批量解压 将2020xxxx批量修改为xxxx
-1 2 3 4 5 6 7 8 9 for f in ls /root/testdata1/data/OB/2020 do if test -f $f then echo $f &amp;#34;is file&amp;#34; else mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020} fi done win批量解压sz
-@echo off set path=D:\Program Files\7-Zip;%path% cd L2-shenzhen\2020 for /d %%i in () do ( echo %%i 7z e %%i*trade.7z.001 -o..\%%i\ ) pause win批量解压OB
-@echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.7z) do ( echo %%i 7z x %%i *\SZ000725 *\SZ002475 *\SZ300185 *\SZ300059 *\SZ300433 *\SZ002241 *\SZ002549 *\SZ002797 *\SZ123048 *\SZ000100 -y ) pause </description>
+      <description>文件夹批量改名&amp;amp;批量解压 将2020xxxx批量修改为xxxx 1 2 3 4 5 6 7 8 9 for f in ls /root/testdata1/data/OB/2020 do if test -f $f then echo $f &amp;#34;is file&amp;#34; else mv /root/testdata1/data/OB/2020/$f /root/testdata1/data/OB/2020/${f##2020} fi done win批量解压sz @echo off set path=D:\Program Files\7-Zip;%path% cd L2-shenzhen\2020 for /d %%i in () do ( echo %%i 7z e %%i*trade.7z.001 -o..\%%i\ ) pause win批量解压OB @echo off set path=D:\Program Files\7-Zip;%path% cd OB\2020 for %%i in (*.7z) do ( echo %%i 7z x %%i *\SZ000725 *\SZ002475 *\SZ300185 *\SZ300059 *\SZ300433 *\SZ002241 *\SZ002549 *\SZ002797 *\SZ123048 *\SZ000100 -y ) pause</description>
     </item>
     
   </channel>

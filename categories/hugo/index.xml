@@ -5,7 +5,7 @@
     <link>http://blog.lazy.icu/categories/hugo/</link>
     <description>Recent content in hugo on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-Hans</language>
     <lastBuildDate>Wed, 21 Nov 2018 22:52:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo搭建博客使用travis自动发布</title>
@@ -13,15 +13,7 @@
       <pubDate>Wed, 21 Nov 2018 22:52:47 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2018/11/21/</guid>
-      <description>原老域名到期,cn的其实不是很喜欢.
-索性买了个io的.结果发现无法备案.
-就直接GitHub上搭建博客吧&amp;hellip;
-博客搞了好多年,从WordPress到Ghost,其实觉得Ghost还是蛮好用的.
-这次寻找了一番,决定换Hugo.之前的博客等我慢慢迁移吧.
-主题和搭建过程是参见
-https://segmentfault.com/a/1190000012975914 方式建立的.
-但文章中对很多问题描述都不是很清楚.
-稍后等我慢慢道来&amp;hellip;</description>
+      <description>原老域名到期,cn的其实不是很喜欢. 索性买了个io的.结果发现无法备案. 就直接GitHub上搭建博客吧&amp;hellip; 博客搞了好多年,从WordPress到Ghost,其实觉得Ghost还是蛮好用的. 这次寻找了一番,决定换Hugo.之前的博客等我慢慢迁移吧. 主题和搭建过程是参见 https://segmentfault.com/a/1190000012975914</description>
     </item>
     
   </channel>

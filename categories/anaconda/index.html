@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
 <head>
 
     <meta charset="utf-8">
@@ -50,9 +50,9 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://blog.lazy.icu">Home</a>
+                    <a class="" href="http://blog.lazy.icu">首页</a>
                     
-                    <a  href="http://blog.lazy.icu/books/" title="读书">读书</a>
+                    <a  href="http://blog.lazy.icu/tools/" title="工具">工具</a>
                     
                     <a  href="http://blog.lazy.icu/archives/" title="归档">归档</a>
                     
@@ -78,9 +78,11 @@
         
             <span>4</span>
         
-            <span>3</span>
+            <span>4</span>
         
-            <span>3</span>
+            <span>2</span>
+        
+            <span>2</span>
         
             <span>2</span>
         
@@ -111,7 +113,7 @@
             <span>1</span>
         
         <span class="keyword">anaconda </span>
-        articles
+        中的文章
     </h3>
     
 
@@ -124,7 +126,7 @@
         </header>
         
   <time datetime="2021-08-04T12:05:48Z" class="post-meta meta-date dt-published">
-    2021-08-04
+    2021年8月4日
   </time>
 
 
@@ -139,13 +141,8 @@
 
 
         <div class="post-content">
-            Anaconda &amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。
-各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config --set show_channel_urls yes 生成该文件之后再修改。
-channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud 即可添加 Anaconda Python 免费仓库。
-运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索引。
-运行 conda create -n myenv numpy 测试一下吧。
-#创建python3.6环境,名称为python3.6,可按照实际环境名称修改 conda create -n python3.6 python=3.6 #移除环境 conda remove -n py3 --all #进入指定的环境 conda activate python3.……
-            <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" target="_blank">Continue reading</a></p>
+            Anaconda &amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。 各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config --set show_channel_urls yes 生成该文件之后再修改。 channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud 即可添加 Anaconda Python 免费仓库。 运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索……
+            <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" target="_blank">阅读全文</a></p>
         </div>
     </article>
     
@@ -203,8 +200,12 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">Latest articles</h3>
+        <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.lazy.icu/2023/02/02/centosgit2/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
+    </li>
     
     <li>
         <a href="http://blog.lazy.icu/2022/09/28/rust-mod/" title="Rust中的mod(模块)使用的五种方式" target="_blank">Rust中的mod(模块)使用的五种方式</a>
@@ -242,46 +243,44 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
     </li>
     
-    <li>
-        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
     <li><a href="http://blog.lazy.icu/categories/7z/">7z (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Docker/">Docker (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/docker/">Docker (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Jupyter/">Jupyter (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/VM/">VM (1)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/anaconda/">anaconda  (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/esxi/">esxi (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/git/">git (1)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/git/">git (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/hugo/">hugo (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/java/">java (4)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (4)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (5)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/rust/">Rust (3)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (2)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
-    
-    <li><a href="http://blog.lazy.icu/categories/vm/">VM (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/">位置服务 (1)</a></li>
     
@@ -295,14 +294,22 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="http://blog.lazy.icu/tags/Docker/">Docker</a>
+    
+    <a href="http://blog.lazy.icu/tags/Jupyter/">Jupyter</a>
+    
+    <a href="http://blog.lazy.icu/tags/LBS/">LBS</a>
+    
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
+    
+    <a href="http://blog.lazy.icu/tags/VM/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/chrome%E8%A7%A3%E5%AF%86/">chrome解密</a>
     
     <a href="http://blog.lazy.icu/tags/conda/">conda</a>
-    
-    <a href="http://blog.lazy.icu/tags/docker/">Docker</a>
     
     <a href="http://blog.lazy.icu/tags/esxi/">esxi</a>
     
@@ -320,21 +327,15 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
     
     <a href="http://blog.lazy.icu/tags/java8%E6%97%B6%E9%97%B4/">java8时间</a>
     
-    <a href="http://blog.lazy.icu/tags/jupyter/">Jupyter</a>
-    
-    <a href="http://blog.lazy.icu/tags/lbs/">LBS</a>
-    
     <a href="http://blog.lazy.icu/tags/linux/">linux</a>
     
     <a href="http://blog.lazy.icu/tags/maven/">maven</a>
     
     <a href="http://blog.lazy.icu/tags/python/">python</a>
     
-    <a href="http://blog.lazy.icu/tags/rust/">Rust</a>
+    <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
     
     <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
-    
-    <a href="http://blog.lazy.icu/tags/vm/">VM</a>
     
     <a href="http://blog.lazy.icu/tags/zip/">zip</a>
     
@@ -349,15 +350,23 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
 
     
 <section class="widget">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <ul class="widget-list">
         
         <li>
-            <a target="_blank" href="http://www.baidu.com" title="百度">百度</a>
+            <a target="_blank" href="https://www.tailwindcss.cn/docs" title="TailWindCSS文档">TailWindCSS文档</a>
         </li>
         
         <li>
-            <a target="_blank" href="http://www.oschina.net" title="开源中国">开源中国</a>
+            <a target="_blank" href="https://daisyui.com" title="DaisyUI">DaisyUI</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.shuttle.rs" title="shuttle-rs">shuttle-rs</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://icones.js.org" title="icones">icones</a>
         </li>
         
     </ul>
@@ -365,9 +374,9 @@ channels: - defaults show_channel_urls: true default_channels: - https://mirrors
 
 
     <section class="widget">
-        <h3 class="widget-title">Meta</h3>
+        <h3 class="widget-title">其它</h3>
         <ul class="widget-list">
-            <li><a href="http://blog.lazy.icu/index.xml">RSS</a></li>
+            <li><a href="http://blog.lazy.icu/index.xml">文章 RSS</a></li>
         </ul>
     </section>
 </div>
