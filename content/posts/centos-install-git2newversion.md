@@ -1,6 +1,6 @@
 ---
 title: "centos7安装新版本的git客户端"
-date: 2023-03-10T00:15:47+08:00
+date: 2023-03-10T00:16:47+08:00
 draft: false
 weight: 70
 keywords: ["linux,git,github,centos"]
