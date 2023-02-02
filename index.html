@@ -200,34 +200,6 @@ whl强制安装/更新 pip install -U --force-reinstall xxx.whl……
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2023/02/02/centos-install-git2newversion/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
-            </h1>
-        </header>
-        
-  <time datetime="2022-03-09T16:15:47Z" class="post-meta meta-date dt-published">
-    2022-03-10
-  </time>
-
-
-<div class="post-meta meta-category">
-  <span>&nbsp;|</span>
-  
-    <a href='/categories/linux' target="_blank">linux</a>
-  
-</div>
-
-
-        <div class="post-content">
-            linux中访问github:参见: https://gitclone.com/ 1 2 3 4 5 6 7 8 9 10 11 12 13 方法一（替换URL） git clone https://gitclone.com/github.com/tendermint/tendermint.git 方法二（设置git参数） git config --global url.&#34;https://gitclone.com/&#34;.insteadOf https:// git clone https://github.com/tendermint/tendermint.git 方法三（使用cgit客户端） cgit clone https://github.com/tendermint/tendermint.git 安装新版本的git客户端: 使用 https://ius.io/ 源 1 2 3 4 5 6 7 8 9 10 curl -sSL https://setup.ius.io | sh # 查看哪些包提供git这个命令 yum provides git # 这里结果显示最新版本为ius提供的包，版本为2.36.4 yum install git236 -y # 查看版本 git --version ……
-        </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2023/02/02/centos-install-git2newversion/" target="_blank">Continue reading</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别" target="_blank">python验证码在线识别</a>
             </h1>
         </header>
@@ -408,6 +380,41 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
     
     
     
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
+            </h1>
+        </header>
+        
+  <time datetime="2021-08-04T12:05:48Z" class="post-meta meta-date dt-published">
+    2021-08-04
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/python' target="_blank">python</a>
+  
+    <a href='/categories/anaconda' target="_blank">anaconda </a>
+  
+</div>
+
+
+        <div class="post-content">
+            Anaconda &amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。
+各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config --set show_channel_urls yes 生成该文件之后再修改。
+channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud 即可添加 Anaconda Python 免费仓库。
+运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索引。
+运行 conda create -n myenv numpy 测试一下吧。
+#创建python3.6环境,名称为python3.6,可按照实际环境名称修改 conda create -n python3.6 python=3.6 #移除环境 conda remove -n py3 --all #进入指定的环境 conda activate python3.……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" target="_blank">Continue reading</a></p>
+    </article>
+    
+    
+    
 
 
 
@@ -504,10 +511,6 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2023/02/02/centos-install-git2newversion/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
-    </li>
-    
-    <li>
         <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别" target="_blank">python验证码在线识别</a>
     </li>
     
@@ -525,6 +528,10 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
     
     <li>
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
     </li>
     
 </ul>
@@ -552,7 +559,7 @@ Windows：在Anaconda Prompt, 运行 activate myenv macOS &amp; Linux, 在Termin
     
     <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/linux/">linux (4)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     

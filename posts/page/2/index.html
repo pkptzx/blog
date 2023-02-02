@@ -76,41 +76,6 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
-            </h1>
-        </header>
-        
-  <time datetime="2021-08-04T12:05:48Z" class="post-meta meta-date dt-published">
-    2021-08-04
-  </time>
-
-
-<div class="post-meta meta-category">
-  <span>&nbsp;|</span>
-  
-    <a href='/categories/python' target="_blank">python</a>
-  
-    <a href='/categories/anaconda' target="_blank">anaconda </a>
-  
-</div>
-
-
-        <div class="post-content">
-            Anaconda &amp; conda 配置镜像 Anaconda 安装包可以到 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 下载。
-各系统都可以通过修改用户目录下的 .condarc 文件。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config --set show_channel_urls yes 生成该文件之后再修改。
-channels: - defaults show_channel_urls: true default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud 即可添加 Anaconda Python 免费仓库。
-运行 conda clean -i 清除索引缓存，保证用的是镜像站提供的索引。
-运行 conda create -n myenv numpy 测试一下吧。
-#创建python3.6环境,名称为python3.6,可按照实际环境名称修改 conda create -n python3.6 python=3.6 #移除环境 conda remove -n py3 --all #进入指定的环境 conda activate python3.……
-        </div>
-        <p class="readmore"><a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" target="_blank">Continue reading</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2021/08/04/java-7z-unpack-size/" title="获取7z压缩文件压缩前文件大小" target="_blank">获取7z压缩文件压缩前文件大小</a>
             </h1>
         </header>
@@ -378,6 +343,36 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     
     
     
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2018/11/30/" title="Windows远程“要求的函数不受支持”解决办法" target="_blank">Windows远程“要求的函数不受支持”解决办法</a>
+            </h1>
+        </header>
+        
+  <time datetime="2018-11-30T14:53:02Z" class="post-meta meta-date dt-published">
+    2018-11-30
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/%E7%B3%BB%E7%BB%9F' target="_blank">系统</a>
+  
+</div>
+
+
+        <div class="post-content">
+            Windows远程“要求的函数不受支持”解决办法 解决方法：
+开启组策略中远程桌面链接安全层。 1、开始-运行-gpedit.msc，进入组策略编辑器； 2、找到左侧边栏计算机配置-管理模板-Windows组件-远程桌面服务-远程桌面会话主机-安全项； 3、修改以下两项：
+A,远程（RDP）连接要求使用指定的安全层，改为启用，安全层选择RDP B,要求使用网络级别的身份验证对远程连接的用户进行身份验证，改为禁用； 4、关闭组策略编辑器，重启计算机。……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2018/11/30/" target="_blank">Continue reading</a></p>
+    </article>
+    
+    
+    
 
 
 
@@ -478,10 +473,6 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     </li>
     
     <li>
-        <a href="http://blog.lazy.icu/2023/02/02/centos-install-git2newversion/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
-    </li>
-    
-    <li>
         <a href="http://blog.lazy.icu/2022/03/10/python-captcha-discriminate-online-api/" title="python验证码在线识别" target="_blank">python验证码在线识别</a>
     </li>
     
@@ -499,6 +490,10 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     
     <li>
         <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.lazy.icu/2021/08/04/anaconda-conda-install-mirrors/" title="Anaconda &amp; conda 配置镜像" target="_blank">Anaconda &amp; conda 配置镜像</a>
     </li>
     
 </ul>
@@ -526,7 +521,7 @@ public class MvnCheckJar { public static void main(String[] args) throws Excepti
     
     <li><a href="http://blog.lazy.icu/categories/jupyter/">Jupyter (1)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/linux/">linux (4)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/linux/">linux (3)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/maven/">maven (1)</a></li>
     
