@@ -6,7 +6,25 @@
     <description>Recent content in Categories on 码魂</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 02 Feb 2023 15:16:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Feb 2023 18:16:47 +0800</lastBuildDate><atom:link href="http://blog.lazy.icu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust</title>
+      <link>http://blog.lazy.icu/categories/Rust/</link>
+      <pubDate>Thu, 16 Feb 2023 18:16:47 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/categories/Rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shuttle</title>
+      <link>http://blog.lazy.icu/categories/shuttle/</link>
+      <pubDate>Thu, 16 Feb 2023 18:16:47 +0800</pubDate>
+      
+      <guid>http://blog.lazy.icu/categories/shuttle/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>git</title>
       <link>http://blog.lazy.icu/categories/git/</link>
@@ -22,15 +40,6 @@
       <pubDate>Thu, 02 Feb 2023 15:16:47 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rust</title>
-      <link>http://blog.lazy.icu/categories/Rust/</link>
-      <pubDate>Wed, 28 Sep 2022 18:57:58 +0800</pubDate>
-      
-      <guid>http://blog.lazy.icu/categories/Rust/</guid>
       <description></description>
     </item>
     

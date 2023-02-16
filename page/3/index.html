@@ -75,6 +75,34 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/" title="docker设置固定ip地址" target="_blank">docker设置固定ip地址</a>
+            </h1>
+        </header>
+        
+  <time datetime="2018-12-06T08:22:22Z" class="post-meta meta-date dt-published">
+    2018年12月6日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/Docker' target="_blank">Docker</a>
+  
+</div>
+
+
+        <div class="post-content">
+            Docker安装后，默认会创建下面三种网络类型 1 2 3 4 5 $ docker network ls NETWORK ID NAME DRIVER SCOPE 9781b1f585ae bridge bridge local 1252da701e55 host host local 237ea3d5cfbf none null local 启动 Docker的时候，用 &ndash;network 参数，可以指定网络类型 1 docker run -itd --name test1 --network bridge --ip 172.17.0.10 centos:latest /bin/bash bridge：桥接网络 默认情况下启动的Docker容器，都是使用 bridge，Docker安装时创建的桥接网……
+        </div>
+        <p class="readmore"><a href="http://blog.lazy.icu/2018/12/06/docker-set-fix-ip/" target="_blank">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="http://blog.lazy.icu/2018/11/30/" title="Windows远程“要求的函数不受支持”解决办法" target="_blank">Windows远程“要求的函数不受支持”解决办法</a>
             </h1>
         </header>
@@ -292,6 +320,10 @@
 <ul class="widget-list">
     
     <li>
+        <a href="http://blog.lazy.icu/2023/02/16/rust-shuttle/" title="rust使用shuttle部署项目后端" target="_blank">rust使用shuttle部署项目后端</a>
+    </li>
+    
+    <li>
         <a href="http://blog.lazy.icu/2023/02/02/centosgit2/" title="centos7安装新版本的git客户端" target="_blank">centos7安装新版本的git客户端</a>
     </li>
     
@@ -325,10 +357,6 @@
     
     <li>
         <a href="http://blog.lazy.icu/2021/08/04/jupyternotebook-use-anaconda-env/" title="Jupyter Notebook使用Anaconda虚拟环境" target="_blank">Jupyter Notebook使用Anaconda虚拟环境</a>
-    </li>
-    
-    <li>
-        <a href="http://blog.lazy.icu/2021/08/04/batch-rename-dir-and-batch-uncompress/" title="文件夹批量改名&amp;批量解压" target="_blank">文件夹批量改名&amp;批量解压</a>
     </li>
     
 </ul>
@@ -366,7 +394,9 @@
     
     <li><a href="http://blog.lazy.icu/categories/python/">python (5)</a></li>
     
-    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (2)</a></li>
+    <li><a href="http://blog.lazy.icu/categories/Rust/">Rust (3)</a></li>
+    
+    <li><a href="http://blog.lazy.icu/categories/shuttle/">shuttle (1)</a></li>
     
     <li><a href="http://blog.lazy.icu/categories/springboot/">springboot (2)</a></li>
     
@@ -422,6 +452,8 @@
     <a href="http://blog.lazy.icu/tags/python/">python</a>
     
     <a href="http://blog.lazy.icu/tags/Rust/">Rust</a>
+    
+    <a href="http://blog.lazy.icu/tags/shuttle/">shuttle</a>
     
     <a href="http://blog.lazy.icu/tags/springboot/">springboot</a>
     
