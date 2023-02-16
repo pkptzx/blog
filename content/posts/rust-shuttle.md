@@ -23,7 +23,7 @@ cargo install cargo-shuttle --target-dir F:\temp
 
 ## 登录shuttle
 ```shell
-cargo shuttle login FwvYic0Pk4k35vlx
+cargo shuttle login abc123abc123abc123abc123abc123abc123
 ```
 
 ## 初始化
