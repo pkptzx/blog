@@ -13,7 +13,7 @@
       <pubDate>Thu, 16 Feb 2023 18:16:47 +0800</pubDate>
       
       <guid>http://blog.lazy.icu/2023/02/16/rust-shuttle/</guid>
-      <description>shuttle v0.10使用说明 https://www.shuttle.rs/ 安装或更新 shuttle 如果系统磁盘剩余空间比较少,可以通过&amp;ndash;target-dir来指定编译时产生的临时文件目录 1 cargo install cargo-shuttle --target-dir F:\temp 登录shuttle 1 cargo shuttle login abc123abc123abc123abc123abc123abc123 初始化 1 cargo shuttle init 部署 1 2 3 cargo shuttle deploy # 如果未提交git,提示异常,根据提示提交或增加参数即可 cargo shuttle deploy --allow-dirty 本地运行 1 cargo</description>
+      <description>shuttle v0.10使用说明 https://www.shuttle.rs/ 安装或更新 shuttle 1 2 3 cargo install cargo-shuttle # 如果系统磁盘剩余空间比较少,可以通过--target-dir来指定编译时产生的临时文件目录 cargo install cargo-shuttle --target-dir F:\temp 登录shuttle 1 cargo shuttle login abc123abc123abc123 初始化 1 cargo shuttle init 部署 1 2 3 cargo shuttle deploy # 如果未提交git,提示异常,根据提示提交或增加参数即可 cargo shuttle deploy --allow-dirty 本地运行 1</description>
     </item>
     
   </channel>

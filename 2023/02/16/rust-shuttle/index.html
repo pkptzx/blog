@@ -107,13 +107,16 @@
             <h1 id="shuttle-v010使用说明">shuttle v0.10使用说明</h1>
 <p><a href="https://www.shuttle.rs/">https://www.shuttle.rs/</a></p>
 <h2 id="安装或更新-shuttle">安装或更新 shuttle</h2>
-<p>如果系统磁盘剩余空间比较少,可以通过&ndash;target-dir来指定编译时产生的临时文件目录</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo install cargo-shuttle --target-dir F:<span style="color:#d14">\t</span>emp
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo install cargo-shuttle
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 如果系统磁盘剩余空间比较少,可以通过--target-dir来指定编译时产生的临时文件目录</span>
+</span></span><span style="display:flex;"><span>cargo install cargo-shuttle --target-dir F:<span style="color:#d14">\t</span>emp
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="登录shuttle">登录shuttle</h2>
@@ -122,7 +125,7 @@
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo shuttle login abc123abc123abc123abc123abc123abc123
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo shuttle login abc123abc123abc123
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="初始化">初始化</h2>
@@ -156,10 +159,7 @@
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo shuttle run
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="指定项目名">指定项目名</h2>
-<p>创建<code>Shuttle.toml</code> 在里面添加:<br>
-name = &ldquo;your-project-name</p>
-<h2 id="报错解决">报错解决</h2>
+</div><h2 id="报错解决貌似只有windows才会必须使用165">报错解决(貌似只有windows才会必须使用1.65?)</h2>
 <p>error:</p>
 <blockquote>
 <p>error: couldn&rsquo;t read \?\x:...\target\debug\build\rustversion-&hellip;\out/version.expr: 文件名、目录名或卷标语法不正确。 (os error 123)</p>
@@ -180,7 +180,7 @@ name = &ldquo;your-project-name</p>
 </ul>
 </li>
 <li>
-<p>方式二</p>
+<p>方式二:</p>
 <ul>
 <li>工程中创建: rust-toolchain.toml</li>
 <li>添加内容:</li>
@@ -198,22 +198,49 @@ name = &ldquo;your-project-name</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
-</ol>
+<li>
+<p>方式三: 每次执行时添加+1.65</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 使用1.65重新安装cargo-shuttle (或者直接binstall[未测])</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 安装rust 1.65</span>
+</span></span><span style="display:flex;"><span>rustup toolchain install 1.65
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 使用1.65重新安装cargo-shuttle (或者直接binstall[未测])</span>
 </span></span><span style="display:flex;"><span>cargo +1.65 install cargo-shuttle --force
 </span></span><span style="display:flex;"><span>cargo +1.65 build
 </span></span><span style="display:flex;"><span>cargo +1.65 shuttle run
 </span></span></code></pre></td></tr></table>
 </div>
+</div></li>
+</ol>
+<h2 id="qa">QA</h2>
+<ol>
+<li>不想git提交前端编译后的文件,导致部署失败<br>
+这是由于如果在.gitignore忽略了前端编译的文件那么shuttle也会忽略.<br>
+解决办法: <a href="https://discord.com/channels/803236282088161321/1072652298678960269/1075338035601879130">https://discord.com/channels/803236282088161321/1072652298678960269/1075338035601879130</a><br>
+使用.ignore再设置为不忽略,这样git会忽略,shuttle不会忽略</li>
+<li>遇到部署时卡住很久很久或爆500错误后再也无法部署<br>
+重启这个项目:
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo shuttle project rm
+</span></span><span style="display:flex;"><span>cargo shuttle project new
+</span></span></code></pre></td></tr></table>
 </div>
+</div></li>
+</ol>
+
         </div>
 
         
